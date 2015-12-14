@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="UFO.Server.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DaoProviderClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DaoProviderFactory</Value>
+    </Setting>
+    <Setting Name="DaoProviderNameSpace" Type="System.String" Scope="User">
+      <Value Profile="(Default)">UFO.Server.Dal.MySql</Value>
+    </Setting>
+    <Setting Name="DaoProviderAssemblyName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">UFO.Server.Dal.MySql</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
