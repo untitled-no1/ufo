@@ -180,8 +180,8 @@ namespace UFO.Server.Dal.MySql
             return performance != null ? DaoResponse.QuerySuccessful(performance) : DaoResponse.QueryEmptyResult<Performance>();
         }
 
-        [DaoExceptionHandler(typeof(IList<Performance>))]
-        public DaoResponse<IList<Performance>> SelectAll()
+        [DaoExceptionHandler(typeof(List<Performance>))]
+        public DaoResponse<List<Performance>> SelectAll()
         {
             var performances = new List<Performance>();
             using (var connection = _dbCommProvider.CreateDbConnection())
@@ -193,13 +193,13 @@ namespace UFO.Server.Dal.MySql
                     performances.Add(CreatePerformanceObject(dataReader));
                 }
             }
-            return performances.Any() ? DaoResponse.QuerySuccessful<IList<Performance>>(performances) : DaoResponse.QueryEmptyResult<IList<Performance>>();
+            return performances.Any() ? DaoResponse.QuerySuccessful<List<Performance>>(performances) : DaoResponse.QueryEmptyResult<List<Performance>>();
         }
 
-        [DaoExceptionHandler(typeof(IList<Performance>))]
-        public DaoResponse<IList<Performance>> SelectWhere<T>(Expression<Filter<Performance, T>> filterExpression, T criteria)
+        [DaoExceptionHandler(typeof(List<Performance>))]
+        public DaoResponse<List<Performance>> SelectWhere<T>(Expression<Filter<Performance, T>> filterExpression, T criteria = default(T))
         {
-            return DaoResponse.QuerySuccessful<IList<Performance>>(
+            return DaoResponse.QuerySuccessful<List<Performance>>(
                 new List<Performance>(filterExpression.Compile()(SelectAll().ResultObject, criteria)));
         }
     }

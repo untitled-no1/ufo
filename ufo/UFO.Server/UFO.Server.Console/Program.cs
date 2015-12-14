@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using UFO.Server.Dal;
 using UFO.Server.Dal.Common;
 using UFO.Server.Domain;
 

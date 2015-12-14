@@ -116,8 +116,8 @@ namespace UFO.Server.Dal.MySql
             return venue != null ? DaoResponse.QuerySuccessful(venue) : DaoResponse.QueryEmptyResult<Venue>();
         }
 
-        [DaoExceptionHandler(typeof(IList<Venue>))]
-        public DaoResponse<IList<Venue>> SelectAll()
+        [DaoExceptionHandler(typeof(List<Venue>))]
+        public DaoResponse<List<Venue>> SelectAll()
         {
             var venues = new List<Venue>();
             using (var connection = _dbCommProvider.CreateDbConnection())
@@ -129,13 +129,13 @@ namespace UFO.Server.Dal.MySql
                     venues.Add(CreateVenueObject(dataReader));
                 }
             }
-            return venues.Any() ? DaoResponse.QuerySuccessful<IList<Venue>>(venues) : DaoResponse.QueryEmptyResult<IList<Venue>>();
+            return venues.Any() ? DaoResponse.QuerySuccessful<List<Venue>>(venues) : DaoResponse.QueryEmptyResult<List<Venue>>();
         }
 
-        [DaoExceptionHandler(typeof(IList<Venue>))]
-        public DaoResponse<IList<Venue>> SelectWhere<T>(Expression<Filter<Venue, T>> filterExpression, T criteria)
+        [DaoExceptionHandler(typeof(List<Venue>))]
+        public DaoResponse<List<Venue>> SelectWhere<T>(Expression<Filter<Venue, T>> filterExpression, T criteria = default(T))
         {
-            return DaoResponse.QuerySuccessful<IList<Venue>>(
+            return DaoResponse.QuerySuccessful<List<Venue>>(
                 new List<Venue>(filterExpression.Compile()(SelectAll().ResultObject, criteria)));
         }
     }

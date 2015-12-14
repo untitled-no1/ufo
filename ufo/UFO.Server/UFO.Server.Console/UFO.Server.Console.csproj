@@ -77,13 +77,13 @@
       <Project>{379da0ba-9dfd-4382-953d-943b5cfe99b4}</Project>
       <Name>UFO.Server.Dal.MySql</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UFO.Server.Dal\UFO.Server.Dal.csproj">
+      <Project>{75DF68F2-A526-469F-9CAB-35EBBAA3F9E6}</Project>
+      <Name>UFO.Server.Dal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UFO.Server.Domain\UFO.Server.Domain.csproj">
       <Project>{d1adb3d6-b6dc-42ca-9468-71dc9693f89c}</Project>
       <Name>UFO.Server.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UFO.Server\UFO.Server.csproj">
-      <Project>{75df68f2-a526-469f-9cab-35ebbaa3f9e6}</Project>
-      <Name>UFO.Server</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

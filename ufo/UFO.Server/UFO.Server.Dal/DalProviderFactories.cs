@@ -21,11 +21,11 @@
 using NLog;
 using PostSharp.Patterns.Diagnostics;
 using UFO.Server.Dal.Common;
-using UFO.Server.Properties;
+using UFO.Server.Dal.Properties;
 using LogLevel = NLog.LogLevel;
 using PostSharp.Extensibility;
 
-namespace UFO.Server
+namespace UFO.Server.Dal
 {
     public static class DalProviderFactories
     {

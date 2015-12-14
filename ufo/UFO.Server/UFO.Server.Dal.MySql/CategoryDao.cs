@@ -108,8 +108,8 @@ namespace UFO.Server.Dal.MySql
             return DaoResponse.QuerySuccessful(entity);
         }
 
-        [DaoExceptionHandler(typeof(IList<Category>))]
-        public DaoResponse<IList<Category>> SelectAll()
+        [DaoExceptionHandler(typeof(List<Category>))]
+        public DaoResponse<List<Category>> SelectAll()
         {
             var categories = new List<Category>();
             using (var connection = _dbCommProvider.CreateDbConnection())
@@ -121,13 +121,13 @@ namespace UFO.Server.Dal.MySql
                     categories.Add(CreateCategoryObject(dataReader));
                 }
             }
-            return categories.Any() ? DaoResponse.QuerySuccessful<IList<Category>>(categories) : DaoResponse.QueryEmptyResult<IList<Category>>();
+            return categories.Any() ? DaoResponse.QuerySuccessful<List<Category>>(categories) : DaoResponse.QueryEmptyResult<List<Category>>();
         }
 
-        [DaoExceptionHandler(typeof(IList<Category>))]
-        public DaoResponse<IList<Category>> SelectWhere<T>(Expression<Filter<Category, T>> filterExpression, T criteria)
+        [DaoExceptionHandler(typeof(List<Category>))]
+        public DaoResponse<List<Category>> SelectWhere<T>(Expression<Filter<Category, T>> filterExpression, T criteria = default(T))
         {
-            return DaoResponse.QuerySuccessful<IList<Category>>(
+            return DaoResponse.QuerySuccessful<List<Category>>(
                 new List<Category>(filterExpression.Compile()(SelectAll().ResultObject, criteria)));
         }
     }

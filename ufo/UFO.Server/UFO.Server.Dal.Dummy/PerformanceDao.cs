@@ -43,12 +43,12 @@ namespace UFO.Server.Dal.Dummy
             throw new System.NotImplementedException();
         }
 
-        public DaoResponse<IList<Performance>> SelectAll()
+        public DaoResponse<List<Performance>> SelectAll()
         {
             throw new System.NotImplementedException();
         }
 
-        public DaoResponse<IList<Performance>> SelectWhere<T>(Expression<Filter<Performance, T>> filterExpression, T criteria)
+        public DaoResponse<List<Performance>> SelectWhere<T>(Expression<Filter<Performance, T>> filterExpression, T criteria = default(T))
         {
             throw new System.NotImplementedException();
         }

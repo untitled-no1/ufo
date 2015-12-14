@@ -108,8 +108,8 @@ namespace UFO.Server.Dal.MySql
             return DaoResponse.QuerySuccessful(entity);
         }
 
-        [DaoExceptionHandler(typeof(IList<Country>))]
-        public DaoResponse<IList<Country>> SelectAll()
+        [DaoExceptionHandler(typeof(List<Country>))]
+        public DaoResponse<List<Country>> SelectAll()
         {
             var countries = new List<Country>();
             using (var connection = _dbCommProvider.CreateDbConnection())
@@ -121,13 +121,13 @@ namespace UFO.Server.Dal.MySql
                     countries.Add(CreateCountryObject(dataReader));
                 }
             }
-            return countries.Any() ? DaoResponse.QuerySuccessful<IList<Country>>(countries) : DaoResponse.QueryEmptyResult<IList<Country>>();
+            return countries.Any() ? DaoResponse.QuerySuccessful<List<Country>>(countries) : DaoResponse.QueryEmptyResult<List<Country>>();
         }
 
-        [DaoExceptionHandler(typeof(IList<Country>))]
-        public DaoResponse<IList<Country>> SelectWhere<T>(Expression<Filter<Country, T>> filterExpression, T criteria)
+        [DaoExceptionHandler(typeof(List<Country>))]
+        public DaoResponse<List<Country>> SelectWhere<T>(Expression<Filter<Country, T>> filterExpression, T criteria = default(T))
         {
-            return DaoResponse.QuerySuccessful<IList<Country>>(
+            return DaoResponse.QuerySuccessful<List<Country>>(
                 new List<Country>(filterExpression.Compile()(SelectAll().ResultObject, criteria)));
         }
     }

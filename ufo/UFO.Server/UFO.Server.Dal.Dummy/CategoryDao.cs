@@ -31,12 +31,12 @@ namespace UFO.Server.Dal.Dummy
             throw new NotImplementedException();
         }
 
-        public DaoResponse<IList<Category>> SelectAll()
+        public DaoResponse<List<Category>> SelectAll()
         {
             throw new NotImplementedException();
         }
         
-        public DaoResponse<IList<Category>> SelectWhere<T>(Expression<Filter<Category, T>> filterExpression, T criteria)
+        public DaoResponse<List<Category>> SelectWhere<T>(Expression<Filter<Category, T>> filterExpression, T criteria = default(T))
         {
             throw new NotImplementedException();
         }

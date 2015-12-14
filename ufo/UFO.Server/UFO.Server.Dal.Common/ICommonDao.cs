@@ -35,14 +35,15 @@ namespace UFO.Server.Dal.Common
         DaoResponse<TType> Insert(TType entity);
         DaoResponse<TType> Update(TType entity);
         DaoResponse<TType> Delete(TType entity);
-        DaoResponse<IList<TType>> SelectAll();
+        DaoResponse<List<TType>> SelectAll();
+
         /// <summary>
         /// Select a value from the DAL implementation with a runtime specified lambda expression.
         /// </summary>
         /// <typeparam name="T">Type of the where clause criteria.</typeparam>
-        /// <param name="criteria">Where clause criteria.</param>
         /// <param name="filterExpression">Expression of the lambda filter used to map the where clause.</param>
+        /// <param name="criteria">Where clause criteria.</param>
         /// <returns>Response object with the collected types.</returns>
-        DaoResponse<IList<TType>> SelectWhere<T>(Expression<Filter<TType, T>> filterExpression, T criteria = default(T));
+        DaoResponse<List<TType>> SelectWhere<T>(Expression<Filter<TType, T>> filterExpression, T criteria = default(T));
     }
 }

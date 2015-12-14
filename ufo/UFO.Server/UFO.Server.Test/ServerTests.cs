@@ -24,9 +24,10 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Transactions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UFO.Server.Dal;
 using UFO.Server.Dal.Common;
 using UFO.Server.Domain;
-using UFO.Server.Properties;
+using UFO.Server.Dal.Properties;
 
 namespace UFO.Server.Test
 {
@@ -135,7 +136,7 @@ namespace UFO.Server.Test
                 TestDbDaoAssemblyName,
                 TestDbDaoNameSpace,
                 TestDbDaoClassName).CreateUserDao();
-            DaoResponse<IList<User>> response = dao.SelectAll();
+            DaoResponse<List<User>> response = dao.SelectAll();
             Assert.IsTrue(response.ResultObject?.Count > 10);
         }
 

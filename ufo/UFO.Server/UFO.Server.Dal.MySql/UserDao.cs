@@ -127,7 +127,7 @@ namespace UFO.Server.Dal.MySql
             return DaoResponse.QuerySuccessful(entity);
         }
 
-        [DaoExceptionHandler(typeof(IList<User>))]
+        [DaoExceptionHandler(typeof(List<User>))]
         public DaoResponse<User> SelectById(int id)
         {
             User user = null;
@@ -175,8 +175,8 @@ namespace UFO.Server.Dal.MySql
             return daoResponse;
         }
 
-        [DaoExceptionHandler(typeof(IList<User>))]
-        public DaoResponse<IList<User>> SelectAll()
+        [DaoExceptionHandler(typeof(List<User>))]
+        public DaoResponse<List<User>> SelectAll()
         {
             var users = new List<User>();
             using (var connection = _dbCommProvider.CreateDbConnection())
@@ -188,13 +188,13 @@ namespace UFO.Server.Dal.MySql
                     users.Add(CreateUserObject(dataReader));
                 }
             }
-            return users.Any() ? DaoResponse.QuerySuccessful<IList<User>>(users) : DaoResponse.QueryEmptyResult<IList<User>>();
+            return users.Any() ? DaoResponse.QuerySuccessful<List<User>>(users) : DaoResponse.QueryEmptyResult<List<User>>();
         }
 
-        [DaoExceptionHandler(typeof(IList<User>))]
-        public DaoResponse<IList<User>> SelectWhere<T>(Expression<Filter<User, T>> filterExpression, T criteria)
+        [DaoExceptionHandler(typeof(List<User>))]
+        public DaoResponse<List<User>> SelectWhere<T>(Expression<Filter<User, T>> filterExpression, T criteria = default(T))
         {
-            return DaoResponse.QuerySuccessful<IList<User>>(
+            return DaoResponse.QuerySuccessful<List<User>>(
                 new List<User>(filterExpression.Compile()(SelectAll().ResultObject, criteria)));
         }
     }

@@ -42,14 +42,14 @@ namespace UFO.Server.Dal.Dummy
             throw new System.NotImplementedException();
         }
 
-        public DaoResponse<IList<User>> SelectAll()
+        public DaoResponse<List<User>> SelectAll()
         {
-            return DaoResponse.QuerySuccessful<IList<User>>(DataCollection.Users.ToList());
+            return DaoResponse.QuerySuccessful<List<User>>(DataCollection.Users.ToList());
         }
         
-        public DaoResponse<IList<User>> SelectWhere<T>(Expression<Filter<User, T>> filterExpression, T criteria)
+        public DaoResponse<List<User>> SelectWhere<T>(Expression<Filter<User, T>> filterExpression, T criteria = default(T))
         {
-            return DaoResponse.QuerySuccessful<IList<User>>(filterExpression.Compile()(DataCollection.Users, criteria).ToList());
+            return DaoResponse.QuerySuccessful<List<User>>(filterExpression.Compile()(DataCollection.Users, criteria).ToList());
         }
 
         public DaoResponse<User> SelectById(int id)

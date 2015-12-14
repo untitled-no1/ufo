@@ -37,18 +37,18 @@ namespace UFO.Server.Dal.Common
             return values.Any() ? DaoResponse.QuerySuccessful(values.First()) : DaoResponse.QueryEmptyResult<User>();
         }
 
-        public static DaoResponse<IList<User>> SelectByLastName(this IUserDao dao, string name)
+        public static DaoResponse<List<User>> SelectByLastName(this IUserDao dao, string name)
         {
             Expression<Filter<User, string>> filterExpression = (users, value) => users.Where(x => x.LastName == value);
             var values = dao.SelectWhere(filterExpression, name).ResultObject;
-            return values.Any() ? DaoResponse.QuerySuccessful(values) : DaoResponse.QueryEmptyResult<IList<User>>();
+            return values.Any() ? DaoResponse.QuerySuccessful(values) : DaoResponse.QueryEmptyResult<List<User>>();
         }
 
-        public static DaoResponse<IList<User>> SelectByFirstName(this IUserDao dao, string name)
+        public static DaoResponse<List<User>> SelectByFirstName(this IUserDao dao, string name)
         {
             Expression<Filter<User, string>> filterExpression = (users, value) => users.Where(x => x.FirstName == value);
             var values = dao.SelectWhere(filterExpression, name).ResultObject;
-            return values.Any() ? DaoResponse.QuerySuccessful(values) : DaoResponse.QueryEmptyResult<IList<User>>();
+            return values.Any() ? DaoResponse.QuerySuccessful(values) : DaoResponse.QueryEmptyResult<List<User>>();
         }
     }
 }
