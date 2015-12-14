@@ -17,15 +17,23 @@
 //     Dinu Marius-Constantin
 //     Wurm Florian
 #endregion
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
 using UFO.Server.Domain;
 
 namespace UFO.Server.Dal.Common
 {
-    public interface IUserDao : ICommonDao<User>
+    public static class IPerformanceDaoExtension
     {
-        DaoResponse<User> SelectById(int id);
-
-        DaoResponse<bool> VerifyAdminCredentials(User user);
+        public static DaoResponse<Performance> SelectByDateTime(this IPerformanceDao dao, DateTime datetime)
+        {
+            Expression<Filter<Performance, DateTime>> filterExpression = (performances, value) => performances.Where(x => x.DateTime == value);
+            var values = dao.SelectWhere(filterExpression, datetime).ResultObject;
+            return values.Any() ? DaoResponse.QuerySuccessful(values.First()) : DaoResponse.QueryEmptyResult<Performance>();
+        }
     }
 }

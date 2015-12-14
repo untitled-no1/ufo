@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="UFO.Server.Dal.Common.ADbCommProvider">
+    <Position X="18.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAACAEAAACAEAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>ADbCommProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.Extensions" Collapsed="true">
+    <Position X="23.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.DaoExceptionHandlerAttribute">
+    <Position X="6" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAgAAAAAQAAAAAgAAAAA=</HashCode>
+      <FileName>DaoExceptionHandlerAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.DaoResponse">
+    <Position X="3.5" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQAgAAACUAAAAAgAAAAAAAAAAAAAAAAAAABAAAAgAAA=</HashCode>
+      <FileName>DaoResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.DaoResponse&lt;TDaoType&gt;">
+    <Position X="3.5" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAACAAAAAAABAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DaoResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.IArtistDaoExtension" Collapsed="true">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAACAAA=</HashCode>
+      <FileName>IArtistDaoExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.ICategoryDaoExtension" Collapsed="true">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAACAAA=</HashCode>
+      <FileName>ICategoryDaoExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.ICountryDaoExtension" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>ICountryDaoExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.IPerformanceDaoExtension" Collapsed="true">
+    <Position X="17" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPerformanceDaoExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.IUserDaoExtension" Collapsed="true">
+    <Position X="18.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAAAAAAAACAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>IUserDaoExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.IVenueDaoExtension" Collapsed="true">
+    <Position X="20.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAACAAA=</HashCode>
+      <FileName>IVenueDaoExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.QueryParameter" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QueryParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Dal.Common.QueryParameter&lt;TDbType&gt;" Collapsed="true">
+    <Position X="0.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>QueryParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="UFO.Server.Dal.Common.IArtistDao">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IArtistDao.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UFO.Server.Dal.Common.ICategoryDao">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>ICategoryDao.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UFO.Server.Dal.Common.ICommonDao&lt;TType&gt;">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAACAAAAAAAAAAAAAAAAEAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>ICommonDao.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UFO.Server.Dal.Common.ICountryDao">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICountryDao.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UFO.Server.Dal.Common.IDaoProviderFactory">
+    <Position X="17" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAgEAAAAAAAEAgAAAAAAAAAAgAAA=</HashCode>
+      <FileName>IDaoProviderFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UFO.Server.Dal.Common.ILocationDao">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>ILocationDao.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UFO.Server.Dal.Common.IPerformanceDao">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPerformanceDao.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UFO.Server.Dal.Common.IUserDao">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IUserDao.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="UFO.Server.Dal.Common.IVenueDao">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVenueDao.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="UFO.Server.Dal.Common.DaoStatus">
+    <Position X="6" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAABIAAAAAAAA=</HashCode>
+      <FileName>DaoResponse.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="UFO.Server.Dal.Common.Filter&lt;TResult, TCriteria&gt;">
+    <Position X="10.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Constants.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="UFO.Server.Dal.Common.DaoResponseEventHandler&lt;T&gt;">
+    <Position X="22.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>IArtistDao.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

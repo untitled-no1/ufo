@@ -21,6 +21,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Runtime.InteropServices;
 using UFO.Server.Dal.Common;
 using UFO.Server.Domain;
 
@@ -34,8 +37,7 @@ namespace UFO.Server.Dal.MySql
         {
             _dbCommProvider = dbCommProvider;
         }
-
-
+        
         private Performance CreatePerformanceObject(IDataReader dataReader)
         {
             var performance = new Performance
@@ -82,18 +84,104 @@ namespace UFO.Server.Dal.MySql
                 };
                 performance.Venue = venue;
             }
-
             return performance;
         }
 
-        [DaoExceptionHandler(typeof(Performance))]
-        public DaoResponse<Performance> Update(Performance performance)
+        private void VerifyPerformanceValue(Performance entity)
         {
-            throw new System.NotImplementedException();
+            if (entity.DateTime.Minute != 0 || entity.DateTime.Second != 0 || entity.DateTime.Millisecond != 0)
+            {
+                throw new InvalidOperationException("Invalid Date format: Only full hours allowed!");
+            }
+
+            var fromTime = entity.DateTime.AddHours(-1);
+            var toTime = entity.DateTime.AddHours(1);
+
+            var parameter = new Dictionary<string, QueryParameter>
+            {
+                {"?FromTime", new QueryParameter {ParameterValue = fromTime.ToString(Constants.CommonDateFormat)}},
+                {"?ToTime", new QueryParameter {ParameterValue = toTime.ToString(Constants.CommonDateFormat)}},
+                {"?ArtistId", new QueryParameter {ParameterValue = entity.Artist?.ArtistId}}
+            };
+
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.SelectPerformanceBetweenHours, parameter))
+            using (var dataReader = _dbCommProvider.ExecuteReader(command))
+            {
+                if (dataReader.Read())
+                {
+                    throw new InvalidOperationException("Invalid Date format: ArtistId already performing!");
+                }
+            }
+        }
+
+        private Dictionary<string, QueryParameter> CreatePerformanceParameter(Performance performance)
+        {
+            return new Dictionary<string, QueryParameter>
+            {
+                {"?Date", new QueryParameter {ParameterValue = performance.DateTime.ToString(Constants.CommonDateFormat)}},
+                {"?ArtistId", new QueryParameter {ParameterValue = performance.Artist.ArtistId}},
+                {"?VenueId", new QueryParameter {ParameterValue = performance.Venue.VenueId}}
+            };
+        }
+
+        [DaoExceptionHandler(typeof(Performance))]
+        public DaoResponse<Performance> Insert(Performance entity)
+        {
+            VerifyPerformanceValue(entity);
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.InsertPerformance, CreatePerformanceParameter(entity)))
+            {
+                _dbCommProvider.ExecuteNonQuery(command);
+            }
+            return DaoResponse.QuerySuccessful(entity);
+        }
+
+        [DaoExceptionHandler(typeof(Performance))]
+        public DaoResponse<Performance> Update(Performance entity)
+        {
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.UpdatePerformance, CreatePerformanceParameter(entity)))
+            {
+                _dbCommProvider.ExecuteNonQuery(command);
+            }
+            return DaoResponse.QuerySuccessful(entity);
+        }
+
+        [DaoExceptionHandler(typeof(Performance))]
+        public DaoResponse<Performance> Delete(Performance entity)
+        {
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.DeletePerformance, CreatePerformanceParameter(entity)))
+            {
+                _dbCommProvider.ExecuteNonQuery(command);
+            }
+            return DaoResponse.QuerySuccessful(entity);
+        }
+
+        [DaoExceptionHandler(typeof(Performance))]
+        public DaoResponse<Performance> SelectById(DateTime dateTime, int artistId)
+        {
+            Performance performance = null;
+            var parameter = new Dictionary<string, QueryParameter>
+            {
+                {"?Date", new QueryParameter {ParameterValue = dateTime.ToString(Constants.CommonDateFormat)}},
+                {"?ArtistId", new QueryParameter {ParameterValue = artistId}}
+            };
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.SelectPerformanceById, parameter))
+            using (var dataReader = _dbCommProvider.ExecuteReader(command))
+            {
+                if (dataReader.Read())
+                {
+                    performance = CreatePerformanceObject(dataReader);
+                }
+            }
+            return performance != null ? DaoResponse.QuerySuccessful(performance) : DaoResponse.QueryEmptyResult<Performance>();
         }
 
         [DaoExceptionHandler(typeof(IList<Performance>))]
-        public DaoResponse<IList<Performance>> GetAll()
+        public DaoResponse<IList<Performance>> SelectAll()
         {
             var performances = new List<Performance>();
             using (var connection = _dbCommProvider.CreateDbConnection())
@@ -105,15 +193,14 @@ namespace UFO.Server.Dal.MySql
                     performances.Add(CreatePerformanceObject(dataReader));
                 }
             }
-
-            return DaoResponse.QuerySuccessfull<IList<Performance>>(performances);
+            return performances.Any() ? DaoResponse.QuerySuccessful<IList<Performance>>(performances) : DaoResponse.QueryEmptyResult<IList<Performance>>();
         }
 
         [DaoExceptionHandler(typeof(IList<Performance>))]
-        public DaoResponse<IList<Performance>> GetAllAndFilterBy<T>(T criteria, Filter<Performance, T> filter)
+        public DaoResponse<IList<Performance>> SelectWhere<T>(Expression<Filter<Performance, T>> filterExpression, T criteria)
         {
-            return DaoResponse.QuerySuccessfull<IList<Performance>>(
-                new List<Performance>(filter.Invoke(GetAll().ResultObject, criteria)));
+            return DaoResponse.QuerySuccessful<IList<Performance>>(
+                new List<Performance>(filterExpression.Compile()(SelectAll().ResultObject, criteria)));
         }
     }
 }

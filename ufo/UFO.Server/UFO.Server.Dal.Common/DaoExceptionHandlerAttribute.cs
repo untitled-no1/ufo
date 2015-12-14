@@ -102,26 +102,18 @@ namespace UFO.Server.Dal.Common
             else
             {
                 // craete a generic typed response object
-                var daoResponse = Type.GetType("UFO.Server.Dal.Common.DaoResponse`1");
-                if (daoResponse != null)
-                {
-                    var property = daoResponse.GetProperty("ErrorMessage");
-                    var objectCreator = daoResponse.MakeGenericType(_returnType);
-                    var obj = Activator.CreateInstance(objectCreator);
-                    property.SetValue(obj, args.Exception.Message);
-                    property = daoResponse.GetProperty("ResponseStatus");
-                    property.SetValue(obj, DaoStatus.Failed);
-                    property = daoResponse.GetProperty("Exception");
-                    property.SetValue(obj, args.Exception);
+                var daoResponse = typeof (DaoResponse<>);
+                var property = daoResponse.GetProperty("ErrorMessage");
+                var objectCreator = daoResponse.MakeGenericType(_returnType);
+                var obj = Activator.CreateInstance(objectCreator);
+                property.SetValue(obj, args.Exception.Message);
+                property = daoResponse.GetProperty("ResponseStatus");
+                property.SetValue(obj, DaoStatus.Failed);
+                property = daoResponse.GetProperty("Exception");
+                property.SetValue(obj, args.Exception);
 
-                    // set return type value
-                    args.ReturnValue = obj;
-                }
-                else
-                {
-                    // throw exception for missing (unexcepted) type resource 
-                    throw new InvalidOperationException("An unexpected reflection implementation expection occured!");
-                }
+                // set return type value
+                args.ReturnValue = obj;
             }
         }
     }

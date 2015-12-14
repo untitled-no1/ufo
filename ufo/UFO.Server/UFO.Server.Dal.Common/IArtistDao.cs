@@ -25,18 +25,9 @@ using UFO.Server.Domain;
 namespace UFO.Server.Dal.Common
 {
     public delegate void DaoResponseEventHandler<T>(object sender, DaoResponse<T> daoResponse);
-    
-    public interface IArtistDao
+
+    public interface IArtistDao : ICommonDao<Artist>
     {
-        DaoResponse<Artist> Insert(Artist artist);
-        
-        DaoResponse<Artist> Update(Artist artist);
-        
-        DaoResponse<Artist> Delete(Artist artist);
-        
-        DaoResponse<IList<Artist>> GetAll();
-        
-        DaoResponse<IList<Artist>> GetAllAndFilterBy<T>(T criteria, Filter<Artist, T> filter);
+        DaoResponse<Artist> SelectById(int id);
     }
-    
 }

@@ -62,5 +62,10 @@ namespace UFO.Server.Dal.MySql
         {
             return new CountryDao(_dbCommProvider);
         }
+
+        public ILocationDao CreateLocationDao()
+        {
+            return new LocationDao(_dbCommProvider);
+        }
     }
 }

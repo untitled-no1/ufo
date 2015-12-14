@@ -19,6 +19,9 @@
 #endregion
 namespace UFO.Server.Dal.Common
 {
+    /// <summary>
+    /// Defines the available DAO methods for the DAL.
+    /// </summary>
     public interface IDaoProviderFactory
     {
         IArtistDao CreateArtistDao();
@@ -32,5 +35,7 @@ namespace UFO.Server.Dal.Common
         ICategoryDao CreateCategoryDao();
 
         ICountryDao CreateCountryDao();
+
+        ILocationDao CreateLocationDao();
     }
 }

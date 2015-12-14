@@ -58,8 +58,14 @@
     <Compile Include="DaoResponse.cs" />
     <Compile Include="ADbCommProvider.cs" />
     <Compile Include="IArtistDao.cs" />
+    <Compile Include="ILocationDao.cs" />
+    <Compile Include="IPerformanceDaoExtension.cs" />
+    <Compile Include="IVenueDaoExtension.cs" />
+    <Compile Include="ICountryDaoExtension.cs" />
+    <Compile Include="ICategoryDaoExtension.cs" />
     <Compile Include="IArtistDaoExtension.cs" />
     <Compile Include="ICategoryDao.cs" />
+    <Compile Include="ICommonDao.cs" />
     <Compile Include="ICountryDao.cs" />
     <Compile Include="IDaoProviderFactory.cs" />
     <Compile Include="IPerformanceDao.cs" />
@@ -76,6 +82,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram-Common.cd" />
     <None Include="packages.config" />
     <None Include="UFO.Server.Dal.Common.licenseheader" />
     <None Include="UFO.Server.Dal.Common.psproj" />

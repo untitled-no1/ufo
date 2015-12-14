@@ -18,6 +18,7 @@
 //     Wurm Florian
 #endregion
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UFO.Server.Dal.Common;
 using UFO.Server.Domain;
 
@@ -40,12 +41,17 @@ namespace UFO.Server.Dal.Dummy
             throw new System.NotImplementedException();
         }
         
-        public DaoResponse<IList<Artist>> GetAll()
+        public DaoResponse<IList<Artist>> SelectAll()
         {
             throw new System.NotImplementedException();
         }
         
-        public DaoResponse<IList<Artist>> GetAllAndFilterBy<T>(T criteria, Filter<Artist, T> filter)
+        public DaoResponse<IList<Artist>> SelectWhere<T>(Expression<Filter<Artist, T>> filterExpression, T criteria)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public DaoResponse<Artist> SelectById(int id)
         {
             throw new System.NotImplementedException();
         }

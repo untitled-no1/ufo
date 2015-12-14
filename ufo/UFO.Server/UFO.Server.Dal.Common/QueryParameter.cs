@@ -22,11 +22,18 @@ using System.Data;
 
 namespace UFO.Server.Dal.Common
 {
+    /// <summary>
+    /// Query parameter wrapper object.
+    /// </summary>
     public class QueryParameter
     {
         public virtual object ParameterValue { get; set; }
     }
 
+    /// <summary>
+    /// Query parameter wrapper of typed TDbType object.
+    /// </summary>
+    /// <typeparam name="TDbType">Database specific DbType implementation.</typeparam>
     public class QueryParameter<TDbType> : QueryParameter
     {
         public virtual TDbType DbType { get; set; }

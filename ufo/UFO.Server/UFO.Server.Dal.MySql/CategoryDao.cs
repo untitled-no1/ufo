@@ -19,6 +19,8 @@
 #endregion
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Linq.Expressions;
 using MySql.Data.MySqlClient;
 using UFO.Server.Dal.Common;
 using UFO.Server.Domain;
@@ -44,8 +46,17 @@ namespace UFO.Server.Dal.MySql
             return category;
         }
 
+        private Dictionary<string, QueryParameter> CreateCategoryParameter(Category entity)
+        {
+            return new Dictionary<string, QueryParameter>
+            {
+                {"?CategoryId", new QueryParameter {ParameterValue = entity.CategoryId}},
+                {"?Name", new QueryParameter {ParameterValue = entity.Name}}
+            };
+        }
+
         [DaoExceptionHandler(typeof(Category))]
-        public DaoResponse<Category> GetById(string id)
+        public DaoResponse<Category> SelectById(string id)
         {
             Category category = null;
             var parameter = new Dictionary<string, QueryParameter>
@@ -53,7 +64,7 @@ namespace UFO.Server.Dal.MySql
                 {"?CategoryId", new QueryParameter {ParameterValue = id}}
             };
             using (var connection = _dbCommProvider.CreateDbConnection())
-            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.SelectCountryById, parameter))
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.SelectCategoryById, parameter))
             using (var dataReader = _dbCommProvider.ExecuteReader(command))
             {
                 if (dataReader.Read())
@@ -61,11 +72,44 @@ namespace UFO.Server.Dal.MySql
                     category = CreateCategoryObject(dataReader);
                 }
             }
-            return DaoResponse.QuerySuccessfull(category);
+            return category != null ? DaoResponse.QuerySuccessful(category) : DaoResponse.QueryEmptyResult<Category>();
+        }
+
+        [DaoExceptionHandler(typeof(Category))]
+        public DaoResponse<Category> Insert(Category entity)
+        {
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.InsertCategory, CreateCategoryParameter(entity)))
+            {
+                _dbCommProvider.ExecuteNonQuery(command);
+            }
+            return DaoResponse.QuerySuccessful(entity);
+        }
+
+        [DaoExceptionHandler(typeof(Category))]
+        public DaoResponse<Category> Update(Category entity)
+        {
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.UpdateCategory, CreateCategoryParameter(entity)))
+            {
+                _dbCommProvider.ExecuteNonQuery(command);
+            }
+            return DaoResponse.QuerySuccessful(entity);
+        }
+        
+        [DaoExceptionHandler(typeof(Category))]
+        public DaoResponse<Category> Delete(Category entity)
+        {
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.DeleteCategory, CreateCategoryParameter(entity)))
+            {
+                _dbCommProvider.ExecuteNonQuery(command);
+            }
+            return DaoResponse.QuerySuccessful(entity);
         }
 
         [DaoExceptionHandler(typeof(IList<Category>))]
-        public DaoResponse<IList<Category>> GetAll()
+        public DaoResponse<IList<Category>> SelectAll()
         {
             var categories = new List<Category>();
             using (var connection = _dbCommProvider.CreateDbConnection())
@@ -77,14 +121,14 @@ namespace UFO.Server.Dal.MySql
                     categories.Add(CreateCategoryObject(dataReader));
                 }
             }
-            return DaoResponse.QuerySuccessfull<IList<Category>>(categories);
+            return categories.Any() ? DaoResponse.QuerySuccessful<IList<Category>>(categories) : DaoResponse.QueryEmptyResult<IList<Category>>();
         }
 
         [DaoExceptionHandler(typeof(IList<Category>))]
-        public DaoResponse<IList<Category>> GetAllAndFilterBy<T>(T criteria, Filter<Category, T> filter)
+        public DaoResponse<IList<Category>> SelectWhere<T>(Expression<Filter<Category, T>> filterExpression, T criteria)
         {
-            return DaoResponse.QuerySuccessfull<IList<Category>>(
-                new List<Category>(filter.Invoke(GetAll().ResultObject, criteria)));
+            return DaoResponse.QuerySuccessful<IList<Category>>(
+                new List<Category>(filterExpression.Compile()(SelectAll().ResultObject, criteria)));
         }
     }
 }

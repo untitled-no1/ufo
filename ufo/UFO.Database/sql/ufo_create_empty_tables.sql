@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2015 at 09:16 PM
+-- Generation Time: Nov 20, 2015 at 12:28 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -19,6 +19,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `ufo`
 --
+CREATE DATABASE IF NOT EXISTS `ufo`;
+
+USE `ufo`;
 
 -- --------------------------------------------------------
 
@@ -31,10 +34,10 @@ CREATE TABLE IF NOT EXISTS `artist` (
   `Name` varchar(30) NOT NULL,
   `EMail` varchar(40) NOT NULL,
   `CategoryId` varchar(2) DEFAULT NULL,
-  `CountryCode` char(2) NOT NULL,
+  `CountryCode` char(2) DEFAULT NULL,
   `Picture` mediumtext,
   `PromoVideo` mediumtext
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=477 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -139,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `IsArtist` tinyint(1) NOT NULL,
   `ArtistId` int(11) DEFAULT NULL,
   `EMail` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10001 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -274,6 +277,20 @@ ALTER TABLE `venue`
   ADD PRIMARY KEY (`VenueId`), ADD KEY `R_19` (`LocationId`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `artist`
+--
+ALTER TABLE `artist`
+  MODIFY `ArtistId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=477;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10001;
+--
 -- Constraints for dumped tables
 --
 
@@ -282,26 +299,26 @@ ALTER TABLE `venue`
 --
 ALTER TABLE `artist`
 ADD CONSTRAINT `R_11` FOREIGN KEY (`CountryCode`) REFERENCES `country` (`Code`),
-ADD CONSTRAINT `R_8` FOREIGN KEY (`CategoryId`) REFERENCES `category` (`CategoryId`);
+ADD CONSTRAINT `R_8` FOREIGN KEY (`CategoryId`) REFERENCES `category` (`CategoryId`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `performance`
 --
 ALTER TABLE `performance`
-ADD CONSTRAINT `R_12` FOREIGN KEY (`ArtistId`) REFERENCES `artist` (`ArtistId`),
-ADD CONSTRAINT `R_14` FOREIGN KEY (`VenueId`) REFERENCES `venue` (`VenueId`);
+ADD CONSTRAINT `R_12` FOREIGN KEY (`ArtistId`) REFERENCES `artist` (`ArtistId`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `R_14` FOREIGN KEY (`VenueId`) REFERENCES `venue` (`VenueId`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user`
 --
 ALTER TABLE `user`
-ADD CONSTRAINT `R_5` FOREIGN KEY (`ArtistId`) REFERENCES `artist` (`ArtistId`);
+ADD CONSTRAINT `R_5` FOREIGN KEY (`ArtistId`) REFERENCES `artist` (`ArtistId`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `venue`
 --
 ALTER TABLE `venue`
-ADD CONSTRAINT `R_19` FOREIGN KEY (`LocationId`) REFERENCES `location` (`LocationId`);
+ADD CONSTRAINT `R_19` FOREIGN KEY (`LocationId`) REFERENCES `location` (`LocationId`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

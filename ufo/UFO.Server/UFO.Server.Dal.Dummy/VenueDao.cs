@@ -18,6 +18,7 @@
 //     Wurm Florian
 #endregion
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UFO.Server.Dal.Common;
 using UFO.Server.Domain;
 
@@ -25,22 +26,32 @@ namespace UFO.Server.Dal.Dummy
 {
     class VenueDao : IVenueDao
     {
-        public DaoResponse<Venue> Insert(Venue venue)
+        public DaoResponse<Venue> Insert(Venue entity)
         {
             throw new System.NotImplementedException();
         }
         
-        public DaoResponse<Venue> Update(Venue venue)
+        public DaoResponse<Venue> Update(Venue entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public DaoResponse<Venue> Delete(Venue entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public DaoResponse<IList<Venue>> SelectAll()
         {
             throw new System.NotImplementedException();
         }
         
-        public DaoResponse<IList<Venue>> GetAll()
+        public DaoResponse<IList<Venue>> SelectWhere<T>(Expression<Filter<Venue, T>> filterExpression, T criteria)
         {
             throw new System.NotImplementedException();
         }
-        
-        public DaoResponse<IList<Venue>> GetAllAndFilterBy<T>(T criteria, Filter<Venue, T> filter)
+
+        public DaoResponse<Venue> SelectById(string id)
         {
             throw new System.NotImplementedException();
         }

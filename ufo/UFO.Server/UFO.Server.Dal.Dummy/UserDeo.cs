@@ -19,6 +19,7 @@
 #endregion
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using UFO.Server.Dal.Common;
 using UFO.Server.Domain;
 
@@ -26,19 +27,39 @@ namespace UFO.Server.Dal.Dummy
 {
     class UserDeo : IUserDao
     {
-        public DaoResponse<User> Update(User user)
+        public DaoResponse<User> Insert(User entity)
         {
             throw new System.NotImplementedException();
         }
-        
-        public DaoResponse<IList<User>> GetAll()
+
+        public DaoResponse<User> Update(User entity)
         {
-            return DaoResponse.QuerySuccessfull<IList<User>>(DataCollection.Users.ToList());
+            throw new System.NotImplementedException();
+        }
+
+        public DaoResponse<User> Delete(User entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public DaoResponse<IList<User>> SelectAll()
+        {
+            return DaoResponse.QuerySuccessful<IList<User>>(DataCollection.Users.ToList());
         }
         
-        public DaoResponse<IList<User>> GetAllAndFilterBy<T>(T criteria, Filter<User, T> filter)
+        public DaoResponse<IList<User>> SelectWhere<T>(Expression<Filter<User, T>> filterExpression, T criteria)
         {
-            return DaoResponse.QuerySuccessfull<IList<User>>(filter(DataCollection.Users, criteria).ToList());
+            return DaoResponse.QuerySuccessful<IList<User>>(filterExpression.Compile()(DataCollection.Users, criteria).ToList());
+        }
+
+        public DaoResponse<User> SelectById(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public DaoResponse<bool> VerifyAdminCredentials(User user)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -43,7 +43,33 @@ namespace UFO.Server.Domain
 
         public override string ToString()
         {
-            return $"ID: {ArtistId}, Name: {Name}, EMail: {EMail}";
+            return $"ArtistId: {ArtistId}, ArtistName: {Name}, ArtistEMail: {EMail}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            var artist = obj as Artist;
+            return artist != null 
+                && ArtistId == artist.ArtistId
+                && Name == artist.Name
+                && EMail == artist.EMail
+                && Category == artist.Category
+                && Country == artist.Country
+                && Picture == artist.Picture
+                && PromoVideo == artist.PromoVideo;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 33;
+            hashCode += ArtistId;
+            hashCode += Name?.GetHashCode() ?? 0;
+            hashCode += EMail?.GetHashCode() ?? 0;
+            hashCode += Category?.GetHashCode() ?? 0;
+            hashCode += Country?.GetHashCode() ?? 0;
+            hashCode += Picture?.GetHashCode() ?? 0;
+            hashCode += PromoVideo?.GetHashCode() ?? 0;
+            return hashCode;
         }
     }
 }

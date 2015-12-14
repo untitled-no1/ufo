@@ -37,14 +37,21 @@ namespace UFO.Server.Dal.Common
         public abstract DbConnection CreateDbConnection(string dbProviderName = null, string connectionString = null);
 
         /// <summary>
-        /// Database independent command creation method. Can be overridden with database specific behavior.
+        /// Database independent command creation method with generic type. Can be overridden with database specific behavior.
         /// </summary>
-        /// <param name="connection">Database connection.</param>
+        /// <param name="connection">Database connection for communication.</param>
         /// <param name="queryText">Database query.</param>
         /// <param name="parameters">Query parameters pairs.</param>
         /// <returns></returns>
         public abstract DbCommand CreateDbCommand<TDbType>(DbConnection connection, string queryText, Dictionary<string, QueryParameter<TDbType>> parameters = null);
 
+        /// <summary>
+        /// Database independet command creation method without generic type. Can be overridden with database specific behavior.
+        /// </summary>
+        /// <param name="connection">Database connection for communication.</param>
+        /// <param name="queryText">Database query.</param>
+        /// <param name="parameters">Query parameters pairs without typed QueryParameter.</param>
+        /// <returns></returns>
         public virtual DbCommand CreateDbCommand(DbConnection connection, string queryText, Dictionary<string, QueryParameter> parameters = null)
         {
             Dictionary<string, QueryParameter<object>> nonGenericParameters = null;
@@ -59,18 +66,41 @@ namespace UFO.Server.Dal.Common
             return CreateDbCommand(connection, queryText, nonGenericParameters);
         }
 
+        /// <summary>
+        /// Cast a read object from the IDataReader to the target generic type.
+        /// </summary>
+        /// <typeparam name="T">Type used for the cast.</typeparam>
+        /// <param name="reader">Database reader.</param>
+        /// <param name="column">Name of the column to be read by the IDataReader.</param>
+        /// <returns>Cast type or default value of T.</returns>
         public virtual T CastDbObject<T>(IDataReader reader, string column)
         {
             return !Convert.IsDBNull(reader[column]) ? (T) reader[column] : default(T);
         }
 
+        /// <summary>
+        /// Verify if the IDataReader did not contain an specified column. Null value checks.
+        /// </summary>
+        /// <param name="reader">Database reader.</param>
+        /// <param name="column">Name of the column to be read by the IDataReader.</param>
+        /// <returns>True if an object is availabe or false if the database entry is null.</returns>
         public virtual bool IsDbNull(IDataReader reader, string column)
         {
             return reader[column] is DBNull;
         }
 
+        /// <summary>
+        /// Reader implementation for the specified database.
+        /// </summary>
+        /// <param name="command">Command to be executed.</param>
+        /// <returns>Database reader.</returns>
         public abstract IDataReader ExecuteReader(DbCommand command);
 
+        /// <summary>
+        /// Non-Query execution implementation for the specified database.
+        /// </summary>
+        /// <param name="command">Command to be executed.</param>
+        /// <returns>The number of rows affected.</returns>
         public abstract int ExecuteNonQuery(DbCommand command);
     }
 }

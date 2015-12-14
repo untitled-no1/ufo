@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="UFO.Server.Domain.Artist">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAEgAAAEAQAACIAAIAAAAAAAAAASAA=</HashCode>
+      <FileName>Artist.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Domain.BlobData">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIEgAAAAAQAAAAAAIAAIAAAAgAAAAA=</HashCode>
+      <FileName>BlobData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Domain.Category">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAEgAAAAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Domain.Constants">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAgAAAAABAAAAA=</HashCode>
+      <FileName>Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Domain.Country">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAgAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Domain.Location">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAEAAAAAEgAAIAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Location.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Domain.Performance">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAEgAAAAAAAAIAAAIQAAAAAAAAAAAA=</HashCode>
+      <FileName>Performance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Domain.User">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAEgAAAAAgACKgAAIACAAAAAAAAAAg=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UFO.Server.Domain.Venue" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAIAAAQAAAgAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Venue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -44,7 +44,7 @@ namespace UFO.Server.Dal.Dummy
                 new User
                 {
                     EMail = "marius.dinu@mail.com",
-                    FistName = "Marius",
+                    FirstName = "Marius",
                     LastName = "Dinu",
                     Password = "cfefe3e7c1ce34edfd95f0386ab03724", // PW: theTools48297!
                     IsAdmin = true,
@@ -53,7 +53,7 @@ namespace UFO.Server.Dal.Dummy
                 new User
                 {
                     EMail = "chesterbenn@live.com",
-                    FistName = "Chester",
+                    FirstName = "Chester",
                     LastName = "Bennington",
                     Password = "098f6bcd4621d373cade4e832627b4f6", // PW: test
                     IsAdmin = false,
@@ -62,7 +62,7 @@ namespace UFO.Server.Dal.Dummy
                 new User
                 {
                     EMail = "shinoda@hotmail.com",
-                    FistName = "Mike",
+                    FirstName = "Mike",
                     LastName = "Shinoda",
                     Password = "a4f5dfd41d26f7fb0972ba8a77eead30", // PW: se8ndkKhHnd3821!D$
                     IsAdmin = false,
@@ -71,7 +71,7 @@ namespace UFO.Server.Dal.Dummy
                 new User
                 {
                     EMail = "hallo@mail.com",
-                    FistName = "Peter",
+                    FirstName = "Peter",
                     LastName = "Fox",
                     Password = "5f4dcc3b5aa765d61d8327deb882cf99", // PW: password
                     IsAdmin = false,
@@ -94,7 +94,7 @@ namespace UFO.Server.Dal.Dummy
 
             fixture.Customize<User>(c => c
             .With(u => u.EMail, $"{fixture.Create<string>()}@{fixture.Create<string>()}.com")
-            .With(u => u.FistName, fixture.Create<string>())
+            .With(u => u.FirstName, fixture.Create<string>())
             );
 
             return user.Create();

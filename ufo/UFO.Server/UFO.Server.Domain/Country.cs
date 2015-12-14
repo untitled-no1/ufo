@@ -27,5 +27,26 @@ namespace UFO.Server.Domain
         public string Code { get; set; }
 
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return $"CountryCode: {Code}, CountryName: {Name}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            var country = obj as Country;
+            return country != null
+                && Code == country.Code
+                && Name == country.Name;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 33;
+            hashCode += Code?.GetHashCode() ?? 0;
+            hashCode += Name?.GetHashCode() ?? 0;
+            return hashCode;
+        }
     }
 }

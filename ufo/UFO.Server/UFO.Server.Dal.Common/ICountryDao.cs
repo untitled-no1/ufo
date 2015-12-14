@@ -26,12 +26,8 @@ using UFO.Server.Domain;
 
 namespace UFO.Server.Dal.Common
 {
-    public interface ICountryDao
+    public interface ICountryDao : ICommonDao<Country>
     {
         DaoResponse<Country> GetByCode(string code);
-        
-        DaoResponse<IList<Country>> GetAll();
-
-        DaoResponse<IList<Country>> GetAllAndFilterBy<T>(T criteria, Filter<Country, T> filter);
     }
 }

@@ -27,7 +27,7 @@ namespace UFO.Server.Domain
     {
         public int UserId { get; set; } = Constants.InvalidIdValue;
 
-        public string FistName { get; set; }
+        public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
@@ -42,22 +42,34 @@ namespace UFO.Server.Domain
 
         public Artist Artist { get; set; }
 
-        public override int GetHashCode()
+        public override string ToString()
         {
-            var hashCode = 33;
-            hashCode += EMail?.GetHashCode() ?? 0;
-            return hashCode;
+            return $"UserId: {UserId}, FirstName: {FirstName}, LastName: {LastName}, UserEMail: {EMail}, Artist: ({Artist})";
         }
 
         public override bool Equals(object obj)
         {
             var user = obj as User;
-            return user != null && (Artist == user.Artist && EMail == user.EMail);
+            return user != null
+                && Artist == user.Artist
+                && FirstName == user.FirstName
+                && LastName == user.LastName
+                && EMail == user.EMail
+                && Password == user.Password
+                && IsAdmin == user.IsAdmin
+                && IsArtist == user.IsArtist
+                && Artist == user.Artist;
         }
 
-        public override string ToString()
+        public override int GetHashCode()
         {
-            return $"User ( ArtistId={Artist}, FirstName={FistName}, LastName={LastName}, EMail={EMail} )";
+            var hashCode = 33;
+            hashCode += FirstName?.GetHashCode() ?? 0;
+            hashCode += LastName?.GetHashCode() ?? 0;
+            hashCode += EMail?.GetHashCode() ?? 0;
+            hashCode += Artist?.GetHashCode() ?? 0;
+            return hashCode;
         }
+        
     }
 }

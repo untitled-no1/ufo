@@ -17,7 +17,10 @@
 //     Dinu Marius-Constantin
 //     Wurm Florian
 #endregion
+
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UFO.Server.Dal.Common;
 using UFO.Server.Domain;
 
@@ -25,19 +28,34 @@ namespace UFO.Server.Dal.Dummy
 {
     class PerformanceDao : IPerformanceDao
     {
-        public DaoResponse<Performance> Update(Performance performance)
+        public DaoResponse<Performance> Insert(Performance entity)
         {
             throw new System.NotImplementedException();
         }
 
-        public DaoResponse<IList<Performance>> GetAll()
+        public DaoResponse<Performance> Update(Performance entity)
         {
             throw new System.NotImplementedException();
         }
 
-        public DaoResponse<IList<Performance>> GetAllAndFilterBy<T>(T criteria, Filter<Performance, T> filter)
+        public DaoResponse<Performance> Delete(Performance entity)
         {
             throw new System.NotImplementedException();
+        }
+
+        public DaoResponse<IList<Performance>> SelectAll()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public DaoResponse<IList<Performance>> SelectWhere<T>(Expression<Filter<Performance, T>> filterExpression, T criteria)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public DaoResponse<Performance> SelectById(DateTime dateTime, int artistId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

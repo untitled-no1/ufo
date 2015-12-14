@@ -17,17 +17,15 @@
 //     Dinu Marius-Constantin
 //     Wurm Florian
 #endregion
+
+using System;
 using System.Collections.Generic;
 using UFO.Server.Domain;
 
 namespace UFO.Server.Dal.Common
 {
-    public interface IPerformanceDao
+    public interface IPerformanceDao : ICommonDao<Performance>
     {
-        DaoResponse<Performance> Update(Performance performance);
-        
-        DaoResponse<IList<Performance>> GetAll();
-        
-        DaoResponse<IList<Performance>> GetAllAndFilterBy<T>(T criteria, Filter<Performance, T> filter);
+        DaoResponse<Performance> SelectById(DateTime dateTime, int artistId);
     }
 }

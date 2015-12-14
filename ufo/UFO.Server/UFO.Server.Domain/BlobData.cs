@@ -30,11 +30,36 @@ namespace UFO.Server.Domain
 
         public string Name { get; set; }
 
+        public string Path { get; set; }
+
         public byte[] DataStream { get; set; }
+       
+        public override string ToString()
+        {
+            return $"BlobDataName: {Name}, BlobDataPath: {Path}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            var blobData = obj as BlobData;
+            return blobData != null
+                && Name == blobData.Name
+                && Path == blobData.Path
+                && DataStream == blobData.DataStream;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 33;
+            hashCode += Name?.GetHashCode() ?? 0;
+            hashCode += Path?.GetHashCode() ?? 0;
+            hashCode += DataStream?.GetHashCode() ?? 0;
+            return hashCode;
+        }
 
         public static BlobData CreateBlobData(string path)
         {
-            return new BlobData {Name = path};
+            return new BlobData { Path = path };
         }
     }
 }

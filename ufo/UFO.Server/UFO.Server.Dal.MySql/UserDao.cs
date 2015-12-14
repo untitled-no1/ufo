@@ -21,6 +21,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Security.Authentication;
 using UFO.Server.Dal.Common;
 using UFO.Server.Domain;
 
@@ -40,7 +43,7 @@ namespace UFO.Server.Dal.MySql
             var user = new User
             {
                 UserId = _dbCommProvider.CastDbObject<int>(dataReader, "UserId"),
-                FistName = _dbCommProvider.CastDbObject<string>(dataReader, "FirstName"),
+                FirstName = _dbCommProvider.CastDbObject<string>(dataReader, "FirstName"),
                 LastName = _dbCommProvider.CastDbObject<string>(dataReader, "LastName"),
                 EMail = _dbCommProvider.CastDbObject<string>(dataReader, "UserMail"),
                 Password = _dbCommProvider.CastDbObject<string>(dataReader, "Password"),
@@ -77,29 +80,103 @@ namespace UFO.Server.Dal.MySql
             return user;
         }
 
-        [DaoExceptionHandler(typeof(User))]
-        public DaoResponse<User> Update(User user)
+        private Dictionary<string, QueryParameter> CreateUserParameter(User entity)
         {
-            var paramter = new Dictionary<string, QueryParameter>
+            return new Dictionary<string, QueryParameter>
             {
-                {"?UserId", new QueryParameter {ParameterValue = user.UserId}},
-                {"?FirstName", new QueryParameter {ParameterValue = user.FistName}},
-                {"?LastName", new QueryParameter {ParameterValue = user.LastName}},
-                {"?Password", new QueryParameter {ParameterValue = user.Password}},
-                {"?IsAdmin", new QueryParameter {ParameterValue = user.IsAdmin}},
-                {"?IsArtist", new QueryParameter {ParameterValue = user.IsArtist}},
-                {"?ArtistId", new QueryParameter {ParameterValue = user.Artist?.ArtistId}}
+                {"?UserId", new QueryParameter {ParameterValue = entity.UserId}},
+                {"?FirstName", new QueryParameter {ParameterValue = entity.FirstName}},
+                {"?LastName", new QueryParameter {ParameterValue = entity.LastName}},
+                {"?Password", new QueryParameter {ParameterValue = entity.Password}},
+                {"?IsAdmin", new QueryParameter {ParameterValue = entity.IsAdmin}},
+                {"?IsArtist", new QueryParameter {ParameterValue = entity.IsArtist}},
+                {"?ArtistId", new QueryParameter {ParameterValue = entity.Artist?.ArtistId}}
             };
+        }
+
+        [DaoExceptionHandler(typeof(User))]
+        public DaoResponse<User> Insert(User entity)
+        {
             using (var connection = _dbCommProvider.CreateDbConnection())
-            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.UpdateUser, paramter))
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.InsertUser, CreateUserParameter(entity)))
             {
                 _dbCommProvider.ExecuteNonQuery(command);
-                return DaoResponse.QuerySuccessfull(user);
             }
+            return DaoResponse.QuerySuccessful(entity);
+        }
+
+        [DaoExceptionHandler(typeof(User))]
+        public DaoResponse<User> Update(User entity)
+        {
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.UpdateUser, CreateUserParameter(entity)))
+            {
+                _dbCommProvider.ExecuteNonQuery(command);
+            }
+            return DaoResponse.QuerySuccessful(entity);
+        }
+
+        [DaoExceptionHandler(typeof(User))]
+        public DaoResponse<User> Delete(User entity)
+        {
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.DeleteUser, CreateUserParameter(entity)))
+            {
+                _dbCommProvider.ExecuteNonQuery(command);
+            }
+            return DaoResponse.QuerySuccessful(entity);
         }
 
         [DaoExceptionHandler(typeof(IList<User>))]
-        public DaoResponse<IList<User>> GetAll()
+        public DaoResponse<User> SelectById(int id)
+        {
+            User user = null;
+            var parameter = new Dictionary<string, QueryParameter>
+            {
+                {"?UserId", new QueryParameter {ParameterValue = id}}
+            };
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.SelectUserById, parameter))
+            using (var dataReader = _dbCommProvider.ExecuteReader(command))
+            {
+                if (dataReader.Read())
+                {
+                    user = CreateUserObject(dataReader);
+                }
+            }
+            return user != null ? DaoResponse.QuerySuccessful(user) : DaoResponse.QueryEmptyResult<User>();
+        }
+
+        [DaoExceptionHandler(typeof(bool))]
+        public DaoResponse<bool> VerifyAdminCredentials(User user)
+        {
+            DaoResponse<bool> daoResponse = null;
+            SelectById(user.UserId)
+                .OnFailure(response =>
+                {
+                    throw response.Exception;
+                })
+                .OnSuccess(u =>
+                {
+                    if (u.Password == user.Password && u.IsAdmin)
+                    {
+                        daoResponse = DaoResponse.QuerySuccessful(true);
+                    }
+                    else
+                    {
+                        const string msg = "Invalid user credentials.";
+                        daoResponse = DaoResponse.QueryFailed(false, msg, new InvalidCredentialException(msg));
+                    }
+                })
+                .OnEmptyResult(() =>
+                {
+                    daoResponse = DaoResponse.QueryEmptyResult<bool>();
+                });
+            return daoResponse;
+        }
+
+        [DaoExceptionHandler(typeof(IList<User>))]
+        public DaoResponse<IList<User>> SelectAll()
         {
             var users = new List<User>();
             using (var connection = _dbCommProvider.CreateDbConnection())
@@ -111,14 +188,14 @@ namespace UFO.Server.Dal.MySql
                     users.Add(CreateUserObject(dataReader));
                 }
             }
-            return DaoResponse.QuerySuccessfull<IList<User>>(users);
+            return users.Any() ? DaoResponse.QuerySuccessful<IList<User>>(users) : DaoResponse.QueryEmptyResult<IList<User>>();
         }
 
         [DaoExceptionHandler(typeof(IList<User>))]
-        public DaoResponse<IList<User>> GetAllAndFilterBy<T>(T criteria, Filter<User, T> filter)
+        public DaoResponse<IList<User>> SelectWhere<T>(Expression<Filter<User, T>> filterExpression, T criteria)
         {
-            return DaoResponse.QuerySuccessfull<IList<User>>(
-                new List<User>(filter.Invoke(GetAll().ResultObject, criteria)));
+            return DaoResponse.QuerySuccessful<IList<User>>(
+                new List<User>(filterExpression.Compile()(SelectAll().ResultObject, criteria)));
         }
     }
 }

@@ -35,7 +35,6 @@ namespace UFO.Server
         /// <param name="nameSpace">Namespace where the class is embedded.</param>
         /// <param name="className">Class name which will be instantiated.</param>
         /// <returns></returns>
-        [LogException]
         public static T LoadClass<T>(string assemblyName, string nameSpace, string className)
         {
             try

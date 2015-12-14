@@ -31,8 +31,8 @@ namespace UFO.Server
     {
         /// <summary>
         /// Creates a DAO factory at runtime, which provides methods for DAO creation.
-        /// This is used to create loose coupling between assemblies using technology proprietary implementations
-        /// and the business logic libraries.
+        /// This is used to create loose coupling between assemblies by not using technology proprietary implementation
+        /// logic and using configurations from XML file.
         /// </summary>
         /// <param name="assemblyName">Name of the assebly to be loaded.</param>
         /// <param name="nameSpace">Namespace where the class is embedded.</param>

@@ -27,13 +27,20 @@ using UFO.Server.Domain;
 
 namespace UFO.Server.Dal.Common
 {
-    public static class IArtistDaoExtension
+    public static class ICategoryDaoExtension
     {
-        public static DaoResponse<Artist> SelectByName(this IArtistDao dao, string name)
+        public static DaoResponse<Category> SelectById(this ICategoryDao dao, string id)
         {
-            Expression<Filter <Artist, string>> filterExpression = (users, value) => users.Where(x => x.Name == value);
+            Expression<Filter<Category, string>> filterExpression = (categories, value) => categories.Where(x => x.CategoryId == value);
+            var values = dao.SelectWhere(filterExpression, id).ResultObject;
+            return values.Any() ? DaoResponse.QuerySuccessful(values.First()) : DaoResponse.QueryEmptyResult<Category>();
+        }
+
+        public static DaoResponse<Category> SelectByName(this ICategoryDao dao, string name)
+        {
+            Expression<Filter<Category, string>> filterExpression = (categories, value) => categories.Where(x => x.Name == value);
             var values = dao.SelectWhere(filterExpression, name).ResultObject;
-            return values.Any() ? DaoResponse.QuerySuccessful(values.First()) : DaoResponse.QueryEmptyResult<Artist>();
+            return values.Any() ? DaoResponse.QuerySuccessful(values.First()) : DaoResponse.QueryEmptyResult<Category>();
         }
     }
 }

@@ -24,14 +24,37 @@ namespace UFO.Server.Domain
     [Serializable]
     public class Location
     {
-        public const double InvalidGeoLocation = double.MinValue;
-
         public int LocationId { get; set; } = Constants.InvalidIdValue;
 
-        public decimal Longitude { get; set; }
+        public decimal Longitude { get; set; } = Constants.InvalidGeoLocation;
 
-        public decimal Latitude { get; set; }
+        public decimal Latitude { get; set; } = Constants.InvalidGeoLocation;
 
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return $"LocationId: {LocationId}, LocationName: {Name}, Longitude: {Longitude}, Latitude: {Latitude}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            var location = obj as Location;
+            return location != null
+                && LocationId == location.LocationId
+                && Name == location.Name
+                && Longitude == location.Longitude
+                && Latitude == location.Latitude;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 33;
+            hashCode += LocationId;
+            hashCode += Longitude.GetHashCode();
+            hashCode += Latitude.GetHashCode();
+            hashCode += Name?.GetHashCode() ?? 0;
+            return hashCode;
+        }
     }
 }

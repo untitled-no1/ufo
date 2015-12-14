@@ -52,5 +52,10 @@ namespace UFO.Server.Dal.Dummy
         {
             return new CountryDao();
         }
+
+        public ILocationDao CreateLocationDao()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

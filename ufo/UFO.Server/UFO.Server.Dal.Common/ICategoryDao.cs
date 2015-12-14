@@ -26,12 +26,8 @@ using UFO.Server.Domain;
 
 namespace UFO.Server.Dal.Common
 {
-    public interface ICategoryDao
+    public interface ICategoryDao : ICommonDao<Category>
     {
-        DaoResponse<Category> GetById(string id);
-        
-        DaoResponse<IList<Category>> GetAll();
-        
-        DaoResponse<IList<Category>> GetAllAndFilterBy<T>(T criteria, Filter<Category, T> filter);
+        DaoResponse<Category> SelectById(string id);
     }
 }

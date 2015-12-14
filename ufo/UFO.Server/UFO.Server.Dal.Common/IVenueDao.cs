@@ -22,14 +22,8 @@ using UFO.Server.Domain;
 
 namespace UFO.Server.Dal.Common
 {
-    public interface IVenueDao
+    public interface IVenueDao : ICommonDao<Venue>
     {
-        DaoResponse<Venue> Insert(Venue venue);
-        
-        DaoResponse<Venue> Update(Venue venue);
-        
-        DaoResponse<IList<Venue>> GetAll();
-        
-        DaoResponse<IList<Venue>> GetAllAndFilterBy<T>(T criteria, Filter<Venue, T> filter);
+        DaoResponse<Venue> SelectById(string id);
     }
 }
