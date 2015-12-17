@@ -65,10 +65,23 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BusinessTests.cs" />
     <Compile Include="ServerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UFO.Server.BLL.Common\UFO.Server.BLL.Common.csproj">
+      <Project>{4d4907b5-41fd-4fff-84d8-e5584bbee0bb}</Project>
+      <Name>UFO.Server.BLL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFO.Server.BLL.Impl\UFO.Server.BLL.Impl.csproj">
+      <Project>{7be67484-43da-43bf-a7ac-76f84f0515b5}</Project>
+      <Name>UFO.Server.BLL.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFO.Server.BLL\UFO.Server.BLL.csproj">
+      <Project>{0c93f5ff-089d-43e2-978b-bc596b30dc90}</Project>
+      <Name>UFO.Server.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UFO.Server.Dal.Common\UFO.Server.Dal.Common.csproj">
       <Project>{90aa318d-269a-4c83-9ee9-85718a0fdd67}</Project>
       <Name>UFO.Server.Dal.Common</Name>

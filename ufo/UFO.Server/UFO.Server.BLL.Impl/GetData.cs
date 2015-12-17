@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
 using UFO.Server.BLL;
@@ -15,10 +16,19 @@ namespace UFO.Server.BLL.Impl
     {
         private IUserDao userDao = DalProviderFactories.GetDaoFactory().CreateUserDao();
         private IArtistDao artistDao = DalProviderFactories.GetDaoFactory().CreateArtistDao();
+        private IAuthentification authentification;
+
+        public GetData(IAuthentification authentification)
+        {
+            this.authentification = authentification;
+        }
 
         public List<User> GetAllUsers()
         {
-            // TODO Authentification
+            if (!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+
+
             return userDao.SelectAll().ResultObject;
         }
 

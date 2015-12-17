@@ -6,8 +6,7 @@ namespace UFO.Server.BLL.Common
 {
     public interface IAuthentification
     {
-        bool Login(string email, string hash);
-        bool Logout();
+        void Logout();
         bool IsLoggedIn();
         User GetLoggedUser();
     }
