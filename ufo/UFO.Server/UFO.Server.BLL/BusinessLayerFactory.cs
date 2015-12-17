@@ -15,9 +15,12 @@ namespace UFO.Server.BLL
             return new GetData(auth);
         }
 
-        public static IAuthentification CreateAuthentificationInstance(User user)
+        public static IAuthentification CreateAuthentificationInstance(string name, string hash)
         {
-            return new Authentification(user);
+            User u = new User();
+            u.EMail = name;
+            u.Password = hash;
+            return new Authentification(u);
         }
 
     }

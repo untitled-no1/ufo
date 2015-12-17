@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UFO.Server.BLL.Common;
 using UFO.Server.Dal;
+using UFO.Server.Dal.Common;
 using UFO.Server.Domain;
 
 namespace UFO.Server.BLL.Impl
@@ -17,10 +18,28 @@ namespace UFO.Server.BLL.Impl
 
         public Authentification(User user)
         {
-            bool valid = DalProviderFactories.GetDaoFactory().CreateUserDao().VerifyAdminCredentials(user).ResultObject;
-            if (!valid) throw new AuthenticationException();
-            this.user = user;
-            this.loggedIn = true;
+            IUserDao userDao = DalProviderFactories.GetDaoFactory().CreateUserDao();
+            DaoResponse<User> response = userDao.SelectByEmail(user.EMail);
+            if (response.ResponseStatus == DaoStatus.Successful)
+            {
+                user.UserId = response.ResultObject.UserId;
+                bool valid = userDao.VerifyAdminCredentials(user).ResultObject;
+                if (!valid)
+                {
+                    this.loggedIn = false;
+                }
+                else
+                {
+                    this.user = response.ResultObject;
+                    this.loggedIn = true;
+                }
+            }
+            else
+            {
+                this.loggedIn = false;
+            }
+            
+            
         }
 
         public void Logout()
