@@ -12,26 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
-using UFO.Commander.Views;
 
-namespace UFO.Commander
+namespace UFO.Commander.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ArtistUserControl.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class ArtistUserControl : UserControl
     {
-        public MainWindow()
+        public ArtistUserControl()
         {
             InitializeComponent();
-            var window = this;
-            this.Loaded += async (sender, args) =>
-            {
-                await window.ShowMetroDialogAsync(new LoginUserControl());
-            };
         }
-        
     }
 }

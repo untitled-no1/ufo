@@ -14,7 +14,7 @@ using UFO.Server.Domain;
 
 namespace UFO.Commander.ViewModels
 {
-    class LoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : INotifyPropertyChanged
     {
         private string userName;
         public string UserName
@@ -39,32 +39,29 @@ namespace UFO.Commander.ViewModels
                 using (var md5 = MD5.Create())
                 {
                     password = Crypto.GetMd5Hash(md5, value);
+                    Console.WriteLine(password);
                 }
                 OnPropertyChanged(nameof(Password));
             }
         }
-
-        private ICommand loginCommand;
-        public ICommand LoginCommand => loginCommand ?? (loginCommand = new RelayCommand(LoginCommandExecute));
-
-        private async void LoginCommandExecute(object o)
+        
+        public async Task<bool> LoginCommandExecute()
         {
             var username = UserName;
             var password = Password;
-            var validLogin = await Task.Run(() => BusinessLayerFactory.CreateAuthentificationInstance(username, password));
+            var auth = await Task.Run(() => BusinessLayerFactory.CreateAuthentificationInstance(username, password));
+            Session.InitSession(auth);
 
-            Console.WriteLine("name: " + UserName);
-            Console.WriteLine("Pw: " + Password);
-            if (validLogin.IsLoggedIn())
+            if (Session.Authentification.IsLoggedIn())
             {
-                Console.WriteLine("Logged in");
-
+                return true;
             }
             else
             {
                 Console.WriteLine("NOT logged in");
+                return false;
             }
-    }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName = null)

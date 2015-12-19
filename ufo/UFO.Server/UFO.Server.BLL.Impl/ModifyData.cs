@@ -23,6 +23,19 @@ namespace UFO.Server.BLL.Impl
             this.authentification = authentification;
         }
 
+        public bool ModifyArtists(List<Artist> artists)
+        {
+            var result = true;
+            foreach (var a in artists)
+            {
+                var res = ModifyArtist(a);
+                if (res == false)
+                {
+                    result = false;
+                }
+            }
+            return result;
+        }
         public bool ModifyArtist(Artist artist)
         {
             if (!authentification.IsLoggedIn())

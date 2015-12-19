@@ -1,9 +1,11 @@
-﻿using UFO.Server.Domain;
+﻿using System.Collections.Generic;
+using UFO.Server.Domain;
 
 namespace UFO.Server.BLL.Common
 {
     public interface IModifyData
     {
+        bool ModifyArtists(List<Artist> artist);
         bool ModifyArtist(Artist artist);
         bool DeleteArtist(Artist artist);
 
