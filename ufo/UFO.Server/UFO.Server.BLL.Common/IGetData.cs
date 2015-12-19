@@ -12,6 +12,11 @@ namespace UFO.Server.BLL.Common
         Artist GetArtistByName(string name);
         List<Artist> GetAllArtists();
 
+        // Category
+        List<Category> GetAllCategories();
 
+
+        // Country
+        List<Country> GetAllCountries();
     }
 }

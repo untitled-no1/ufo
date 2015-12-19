@@ -34,9 +34,47 @@ namespace UFO.Commander.ViewModels
             }
         }
 
+        public string CategoryId
+        {
+            get { return artist?.Category.CategoryId; }
+            set
+            {
+                Category c = FindCategoryById(value);
+                if (c != null)
+                {
+                    artist.Category = c;
+                    OnPropertyChanged(nameof(CategoryId));
+                }
+            }
+        }
+
+        public string CountryId
+        {
+            get { return artist?.Country.Code; }
+            set
+            {
+                Country c = FindCountryById(value);
+                if (c != null)
+                {
+                    artist.Country = c;
+                    OnPropertyChanged(nameof(CountryId));
+                }
+            }
+        }
+
+        
+
         public string PicturePath
         {
-            get { return artist?.Picture.Path; }
+            get
+            {
+                if (artist?.Picture.Path == null)
+                {
+                    return "http://www.focusonthecoast.com/wp-content/uploads/2014/02/making-music-placeholder-image.jpg";
+                }
+                return artist?.Picture.Path;
+
+            }
             set
             {
                 artist.Picture = BlobData.CreateBlobData(value);
@@ -63,6 +101,7 @@ namespace UFO.Commander.ViewModels
             this.artist = a;
             this.artist = artist ?? new Artist();
             artist.PromoVideo = artist.PromoVideo ?? "";
+            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -85,6 +124,30 @@ namespace UFO.Commander.ViewModels
                 if (artist.ArtistId == a.ArtistId)
                 {
                     return a;
+                }
+            }
+            return null;
+        }
+
+        public Category FindCategoryById(string id)
+        {
+            foreach (var c in ArtistDataViewModel.Categories)
+            {
+                if (c.CategoryId == id)
+                {
+                    return c;
+                }
+            }
+            return null;
+        }
+
+        private Country FindCountryById(string id)
+        {
+            foreach (var c in ArtistDataViewModel.Countries)
+            {
+                if (c.Code == id)
+                {
+                    return c;
                 }
             }
             return null;

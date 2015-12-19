@@ -15,6 +15,12 @@ namespace UFO.Commander.ViewModels
 {
     public class ArtistDataViewModel : INotifyPropertyChanged
     {
+        // Categories
+        public static List<Category> Categories;
+        public static List<Country> Countries; 
+
+
+
         public static List<Artist> ChangedArtists = new List<Artist>();
         public ObservableCollection<ArtistViewModel> Artists { get; } = new ObservableCollection<ArtistViewModel>();
         public event PropertyChangedEventHandler PropertyChanged;
@@ -33,16 +39,19 @@ namespace UFO.Commander.ViewModels
 
         public ArtistDataViewModel()
         {
-            InitList();
+            InitLists();
         }
 
-        private void InitList()
+
+        private void InitLists()
         {
             var dbArtists = Session.GetData.GetAllArtists();
             foreach (var a in dbArtists)
             {
                 Artists.Add(new ArtistViewModel(a));
             }
+            Categories = Session.GetData.GetAllCategories();
+            Countries = Session.GetData.GetAllCountries();
         }
 
         protected virtual void OnPropertyChanged(string propertyName = null)
@@ -59,6 +68,9 @@ namespace UFO.Commander.ViewModels
             Console.WriteLine(ChangedArtists.Count + " Artists changed: " + result);
             ChangedArtists.Clear();
         }
+
+
+
 
 
     }

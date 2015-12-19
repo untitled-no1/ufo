@@ -16,6 +16,8 @@ namespace UFO.Server.BLL.Impl
     {
         private IUserDao userDao = DalProviderFactories.GetDaoFactory().CreateUserDao();
         private IArtistDao artistDao = DalProviderFactories.GetDaoFactory().CreateArtistDao();
+        private ICategoryDao categoryDao = DalProviderFactories.GetDaoFactory().CreateCategoryDao();
+        private ICountryDao countryDao = DalProviderFactories.GetDaoFactory().CreateCountryDao();
         private IAuthentification authentification;
 
         public GetData(IAuthentification authentification)
@@ -36,7 +38,20 @@ namespace UFO.Server.BLL.Impl
         {
             return artistDao.SelectByName(name).ResultObject;
         }
-        
+
+        public List<Category> GetAllCategories()
+        {
+            if(!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return categoryDao.SelectAll().ResultObject;
+        }
+
+        public List<Country> GetAllCountries()
+        {
+            if (!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return countryDao.SelectAll().ResultObject;
+        }
 
         public List<Artist> GetAllArtists()
         {
