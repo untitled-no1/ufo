@@ -40,7 +40,7 @@ namespace UFO.Server.BLL.Impl
         {
             if (!authentification.IsLoggedIn())
                 return false;
-            var status = artistDao.SelectById(artist.ArtistId) != null
+            var status = artistDao.SelectById(artist.ArtistId).ResponseStatus == DaoStatus.Successful
                 ? artistDao.Update(artist).ResponseStatus
                 : artistDao.Insert(artist).ResponseStatus;
 

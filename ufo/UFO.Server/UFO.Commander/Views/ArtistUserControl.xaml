@@ -8,13 +8,15 @@
              DataContext="{Binding Path=ArtistDataViewModel, Source={StaticResource ViewModelLocator}}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="90*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100*" />
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Artists}"
+        <local:NewArtistUserControl Grid.Row="0"/>
+        <DataGrid Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Artists}"
                   SelectedItem="{Binding CurArtist, Mode=TwoWay}"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -22,8 +24,8 @@
                 <DataGridTextColumn Binding="{Binding Path=EMail}" Header="EMail"/>
                 
                 <DataGridTextColumn Binding="{Binding Path=CategoryId}" Header="Category"/>
+                <DataGridTextColumn Binding="{Binding Path=CountryId}" Header="Country"/>
 
-                
                 <DataGridTemplateColumn Header="Image" Width="SizeToCells" IsReadOnly="True" CanUserSort="False">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -44,7 +46,7 @@
 -->
             </DataGrid.Columns>
         </DataGrid>
-        <Button Grid.Row="1" Grid.Column="0" Name="SaveButton" Content="Save Changes" Command="{Binding SaveCommand}"></Button>
+        <Button Grid.Row="2" Grid.Column="0" Name="SaveButton" Content="Save Changes" Command="{Binding SaveCommand}"></Button>
         
     </Grid>
 </UserControl>

@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using UFO.Commander.Annotations;
+using UFO.Commander.Util;
 using UFO.Server.Domain;
 
 namespace UFO.Commander.ViewModels
@@ -39,7 +40,7 @@ namespace UFO.Commander.ViewModels
             get { return artist?.Category.CategoryId; }
             set
             {
-                Category c = FindCategoryById(value);
+                Category c = DataContainer.FindCategoryById(value);
                 if (c != null)
                 {
                     artist.Category = c;
@@ -53,7 +54,7 @@ namespace UFO.Commander.ViewModels
             get { return artist?.Country.Code; }
             set
             {
-                Country c = FindCountryById(value);
+                Country c = DataContainer.FindCountryById(value);
                 if (c != null)
                 {
                     artist.Country = c;
@@ -108,49 +109,12 @@ namespace UFO.Commander.ViewModels
         
         protected virtual void OnPropertyChanged(string propertyName = null)
         {
-            var alreadyChangedArtist = FindArtistById(artist);
-            if (alreadyChangedArtist != null)
-            {
-                ArtistDataViewModel.ChangedArtists.Remove(alreadyChangedArtist);
-            }
-            ArtistDataViewModel.ChangedArtists.Add(artist);
+            DataContainer.AddToArtistChanged(artist);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public Artist FindArtistById(Artist artist)
-        {
-            foreach (var a in ArtistDataViewModel.ChangedArtists)
-            {
-                if (artist.ArtistId == a.ArtistId)
-                {
-                    return a;
-                }
-            }
-            return null;
-        }
+        
 
-        public Category FindCategoryById(string id)
-        {
-            foreach (var c in ArtistDataViewModel.Categories)
-            {
-                if (c.CategoryId == id)
-                {
-                    return c;
-                }
-            }
-            return null;
-        }
-
-        private Country FindCountryById(string id)
-        {
-            foreach (var c in ArtistDataViewModel.Countries)
-            {
-                if (c.Code == id)
-                {
-                    return c;
-                }
-            }
-            return null;
-        }
+       
     }
 }

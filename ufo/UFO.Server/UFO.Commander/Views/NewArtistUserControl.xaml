@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="UFO.Commander.Views.NewArtistUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UFO.Commander.Views"
+             mc:Ignorable="d" 
+             DataContext="{Binding Path=NewArtistViewModel, Source={StaticResource ViewModelLocator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Name="NameLabel"
+                Content="Name:"/>
+        <TextBox Grid.Row="1" Grid.Column="0" Name="NameBox"
+                Text="{Binding Name, Mode=TwoWay}"/>
+        
+        <Label Grid.Row="0" Grid.Column="1" Name="MailLabel"
+                Content="Email:"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="MailBox"
+                Text="{Binding Mail, Mode=TwoWay}"/>
+        
+        <Label Grid.Row="0" Grid.Column="2" Name="CategoryLabel"
+                Content="Category:"/>
+        <ComboBox Grid.Row="1" Grid.Column="2" Name="CategoryCb"
+                  ItemsSource="{Binding Categories}" 
+                  SelectedItem="{Binding CurCategory}"/>
+                  
+        
+        <Label Grid.Row="0" Grid.Column="3" Name="CountryLabel"
+                Content="Country:"/>
+        <ComboBox Grid.Row="1" Grid.Column="3" Name="CountyCb"
+                  ItemsSource="{Binding Countries}"
+                  SelectedItem="{Binding CurCountry}"/>
+        
+        <Label Grid.Row="0" Grid.Column="4" Name="ImageLabel"
+                Content="ImageLink:"/>
+        <TextBox Grid.Row="1" Grid.Column="4" Name="ImageBox"
+                Text="{Binding Image, Mode=TwoWay}"/>
+        
+        <Label Grid.Row="0" Grid.Column="5" Name="VideoLabel"
+                Content="VideoLink:"/>
+        <TextBox Grid.Row="1" Grid.Column="5" Name="VideoBox"
+                Text="{Binding Video, Mode=TwoWay}"/>
+        
+        <Button Grid.Row="1" Grid.Column="6" Name="SaveBtn"
+                Content="Save" Command="{Binding SaveArtistCommand}" />
+    </Grid>
+</UserControl>

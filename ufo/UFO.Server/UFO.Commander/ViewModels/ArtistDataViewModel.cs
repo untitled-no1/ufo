@@ -15,14 +15,7 @@ namespace UFO.Commander.ViewModels
 {
     public class ArtistDataViewModel : INotifyPropertyChanged
     {
-        // Categories
-        public static List<Category> Categories;
-        public static List<Country> Countries; 
-
-
-
-        public static List<Artist> ChangedArtists = new List<Artist>();
-        public ObservableCollection<ArtistViewModel> Artists { get; } = new ObservableCollection<ArtistViewModel>();
+        public ObservableCollection<ArtistViewModel> Artists => DataContainer.GetArtistObservColl();
         public event PropertyChangedEventHandler PropertyChanged;
 
         private ArtistViewModel curArtist;
@@ -37,22 +30,6 @@ namespace UFO.Commander.ViewModels
             }
         }
 
-        public ArtistDataViewModel()
-        {
-            InitLists();
-        }
-
-
-        private void InitLists()
-        {
-            var dbArtists = Session.GetData.GetAllArtists();
-            foreach (var a in dbArtists)
-            {
-                Artists.Add(new ArtistViewModel(a));
-            }
-            Categories = Session.GetData.GetAllCategories();
-            Countries = Session.GetData.GetAllCountries();
-        }
 
         protected virtual void OnPropertyChanged(string propertyName = null)
         {
@@ -62,11 +39,9 @@ namespace UFO.Commander.ViewModels
         private ICommand saveCommand;
         public ICommand SaveCommand => saveCommand ?? (saveCommand = new RelayCommand(SaveCommandExecute));
         
-        private async void SaveCommandExecute(object obj)
+        private void SaveCommandExecute(object obj)
         {
-            var result = await Task.Run(() => Session.ModifyData.ModifyArtists(ChangedArtists));
-            Console.WriteLine(ChangedArtists.Count + " Artists changed: " + result);
-            ChangedArtists.Clear();
+            DataContainer.SaveArtistsChanged();
         }
 
 

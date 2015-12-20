@@ -9,7 +9,7 @@
         xmlns:viewModels="clr-namespace:UFO.Commander.ViewModels"
         DataContext="{Binding Path=LoginViewModel, Source={StaticResource ViewModelLocator}}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="768" Width="1024">
+        Title="UFO - Commander FTW" Height="768" Width="1024">
     <Grid>
         <v:MainUserControl />
     </Grid>

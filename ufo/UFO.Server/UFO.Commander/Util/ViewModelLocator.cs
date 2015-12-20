@@ -17,10 +17,14 @@ namespace UFO.Commander.Util
         public static MainViewModel MainViewModel
             => mainViewModel ?? (mainViewModel = new MainViewModel());
 
+
         private static ArtistDataViewModel artistDataViewModel;
         public static ArtistDataViewModel ArtistDataViewModel
             => artistDataViewModel ?? (artistDataViewModel = new ArtistDataViewModel());
 
+        private static NewArtistViewModel newArtistViewModel;
+        public static NewArtistViewModel NewArtistViewModel
+            => newArtistViewModel ?? (newArtistViewModel = new NewArtistViewModel());
 
         private static PerformanceViewModel performanceViewModel;
         public static PerformanceViewModel PerformanceViewModel

@@ -75,14 +75,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Util\DataContainer.cs" />
     <Compile Include="Util\PasswordHelper.cs" />
     <Compile Include="Util\RelayCommand.cs" />
     <Compile Include="Util\Session.cs" />
     <Compile Include="Util\ViewModelLocator.cs" />
     <Compile Include="ViewModels\ArtistDataViewModel.cs" />
     <Compile Include="ViewModels\ArtistViewModel.cs" />
+    <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\CountryViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\NewArtistViewModel.cs" />
     <Compile Include="ViewModels\PerformanceViewModel.cs" />
     <Compile Include="ViewModels\VenueViewModel.cs" />
     <Compile Include="Views\ArtistUserControl.xaml.cs">
@@ -93,6 +97,9 @@
     </Compile>
     <Compile Include="Views\MainUserControl.xaml.cs">
       <DependentUpon>MainUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewArtistUserControl.xaml.cs">
+      <DependentUpon>NewArtistUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PerformanceUserControl.xaml.cs">
       <DependentUpon>PerformanceUserControl.xaml</DependentUpon>
@@ -128,6 +135,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\NewArtistUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PerformanceUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,6 +166,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -29,13 +29,13 @@ namespace UFO.Server.BLL.Impl
         {
             if (!authentification.IsLoggedIn())
                 throw new AuthenticationException();
-
-
             return userDao.SelectAll().ResultObject;
         }
 
         public Artist GetArtistByName(string name)
         {
+            if (!authentification.IsLoggedIn())
+                throw new AuthenticationException();
             return artistDao.SelectByName(name).ResultObject;
         }
 
@@ -55,6 +55,8 @@ namespace UFO.Server.BLL.Impl
 
         public List<Artist> GetAllArtists()
         {
+            if (!authentification.IsLoggedIn())
+                throw new AuthenticationException();
             return artistDao.SelectAll().ResultObject;
         }
     }
