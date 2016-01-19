@@ -9,6 +9,9 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <TabControl>
+            <TabItem Header="Home">
+                
+            </TabItem>
             <TabItem Header="Performances">
                 <local:PerformanceUserControl />
             </TabItem>
@@ -22,7 +25,11 @@
                 <!--<local:ArtistUserControl/>-->
             </TabItem>
             <TabItem Header="Venues">
-                <local:VenueUserControl/>
+                <TabItem.ContentTemplate>
+                    <DataTemplate>
+                        <local:VenueUserControl />
+                    </DataTemplate>
+                </TabItem.ContentTemplate>
             </TabItem>
         </TabControl>
     </Grid>

@@ -164,8 +164,8 @@ namespace UFO.Server.Dal.MySql
         public const string DeleteLocation = @"DELETE FROM location
                                                      WHERE LocationId=?LocationId";
 
-        public const string InsertLocation = @"INSERT INTO location (LocationId, Longitude, Latitude, Name)
-                                                    VALUES (?LocationId, ?Longitude, ?Latitude, ?Name)";
+        public const string InsertLocation = @"INSERT INTO location (Longitude, Latitude, Name)
+                                                    VALUES (?Longitude, ?Latitude, ?Name)";
 
     }
 }

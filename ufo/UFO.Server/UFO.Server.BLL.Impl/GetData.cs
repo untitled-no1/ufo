@@ -9,6 +9,7 @@ using UFO.Server.BLL.Common;
 using UFO.Server.Dal;
 using UFO.Server.Dal.Common;
 using UFO.Server.Domain;
+// ReSharper disable All
 
 namespace UFO.Server.BLL.Impl
 {
@@ -17,7 +18,9 @@ namespace UFO.Server.BLL.Impl
         private IUserDao userDao = DalProviderFactories.GetDaoFactory().CreateUserDao();
         private IArtistDao artistDao = DalProviderFactories.GetDaoFactory().CreateArtistDao();
         private ICategoryDao categoryDao = DalProviderFactories.GetDaoFactory().CreateCategoryDao();
+        private ILocationDao locationDao = DalProviderFactories.GetDaoFactory().CreateLocationDao();
         private ICountryDao countryDao = DalProviderFactories.GetDaoFactory().CreateCountryDao();
+        private IVenueDao venueDao = DalProviderFactories.GetDaoFactory().CreateVenueDao();
         private IAuthentification authentification;
 
         public GetData(IAuthentification authentification)
@@ -58,6 +61,42 @@ namespace UFO.Server.BLL.Impl
             if (!authentification.IsLoggedIn())
                 throw new AuthenticationException();
             return artistDao.SelectAll().ResultObject;
+        }
+
+        public List<Location> GetAllLocations()
+        {
+            if(!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return locationDao.SelectAll().ResultObject;
+        }
+
+
+        public Location GetLocationByName(string name)
+        {
+            if (!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return locationDao.SelectByName(name).ResultObject;
+        }
+
+        public Location GetLocationById(int id)
+        {
+            if (!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return locationDao.SelectById(id).ResultObject;
+        }
+
+        public Venue GetVenueById(string id)
+        {
+            if(!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return venueDao.SelectById(id).ResultObject;
+        }
+
+        public List<Venue> GetAllVenues()
+        {
+            if(!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return venueDao.SelectAll().ResultObject;
         }
     }
 }

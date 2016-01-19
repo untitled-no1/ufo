@@ -10,23 +10,24 @@ using System.Windows.Input;
 using UFO.Commander.Annotations;
 using UFO.Commander.Util;
 using UFO.Server.Domain;
+// ReSharper disable All
 
 namespace UFO.Commander.ViewModels
 {
-    public class ArtistDataViewModel : INotifyPropertyChanged
+    public class LocationDataViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<ArtistViewModel> Artists => DataContainer.GetArtistObservColl();
+        public ObservableCollection<LocationViewModel> Locations => DataContainer.GetLocationObservColl();
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private ArtistViewModel curArtist;
+        private LocationViewModel curLocation;
 
-        public ArtistViewModel CurArtist
+        public LocationViewModel CurLocation
         {
-            get { return curArtist; }
+            get { return curLocation; }
             set
             {
-                curArtist = value;
-                OnPropertyChanged(nameof(CurArtist));
+                curLocation = value;
+                OnPropertyChanged(nameof(CurLocation));
             }
         }
 
@@ -38,10 +39,10 @@ namespace UFO.Commander.ViewModels
 
         private ICommand saveCommand;
         public ICommand SaveCommand => saveCommand ?? (saveCommand = new RelayCommand(SaveCommandExecute));
-
+        
         private void SaveCommandExecute(object obj)
         {
-            DataContainer.SaveArtistsChanged();
+            DataContainer.SaveLocationsChanged();
         }
 
         private ICommand deleteCommand;
@@ -49,10 +50,10 @@ namespace UFO.Commander.ViewModels
 
         private void DeleteCommandExecute(object obj)
         {
-            Artist a = Session.GetData.GetArtistByName(CurArtist.Name);
-            Session.ModifyData.DeleteArtist(a);
+            Location a = Session.GetData.GetLocationByName(CurLocation.Name);
+            Session.ModifyData.DeleteLocation(a);
             Console.WriteLine(a.Name + " deleted");
-            DataContainer.InitArtistObservList();
+            DataContainer.InitLocationObservList();
         }
 
 

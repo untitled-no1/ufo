@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="UFO.Commander.Views.LocationUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UFO.Commander.Views"
+             mc:Ignorable="d"
+             DataContext="{Binding Path=LocationDataViewModel, Source={StaticResource ViewModelLocator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*" />
+        </Grid.ColumnDefinitions>
+        <local:NewLocationUserControl Grid.Row="0"/>
+        <DataGrid Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Locations}"
+                  SelectedItem="{Binding CurLocation, Mode=TwoWay}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Id}" Header="Id" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name"/>
+                <DataGridTextColumn Binding="{Binding Path=Longitude}" Header="Longitude"/>
+                <DataGridTextColumn Binding="{Binding Path=Latitude}" Header="Latitude"/>
+                <DataGridTemplateColumn>
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button Name="DeleteButton" Content="Delete" Command="{Binding LocationDataViewModel.DeleteCommand, Source={StaticResource ViewModelLocator}}"></Button>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -14,8 +14,9 @@ namespace UFO.Server.BLL.Impl
     public class ModifyData : IModifyData
     {
         private IArtistDao artistDao = DalProviderFactories.GetDaoFactory().CreateArtistDao();
-        private IVenueDao venueDao = DalProviderFactories.GetDaoFactory().CreateVenueDao();
         private IPerformanceDao performanceDao = DalProviderFactories.GetDaoFactory().CreatePerformanceDao();
+        private ILocationDao locationDao = DalProviderFactories.GetDaoFactory().CreateLocationDao();
+        private IVenueDao venueDao = DalProviderFactories.GetDaoFactory().CreateVenueDao();
         private IAuthentification authentification;
 
         public ModifyData(IAuthentification authentification)
@@ -56,11 +57,26 @@ namespace UFO.Server.BLL.Impl
             return status == DaoStatus.Successful;
         }
 
+
+        public bool ModifyVenues(List<Venue> venues)
+        {
+            var result = true;
+            foreach (var a in venues)
+            {
+                var res = ModifyVenue(a);
+                if (res == false)
+                {
+                    result = false;
+                }
+            }
+            return result;
+        }
+
         public bool ModifyVenue(Venue venue)
         {
             if (!authentification.IsLoggedIn())
                 return false;
-            var status = venueDao.SelectById(venue.VenueId) != null
+            var status = venueDao.SelectById(venue.VenueId).ResponseStatus == DaoStatus.Successful
                 ? venueDao.Update(venue).ResponseStatus
                 : venueDao.Insert(venue).ResponseStatus;
 
@@ -73,6 +89,40 @@ namespace UFO.Server.BLL.Impl
                 return false;
             var status = venueDao.Delete(venue).ResponseStatus;
 
+            return status == DaoStatus.Successful;
+        }
+
+
+        public bool ModifyLocations(List<Location> locations)
+        {
+            var result = true;
+            foreach (var a in locations)
+            {
+                var res = ModifyLocation(a);
+                if (res == false)
+                {
+                    result = false;
+                }
+            }
+            return result;
+        }
+
+        public bool ModifyLocation(Location location)
+        {
+            if (!authentification.IsLoggedIn())
+                return false;
+            var status = locationDao.SelectById(location.LocationId).ResponseStatus == DaoStatus.Successful
+                ? locationDao.Update(location).ResponseStatus
+                : locationDao.Insert(location).ResponseStatus;
+            return status == DaoStatus.Successful;
+
+        }
+
+        public bool DeleteLocation(Location location)
+        {
+            if (!authentification.IsLoggedIn())
+                return false;
+            var status = locationDao.Delete(location).ResponseStatus;
             return status == DaoStatus.Successful;
         }
 

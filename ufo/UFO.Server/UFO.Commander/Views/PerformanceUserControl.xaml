@@ -5,9 +5,28 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UFO.Commander.Views"
              mc:Ignorable="d"
-             DataContext="{Binding PerformanceViewModel, Source={StaticResource ViewModelLocator}}"
-             d:DesignHeight="300" d:DesignWidth="300">
+             DataContext="{Binding PerformanceViewModel, Source={StaticResource ViewModelLocator}}">
     <Grid>
-        <TextBox>Performances</TextBox>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <ComboBox Grid.Row="0" Name="DateDropdown"
+                  ItemsSource="{Binding }" 
+                  SelectedItem="{Binding }"/>
+        <DataGrid Grid.Row="1"
+                  ItemsSource="{Binding}"
+                  AutoGenerateColumns="False">
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/> <!-- -->
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+        </DataGrid>
     </Grid>
 </UserControl>

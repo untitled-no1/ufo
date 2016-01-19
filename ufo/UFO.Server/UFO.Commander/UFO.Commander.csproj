@@ -44,8 +44,16 @@
       <HintPath>..\packages\PostSharp.4.2.15\lib\net35-client\PostSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PostSharp.Patterns.Common, Version=4.2.15.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.Patterns.Common.4.2.15\lib\net45\PostSharp.Patterns.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PostSharp.Patterns.Diagnostics, Version=4.2.15.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
       <HintPath>..\packages\PostSharp.Patterns.Diagnostics.4.2.15\lib\net40\PostSharp.Patterns.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Model, Version=4.2.15.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.Patterns.Model.4.2.15\lib\net40\PostSharp.Patterns.Model.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -80,17 +88,27 @@
     <Compile Include="Util\RelayCommand.cs" />
     <Compile Include="Util\Session.cs" />
     <Compile Include="Util\ViewModelLocator.cs" />
+    <Compile Include="ViewModels\AgendaDataViewModel.cs" />
+    <Compile Include="ViewModels\AgendaViewModel.cs" />
+    <Compile Include="ViewModels\LocationDataViewModel.cs" />
     <Compile Include="ViewModels\ArtistDataViewModel.cs" />
     <Compile Include="ViewModels\ArtistViewModel.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\CountryViewModel.cs" />
+    <Compile Include="ViewModels\LocationViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewArtistViewModel.cs" />
+    <Compile Include="ViewModels\NewLocationViewModel.cs" />
+    <Compile Include="ViewModels\NewVenueViewModel.cs" />
     <Compile Include="ViewModels\PerformanceViewModel.cs" />
+    <Compile Include="ViewModels\VenueDataViewModel.cs" />
     <Compile Include="ViewModels\VenueViewModel.cs" />
     <Compile Include="Views\ArtistUserControl.xaml.cs">
       <DependentUpon>ArtistUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LocationUserControl.xaml.cs">
+      <DependentUpon>LocationUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginUserControl.xaml.cs">
       <DependentUpon>LoginUserControl.xaml</DependentUpon>
@@ -98,11 +116,20 @@
     <Compile Include="Views\MainUserControl.xaml.cs">
       <DependentUpon>MainUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\NewLocationUserControl.xaml.cs">
+      <DependentUpon>NewLocationUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NewArtistUserControl.xaml.cs">
       <DependentUpon>NewArtistUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\NewVenueUserControl.xaml.cs">
+      <DependentUpon>NewVenueUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PerformanceUserControl.xaml.cs">
       <DependentUpon>PerformanceUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VenueTableUserControl.xaml.cs">
+      <DependentUpon>VenueTableUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\VenueUserControl.xaml.cs">
       <DependentUpon>VenueUserControl.xaml</DependentUpon>
@@ -127,6 +154,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\LocationUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,11 +166,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\NewLocationUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\NewArtistUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\NewVenueUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PerformanceUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VenueTableUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

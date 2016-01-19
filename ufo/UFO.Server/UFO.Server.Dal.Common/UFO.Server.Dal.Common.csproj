@@ -58,6 +58,7 @@
     <Compile Include="DaoResponse.cs" />
     <Compile Include="ADbCommProvider.cs" />
     <Compile Include="IArtistDao.cs" />
+    <Compile Include="ILocationDaoExtension.cs" />
     <Compile Include="ILocationDao.cs" />
     <Compile Include="IPerformanceDaoExtension.cs" />
     <Compile Include="IVenueDaoExtension.cs" />

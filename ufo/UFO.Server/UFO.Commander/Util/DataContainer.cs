@@ -13,8 +13,10 @@ namespace UFO.Commander.Util
     {
         // Categories
         private static List<Category> Categories;
-        private static ObservableCollection<CategoryViewModel> CategoriesObs = new ObservableCollection<CategoryViewModel>();
-         
+
+        private static ObservableCollection<CategoryViewModel> CategoriesObs =
+            new ObservableCollection<CategoryViewModel>();
+
         public static List<Category> GetCategoriesList()
         {
             if (Categories == null)
@@ -56,8 +58,11 @@ namespace UFO.Commander.Util
 
         // Countries
         private static List<Country> Countries;
-        private static ObservableCollection<CountryViewModel> CountriesObs = new ObservableCollection<CountryViewModel>();
-        public static List<Country>GetCountriesList()
+
+        private static ObservableCollection<CountryViewModel> CountriesObs =
+            new ObservableCollection<CountryViewModel>();
+
+        public static List<Country> GetCountriesList()
         {
             if (Countries == null)
             {
@@ -92,11 +97,13 @@ namespace UFO.Commander.Util
             return CountriesObs;
         }
 
-        
+
 
         // Artist
         private static List<Artist> ChangedArtists = new List<Artist>();
-        private static ObservableCollection<ArtistViewModel> Artists { get; } = new ObservableCollection<ArtistViewModel>();
+
+        private static ObservableCollection<ArtistViewModel> Artists { get; } =
+            new ObservableCollection<ArtistViewModel>();
 
         public static void AddToArtistChanged(Artist artist)
         {
@@ -129,7 +136,7 @@ namespace UFO.Commander.Util
             ChangedArtists.Clear();
             InitArtistObservList();
         }
-        
+
 
         public static ObservableCollection<ArtistViewModel> GetArtistObservColl()
         {
@@ -150,6 +157,127 @@ namespace UFO.Commander.Util
                 Artists.Add(new ArtistViewModel(a));
             }
             Console.WriteLine("Artists Reloaded");
+        }
+
+
+        // Location
+        private static List<Location> ChangedLocations = new List<Location>();
+
+        private static ObservableCollection<LocationViewModel> Locations { get; } =
+            new ObservableCollection<LocationViewModel>();
+
+        public static void AddToLocationChanged(Location location)
+        {
+            var alreadyChangedLocation = FindLocationById(location);
+            if (alreadyChangedLocation != null)
+            {
+                ChangedLocations.Remove(alreadyChangedLocation);
+            }
+            ChangedLocations.Add(location);
+        }
+
+        private static Location FindLocationById(Location location)
+        {
+            foreach (var l in ChangedLocations)
+            {
+                if (location.LocationId == l.LocationId)
+                {
+                    return l;
+                }
+            }
+            return null;
+        }
+
+        public static List<Location> GetChangedLocationList => ChangedLocations;
+
+        public static async void SaveLocationsChanged()
+        {
+            var result = await Task.Run(() => Session.ModifyData.ModifyLocations(ChangedLocations));
+            Console.WriteLine(ChangedLocations.Count + " Locations changed: " + result);
+            ChangedLocations.Clear();
+            InitLocationObservList();
+        }
+
+
+        public static ObservableCollection<LocationViewModel> GetLocationObservColl()
+        {
+            if (Locations.Count == 0)
+            {
+                InitLocationObservList();
+            }
+
+            return Locations;
+        }
+
+        public static void InitLocationObservList()
+        {
+            Locations.Clear();
+            var dbLocations = Session.GetData.GetAllLocations();
+            foreach (var l in dbLocations)
+            {
+                Locations.Add(new LocationViewModel(l));
+            }
+            Console.WriteLine("Locations Reloaded");
+        }
+
+        // Venue
+        private static List<Venue> ChangedVenues = new List<Venue>();
+
+        private static ObservableCollection<VenueViewModel> Venues { get; } =
+            new ObservableCollection<VenueViewModel>();
+
+        public static void AddToVenueChanged(Venue venue)
+        {
+            var alreadyChangedVenue = FindVenueById(venue);
+            if (alreadyChangedVenue != null)
+            {
+                ChangedVenues.Remove(alreadyChangedVenue);
+            }
+            ChangedVenues.Add(venue);
+        }
+
+        private static Venue FindVenueById(Venue venue)
+        {
+            foreach (var l in ChangedVenues)
+            {
+                if (venue.VenueId == l.VenueId)
+                {
+                    return l;
+                }
+            }
+            return null;
+        }
+
+        public static List<Venue> GetChangedVenueList => ChangedVenues;
+
+        public static async void SaveVenuesChanged()
+        {
+            var result = await Task.Run(() => Session.ModifyData.ModifyVenues(ChangedVenues));
+            Console.WriteLine(ChangedVenues.Count + " Venues changed: " + result);
+            ChangedVenues.Clear();
+            InitVenueObservList();
+        }
+
+
+        public static ObservableCollection<VenueViewModel> GetVenueObservColl()
+        {
+            if (Venues.Count == 0)
+            {
+                InitVenueObservList();
+            }
+
+            return Venues;
+        }
+
+        public static void InitVenueObservList()
+        {
+            Venues.Clear();
+            var dbVenues = Session.GetData.GetAllVenues();
+            foreach (var l in dbVenues)
+            {
+                Venues.Add(new VenueViewModel(l));
+            }
+            Console.WriteLine("Venues Reloaded");
         }
     }
 }

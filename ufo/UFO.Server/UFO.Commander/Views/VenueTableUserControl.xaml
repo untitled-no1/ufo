@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="UFO.Commander.Views.VenueTableUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UFO.Commander.Views"
+             mc:Ignorable="d" 
+             DataContext="{Binding Path=VenueDataViewModel, Source={StaticResource ViewModelLocator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*" />
+        </Grid.ColumnDefinitions>
+        <local:NewvenueUserControl Grid.Row="0"/>
+        <DataGrid Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Venues}"
+                  SelectedItem="{Binding CurVenue, Mode=TwoWay}"
+                  AutoGenerateColumns="False" VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=VenueId}" Header="Id"/>
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name"/>
+                <DataGridTextColumn Binding="{Binding Path=LocId}" Header="LocationId"/>
+                <DataGridTextColumn Binding="{Binding Path=LocName}" Header="Location" IsReadOnly="True"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="DeleteButton" Content="Delete" Command="{Binding VenueDataViewModel.DeleteCommand, Source={StaticResource ViewModelLocator}}"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="2" Content="Save Changes" Name="SaveButton" Command="{Binding SaveCommand}"/>
+    </Grid>
+</UserControl>

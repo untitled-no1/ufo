@@ -18,5 +18,14 @@ namespace UFO.Server.BLL.Common
 
         // Country
         List<Country> GetAllCountries();
+
+        //Location
+        List<Location> GetAllLocations();
+        Location GetLocationByName(string name);
+        Location GetLocationById(int id);
+
+        // Venue
+        Venue GetVenueById(string id);
+        List<Venue> GetAllVenues();
     }
 }

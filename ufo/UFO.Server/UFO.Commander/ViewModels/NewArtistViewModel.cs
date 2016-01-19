@@ -112,6 +112,10 @@ namespace UFO.Commander.ViewModels
             };
             var worked = await Task.Run(() => Session.ModifyData.ModifyArtist(artist));
             Console.WriteLine(artist.Name + "inserted: " + worked);
+            Name = "";
+            Mail = "";
+            Image = "";
+            Video = "";
             DataContainer.InitArtistObservList();
         }
 
