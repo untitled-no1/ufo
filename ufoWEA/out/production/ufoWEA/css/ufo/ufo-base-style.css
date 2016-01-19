@@ -1,0 +1,10 @@
+.artist-img-td {
+    width: 200px !important;
+}
+
+.artist-img {
+    max-height: 50vh !important;
+    width: 100px !important;
+    display: block !important;
+    margin: 2px !important;
+}

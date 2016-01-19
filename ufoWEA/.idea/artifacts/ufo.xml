@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="ufo">
+    <output-path>$PROJECT_DIR$/out/artifacts/ufo</output-path>
+    <root id="archive" name="ufo.war">
+      <element id="javaee-facet-resources" facet="ufoWEA/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ufoWEA" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Mojarra-2.2.1" />
+          <element id="library" level="project" name="PrimeFaces-5.2" />
+          <element id="library" level="project" name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
