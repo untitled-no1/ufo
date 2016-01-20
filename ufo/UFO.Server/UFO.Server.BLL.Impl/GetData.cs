@@ -21,6 +21,7 @@ namespace UFO.Server.BLL.Impl
         private ILocationDao locationDao = DalProviderFactories.GetDaoFactory().CreateLocationDao();
         private ICountryDao countryDao = DalProviderFactories.GetDaoFactory().CreateCountryDao();
         private IVenueDao venueDao = DalProviderFactories.GetDaoFactory().CreateVenueDao();
+        private IPerformanceDao performanceDao = DalProviderFactories.GetDaoFactory().CreatePerformanceDao();
         private IAuthentification authentification;
 
         public GetData(IAuthentification authentification)
@@ -97,6 +98,13 @@ namespace UFO.Server.BLL.Impl
             if(!authentification.IsLoggedIn())
                 throw new AuthenticationException();
             return venueDao.SelectAll().ResultObject;
+        }
+
+        public List<Performance> GetAllPerformances()
+        {
+            if (!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return performanceDao.SelectAll().ResultObject;
         }
     }
 }

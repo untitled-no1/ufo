@@ -13,7 +13,11 @@
                 
             </TabItem>
             <TabItem Header="Performances">
-                <local:PerformanceUserControl />
+                <TabItem.ContentTemplate>
+                    <DataTemplate>
+                        <local:PerformanceUserControl />
+                    </DataTemplate>
+                </TabItem.ContentTemplate>
             </TabItem>
             <TabItem Header="Artist">
                 <TabItem.ContentTemplate>

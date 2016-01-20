@@ -18,13 +18,17 @@ using UFO.Commander.Util;
 namespace UFO.Commander.Views
 {
     /// <summary>
-    /// Interaction logic for PerformanceUserControl.xaml
+    /// Interaction logic for PerformanceTable.xaml
     /// </summary>
-    public partial class PerformanceUserControl : UserControl
+    public partial class PerformanceTable : UserControl
     {
-        public PerformanceUserControl()
+        public PerformanceTable()
         {
             InitializeComponent();
+
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(PerformanceGrid.ItemsSource);
+            PropertyGroupDescription groupDescription = new PropertyGroupDescription("LocationName");
+            view.GroupDescriptions.Add(groupDescription);
         }
     }
 }
