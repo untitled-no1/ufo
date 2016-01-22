@@ -123,6 +123,29 @@ namespace UFO.Server.Dal.MySql
             return artists.Any() ? DaoResponse.QuerySuccessful<List<Artist>>(artists) : DaoResponse.QueryEmptyResult<List<Artist>>();
         }
 
+        [DaoExceptionHandler(typeof (List<Artist>))]
+        public DaoResponse<List<Artist>> SelectPage(Page page)
+        {
+            var artists = new List<Artist>();
+            var parameter = new Dictionary<string, QueryParameter>
+            {
+                {"?offset", new QueryParameter {ParameterValue = page.getOffset()}},
+                {"?rows", new QueryParameter() {ParameterValue = page.getSize()}}
+            };
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.SelectArtistLimit, parameter))
+            using (var dataReader = _dbCommProvider.ExecuteReader(command))
+            {
+                while (dataReader.Read())
+                {
+                    artists.Add(CreateArtistObject(dataReader));
+                }
+            }
+            return artists.Any()
+                ? DaoResponse.QuerySuccessful<List<Artist>>(artists)
+                : DaoResponse.QueryEmptyResult<List<Artist>>();
+        }
+
         [DaoExceptionHandler(typeof(List<Artist>))]
         public DaoResponse<List<Artist>> SelectWhere<T>(Expression<Filter<Artist, T>> filterExpression, T criteria = default(T))
         {

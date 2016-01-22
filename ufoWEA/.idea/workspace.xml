@@ -2,9 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="329297eb-cd92-4e56-8f99-154ed4bdc21d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/ufo.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ufoWS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.sln" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.sln" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Artist.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/BlobData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Category.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Country.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebService.asmx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebServiceSoap.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetArtistByName.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetArtistByNameResponse.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/HelloWorld.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/HelloWorldResponse.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/ObjectFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/package-info.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ufo/ufo.war" afterPath="$PROJECT_DIR$/out/artifacts/ufo/ufo.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebServiceSoap.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebServiceSoap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/ObjectFactory.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/ObjectFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/ArtistBean.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/ArtistBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebServiceSoap.class" afterPath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebServiceSoap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/ObjectFactory.class" afterPath="$PROJECT_DIR$/src/at/ufo/web/generated/ObjectFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Common/IGetData.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Common/IGetData.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Impl/GetData.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Impl/GetData.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.Common/IArtistDao.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.Common/IArtistDao.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.Common/IArtistDaoExtension.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.Common/IArtistDaoExtension.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.Dummy/ArtistDao.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.Dummy/ArtistDao.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/ArtistDao.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/ArtistDao.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/Properties/Settings.Designer.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/Properties/Settings.Designer.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/Properties/Settings.settings" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/Properties/Settings.settings" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/SqlQueries.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/SqlQueries.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/app.config" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/app.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal/Properties/Settings.Designer.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal/Properties/Settings.Designer.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal/Properties/Settings.settings" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal/Properties/Settings.settings" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal/ProviderUtility.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal/ProviderUtility.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal/app.config" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal/app.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Domain/UFO.Server.Domain.csproj" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Domain/UFO.Server.Domain.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.WebService/DataWebService.asmx.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.WebService/DataWebService.asmx.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.WebService/UFO.Server.WebService.csproj" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.WebService/UFO.Server.WebService.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.WebService/Web.config" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.WebService/Web.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebService.asmx" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebService.asmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistBean.java" afterPath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.xhtml" afterPath="$PROJECT_DIR$/web/index.xhtml" />
     </list>
     <ignored path="ufoweb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,113 +65,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.xhtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.xhtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.45373666">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../SWK/Repo/UFO.Web/web/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArtistBean.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ArtistBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24584104">
-              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#633#634#0" expanded="true" />
-                <element signature="e#662#663#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/META-INF/MANIFEST.MF">
+      <file leaf-file-name="ArtistListBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistListBean.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="faces-config.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-          <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617">
-              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="faces-config.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../SWK/Repo/UFO.Web/web/WEB-INF/faces-config.xml">
-          <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../SWK/Repo/UFO.Web/web/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="20" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InitializeContextListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../SWK/Repo/UFO.Web/src/at/fhooe/hgb/wea5/ufo/InitializeContextListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="29" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#465#466#0" expanded="true" />
+                <element signature="e#541#542#0" expanded="true" />
+                <element signature="e#581#582#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Session.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/ufo/web/utils/Session.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,10 +139,12 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/templates/header.xhtml" />
-        <option value="$PROJECT_DIR$/web/index.xhtml" />
         <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistBean.java" />
         <option value="$PROJECT_DIR$/src/TempClass.java" />
+        <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistListBean.java" />
+        <option value="$PROJECT_DIR$/src/at/ufo/web/utils/Session.java" />
+        <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistBean.java" />
+        <option value="$PROJECT_DIR$/web/index.xhtml" />
       </list>
     </option>
   </component>
@@ -202,7 +180,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -220,9 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,6 +320,72 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ufoweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ufoWEA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ufoweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ufoWEA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generated" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ufoweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ufoWEA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="out" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -366,39 +407,12 @@
               <option name="myItemId" value="out" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoWEA_war_exploded" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoWEA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -928,8 +942,8 @@
       </method>
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.TempClass" />
-      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0.56" />
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0.56" />
+      <item index="1" class="java.lang.String" itemvalue="Application.TempClass" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -954,15 +968,16 @@
       <workItem from="1453220535869" duration="3890000" />
       <workItem from="1453224670172" duration="460000" />
       <workItem from="1453225184258" duration="890000" />
+      <workItem from="1453453823755" duration="1984000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8248000" />
+    <option name="totallyTimeSpent" value="10232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1015,34 +1030,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../SWK/Repo/UFO.Web/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#662#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1052,14 +1039,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
@@ -1071,14 +1058,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../SWK/Repo/UFO.Web/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
@@ -1129,32 +1116,30 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#662#663#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../SWK/Repo/UFO.Web/web/WEB-INF/faces-config.xml">
       <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../SWK/Repo/UFO.Web/web/WEB-INF/faces-config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
@@ -1215,14 +1200,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.xhtml">
@@ -1257,14 +1242,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.xhtml">
@@ -1299,14 +1284,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.xhtml">
@@ -1374,23 +1359,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../SWK/Repo/UFO.Web/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../SWK/Repo/UFO.Web/web/WEB-INF/web.xml">
@@ -1428,33 +1405,63 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
+        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistBean.java">
+    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/utils/Session.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24584104">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#662#663#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistListBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45373666">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -11,6 +11,7 @@ namespace UFO.Server.BLL.Common
         // Artist
         Artist GetArtistByName(string name);
         List<Artist> GetAllArtists();
+        List<Artist> GetArtistsPage(Page page);
 
         // Category
         List<Category> GetAllCategories();

@@ -48,4 +48,15 @@ public interface DataWebServiceSoap {
         @WebParam(name = "name", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
         String name);
 
+    /**
+     * 
+     * @return
+     *     returns at.ufo.web.generated.ArrayOfArtist
+     */
+    @WebMethod(operationName = "GetNextArtistsPage", action = "http://ufo.untitled-no1.at/webservice/GetNextArtistsPage")
+    @WebResult(name = "GetNextArtistsPageResult", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+    @RequestWrapper(localName = "GetNextArtistsPage", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetNextArtistsPage")
+    @ResponseWrapper(localName = "GetNextArtistsPageResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetNextArtistsPageResponse")
+    public ArrayOfArtist getNextArtistsPage();
+
 }

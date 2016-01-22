@@ -38,6 +38,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetNextArtistsPage }
+     * 
+     */
+    public GetNextArtistsPage createGetNextArtistsPage() {
+        return new GetNextArtistsPage();
+    }
+
+    /**
      * Create an instance of {@link HelloWorldResponse }
      * 
      */
@@ -67,6 +75,22 @@ public class ObjectFactory {
      */
     public HelloWorld createHelloWorld() {
         return new HelloWorld();
+    }
+
+    /**
+     * Create an instance of {@link GetNextArtistsPageResponse }
+     * 
+     */
+    public GetNextArtistsPageResponse createGetNextArtistsPageResponse() {
+        return new GetNextArtistsPageResponse();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfArtist }
+     * 
+     */
+    public ArrayOfArtist createArrayOfArtist() {
+        return new ArrayOfArtist();
     }
 
     /**

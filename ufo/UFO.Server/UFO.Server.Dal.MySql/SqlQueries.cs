@@ -95,6 +95,11 @@ namespace UFO.Server.Dal.MySql
         public const string SelectAllArtists =  @"SELECT * 
                                                     FROM artistview";
 
+        /*LIMIT [offset,] numberOfRows*/
+        public const string SelectArtistLimit = @"SELECT * 
+                                                   FROM artistview
+                                                   LIMIT ?offset,?rows";
+
         public const string SelectArtistById = @"SELECT * 
                                                    FROM artistview 
                                                   WHERE ArtistId=?ArtistId";

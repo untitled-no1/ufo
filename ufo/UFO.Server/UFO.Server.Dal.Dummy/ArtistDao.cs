@@ -17,6 +17,7 @@
 //     Dinu Marius-Constantin
 //     Wurm Florian
 #endregion
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UFO.Server.Dal.Common;
@@ -54,6 +55,11 @@ namespace UFO.Server.Dal.Dummy
         public DaoResponse<Artist> SelectById(int id)
         {
             throw new System.NotImplementedException();
+        }
+
+        public DaoResponse<List<Artist>> SelectPage(Page page)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -29,5 +29,6 @@ namespace UFO.Server.Dal.Common
     public interface IArtistDao : ICommonDao<Artist>
     {
         DaoResponse<Artist> SelectById(int id);
+        DaoResponse<List<Artist>> SelectPage(Page page);
     }
 }

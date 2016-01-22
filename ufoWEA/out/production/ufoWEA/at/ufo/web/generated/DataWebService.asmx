@@ -56,6 +56,21 @@
           <s:element minOccurs="0" maxOccurs="1" name="DataStream" type="s:base64Binary" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetNextArtistsPage">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNextArtistsPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNextArtistsPageResult" type="tns:ArrayOfArtist" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArtist">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Artist" nillable="true" type="tns:Artist" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -70,6 +85,12 @@
   <wsdl:message name="GetArtistByNameSoapOut">
     <wsdl:part name="parameters" element="tns:GetArtistByNameResponse" />
   </wsdl:message>
+  <wsdl:message name="GetNextArtistsPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNextArtistsPage" />
+  </wsdl:message>
+  <wsdl:message name="GetNextArtistsPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNextArtistsPageResponse" />
+  </wsdl:message>
   <wsdl:portType name="DataWebServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -78,6 +99,10 @@
     <wsdl:operation name="GetArtistByName">
       <wsdl:input message="tns:GetArtistByNameSoapIn" />
       <wsdl:output message="tns:GetArtistByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextArtistsPage">
+      <wsdl:input message="tns:GetNextArtistsPageSoapIn" />
+      <wsdl:output message="tns:GetNextArtistsPageSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="DataWebServiceSoap" type="tns:DataWebServiceSoap">
@@ -100,6 +125,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetNextArtistsPage">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/GetNextArtistsPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="DataWebServiceSoap12" type="tns:DataWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -114,6 +148,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetArtistByName">
       <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetArtistByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextArtistsPage">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetNextArtistsPage" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

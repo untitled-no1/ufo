@@ -63,6 +63,13 @@ namespace UFO.Server.BLL.Impl
             return artistDao.SelectAll().ResultObject;
         }
 
+        public List<Artist> GetArtistsPage(Page page)
+        {
+            if(!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return artistDao.SelectPage(page).ResultObject;
+        } 
+
         public List<Location> GetAllLocations()
         {
             if(!authentification.IsLoggedIn())

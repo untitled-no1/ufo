@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Services;
 using UFO.Server.BLL;
 using UFO.Server.BLL.Common;
+using UFO.Server.BLL.Impl;
 using UFO.Server.Domain;
 
 namespace UFO.Server.WebService
@@ -19,8 +20,15 @@ namespace UFO.Server.WebService
     // [System.Web.Script.Services.ScriptService]
     public class DataWebService : System.Web.Services.WebService
     {
+        private IGetData dataProxy;
+        private Page ArtistPage;
 
-        //private IGetData dataProxy = BusinessLayerFactory.CreateGetDataInstance();
+        public DataWebService()
+        {
+            IAuthentification auth = BusinessLayerFactory.CreateAuthentificationInstance("a@a.com", "0cc175b9c0f1b6a831c399e269772661");
+            dataProxy = BusinessLayerFactory.CreateGetDataInstance(auth);
+        }
+
 
         [WebMethod]
         public string HelloWorld()
@@ -31,8 +39,17 @@ namespace UFO.Server.WebService
         [WebMethod]
         public Artist GetArtistByName(string name)
         {
-            //return dataProxy.GetArtistByName("");
-            return new Artist();
+            return dataProxy.GetArtistByName(name);
         }
+
+        [WebMethod]
+        public List<Artist> GetNextArtistsPage()
+        {
+            if(ArtistPage == null)
+                ArtistPage = new Page();
+            else
+                ArtistPage.next();
+            return dataProxy.GetArtistsPage(ArtistPage);
+        } 
     }
 }

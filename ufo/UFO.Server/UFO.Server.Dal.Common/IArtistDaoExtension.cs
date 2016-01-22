@@ -35,5 +35,6 @@ namespace UFO.Server.Dal.Common
             var values = dao.SelectWhere(filterExpression, name).ResultObject;
             return values.Any() ? DaoResponse.QuerySuccessful(values.First()) : DaoResponse.QueryEmptyResult<Artist>();
         }
+        
     }
 }

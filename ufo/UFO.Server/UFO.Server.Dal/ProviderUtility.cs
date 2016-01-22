@@ -17,13 +17,12 @@
 //     Dinu Marius-Constantin
 //     Wurm Florian
 #endregion
+
 using System;
 using System.Configuration;
 using System.Reflection;
-using PostSharp.Patterns.Diagnostics;
-using PostSharp.Extensibility;
 
-namespace UFO.Server
+namespace UFO.Server.Dal
 {
     static class ProviderUtility
     {
