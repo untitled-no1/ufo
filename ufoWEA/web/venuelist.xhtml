@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="WEB-INF/templates/basicTemplate.xhtml">
+    <ui:define name="content">
+        <h:panelGroup id="venuelist-page" class="page">
+            <h:form style="width: 70%; align-content: center; margin: auto;">
+                <p:dataScroller value="#{venueListBean.venues}" var="venue" chunkSize="50">
+                    <p:link href="#{request.contextPath}/ufo/venue.xhtml?id=#{venue.venueId}">
+                        <h:panelGrid columns="1" style="width:100%;" columnClasses="detail">
+                            <p:outputPanel>
+                                <h:panelGrid columns="2" cellpadding="5">
+                                    <h:outputText value="#{venue.name} (#{venue.venueId})" style="font-weight: bold"/>
+                                    <h:outputText value="#{venue.location.name}"/>
+                                </h:panelGrid>
+                            </p:outputPanel>
+                        </h:panelGrid>
+                    </p:link>
+                </p:dataScroller>
+            </h:form>
+        </h:panelGroup>
+    </ui:define>
+</ui:composition>
+
+</html>

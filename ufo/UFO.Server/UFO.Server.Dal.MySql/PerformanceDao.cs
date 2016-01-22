@@ -196,6 +196,29 @@ namespace UFO.Server.Dal.MySql
             return performances.Any() ? DaoResponse.QuerySuccessful<List<Performance>>(performances) : DaoResponse.QueryEmptyResult<List<Performance>>();
         }
 
+        [DaoExceptionHandler(typeof (List<Performance>))]
+        public DaoResponse<List<Performance>> SelectPage(Page page)
+        {
+            var performances = new List<Performance>();
+            var parameter = new Dictionary<string, QueryParameter>
+            {
+                {"?offset", new QueryParameter {ParameterValue = page.getOffset()}},
+                {"?rows", new QueryParameter() {ParameterValue = page.getSize()}}
+            };
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.SelectPerformanceLimit, parameter))
+            using (var dataReader = _dbCommProvider.ExecuteReader(command))
+            {
+                while (dataReader.Read())
+                {
+                    performances.Add(CreatePerformanceObject(dataReader));
+                }
+            }
+            return performances.Any()
+                ? DaoResponse.QuerySuccessful<List<Performance>>(performances)
+                : DaoResponse.QueryEmptyResult<List<Performance>>();
+        }
+
         [DaoExceptionHandler(typeof(List<Performance>))]
         public DaoResponse<List<Performance>> SelectWhere<T>(Expression<Filter<Performance, T>> filterExpression, T criteria = default(T))
         {

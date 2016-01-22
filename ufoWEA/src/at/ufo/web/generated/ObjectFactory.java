@@ -30,6 +30,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetVenueByIdResponse }
+     * 
+     */
+    public GetVenueByIdResponse createGetVenueByIdResponse() {
+        return new GetVenueByIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link Venue }
+     * 
+     */
+    public Venue createVenue() {
+        return new Venue();
+    }
+
+    /**
      * Create an instance of {@link GetArtistByName }
      * 
      */
@@ -38,11 +54,59 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetVenueById }
+     * 
+     */
+    public GetVenueById createGetVenueById() {
+        return new GetVenueById();
+    }
+
+    /**
      * Create an instance of {@link GetNextArtistsPage }
      * 
      */
     public GetNextArtistsPage createGetNextArtistsPage() {
         return new GetNextArtistsPage();
+    }
+
+    /**
+     * Create an instance of {@link GetNextVenuesPage }
+     * 
+     */
+    public GetNextVenuesPage createGetNextVenuesPage() {
+        return new GetNextVenuesPage();
+    }
+
+    /**
+     * Create an instance of {@link GetNextVenuesPageResponse }
+     * 
+     */
+    public GetNextVenuesPageResponse createGetNextVenuesPageResponse() {
+        return new GetNextVenuesPageResponse();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfVenue }
+     * 
+     */
+    public ArrayOfVenue createArrayOfVenue() {
+        return new ArrayOfVenue();
+    }
+
+    /**
+     * Create an instance of {@link GetNextPerformancesPageResponse }
+     * 
+     */
+    public GetNextPerformancesPageResponse createGetNextPerformancesPageResponse() {
+        return new GetNextPerformancesPageResponse();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfPerformance }
+     * 
+     */
+    public ArrayOfPerformance createArrayOfPerformance() {
+        return new ArrayOfPerformance();
     }
 
     /**
@@ -94,6 +158,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetNextPerformancesPage }
+     * 
+     */
+    public GetNextPerformancesPage createGetNextPerformancesPage() {
+        return new GetNextPerformancesPage();
+    }
+
+    /**
      * Create an instance of {@link Category }
      * 
      */
@@ -115,6 +187,22 @@ public class ObjectFactory {
      */
     public BlobData createBlobData() {
         return new BlobData();
+    }
+
+    /**
+     * Create an instance of {@link Performance }
+     * 
+     */
+    public Performance createPerformance() {
+        return new Performance();
+    }
+
+    /**
+     * Create an instance of {@link Location }
+     * 
+     */
+    public Location createLocation() {
+        return new Location();
     }
 
 }

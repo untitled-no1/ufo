@@ -107,11 +107,25 @@ namespace UFO.Server.BLL.Impl
             return venueDao.SelectAll().ResultObject;
         }
 
+        public List<Venue> GetVenuesPage(Page page)
+        {
+            if (!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return venueDao.SelectPage(page).ResultObject;
+        }
+
         public List<Performance> GetAllPerformances()
         {
             if (!authentification.IsLoggedIn())
                 throw new AuthenticationException();
             return performanceDao.SelectAll().ResultObject;
+        }
+
+        public List<Performance> GetPerformancePage(Page page)
+        {
+            if(!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return performanceDao.SelectPage(page).ResultObject;
         }
     }
 }

@@ -27,5 +27,6 @@ namespace UFO.Server.Dal.Common
     public interface IPerformanceDao : ICommonDao<Performance>
     {
         DaoResponse<Performance> SelectById(DateTime dateTime, int artistId);
+        DaoResponse<List<Performance>> SelectPage(Page page);
     }
 }

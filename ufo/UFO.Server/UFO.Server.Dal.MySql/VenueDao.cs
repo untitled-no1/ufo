@@ -133,6 +133,29 @@ namespace UFO.Server.Dal.MySql
         }
 
         [DaoExceptionHandler(typeof(List<Venue>))]
+        public DaoResponse<List<Venue>> SelectPage(Page page)
+        {
+            var venues = new List<Venue>();
+            var parameter = new Dictionary<string, QueryParameter>
+            {
+                {"?offset", new QueryParameter {ParameterValue = page.getOffset()}},
+                {"?rows", new QueryParameter() {ParameterValue = page.getSize()}}
+            };
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.SelectVenueLimit, parameter))
+            using (var dataReader = _dbCommProvider.ExecuteReader(command))
+            {
+                while (dataReader.Read())
+                {
+                    venues.Add(CreateVenueObject(dataReader));
+                }
+            }
+            return venues.Any()
+                ? DaoResponse.QuerySuccessful<List<Venue>>(venues)
+                : DaoResponse.QueryEmptyResult<List<Venue>>();
+        }
+
+        [DaoExceptionHandler(typeof(List<Venue>))]
         public DaoResponse<List<Venue>> SelectWhere<T>(Expression<Filter<Venue, T>> filterExpression, T criteria = default(T))
         {
             return DaoResponse.QuerySuccessful<List<Venue>>(

@@ -22,6 +22,8 @@ namespace UFO.Server.WebService
     {
         private IGetData dataProxy;
         private Page ArtistPage;
+        private Page VenuePage;
+        private Page PerformancePage;
 
         public DataWebService()
         {
@@ -50,6 +52,32 @@ namespace UFO.Server.WebService
             else
                 ArtistPage.next();
             return dataProxy.GetArtistsPage(ArtistPage);
-        } 
+        }
+
+        [WebMethod]
+        public Venue GetVenueById(string id)
+        {
+            return dataProxy.GetVenueById(id);
+        }
+
+        [WebMethod]
+        public List<Venue> GetNextVenuesPage()
+        {
+            if (VenuePage == null)
+                VenuePage = new Page();
+            else
+                VenuePage.next();
+            return dataProxy.GetVenuesPage(VenuePage);
+        }
+
+        [WebMethod]
+        public List<Performance> GetNextPerformancesPage()
+        {
+            if (PerformancePage == null)
+                PerformancePage = new Page();
+            else
+                PerformancePage.next();
+            return dataProxy.GetPerformancePage(PerformancePage);
+        }
     }
 }

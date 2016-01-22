@@ -55,6 +55,10 @@ namespace UFO.Server.Dal.MySql
                                                         FROM performanceview
                                                        WHERE Date=?Date AND ArtistId=?ArtistId";
 
+        public const string SelectPerformanceLimit = @"SELECT * 
+                                                   FROM performanceview
+                                                   LIMIT ?offset,?rows";
+
         public const string DeletePerformance = @"DELETE FROM performance
                                                    WHERE Date=?Date AND ArtistId=?ArtistId";
 
@@ -74,6 +78,10 @@ namespace UFO.Server.Dal.MySql
         // Venue
         public const string SelectAllVenues = @"SELECT *
                                                   FROM venueview";
+
+        public static string SelectVenueLimit = @"SELECT * 
+                                                   FROM venueview
+                                                   LIMIT ?offset,?rows";
 
         public const string SelectVenueById = @"SELECT *
                                                   FROM venueview
@@ -172,5 +180,6 @@ namespace UFO.Server.Dal.MySql
         public const string InsertLocation = @"INSERT INTO location (Longitude, Latitude, Name)
                                                     VALUES (?Longitude, ?Latitude, ?Name)";
 
+       
     }
 }

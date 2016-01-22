@@ -55,5 +55,10 @@ namespace UFO.Server.Dal.Dummy
         {
             throw new System.NotImplementedException();
         }
+
+        public DaoResponse<List<Venue>> SelectPage(Page page)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

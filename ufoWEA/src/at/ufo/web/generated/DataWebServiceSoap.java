@@ -59,4 +59,40 @@ public interface DataWebServiceSoap {
     @ResponseWrapper(localName = "GetNextArtistsPageResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetNextArtistsPageResponse")
     public ArrayOfArtist getNextArtistsPage();
 
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns at.ufo.web.generated.Venue
+     */
+    @WebMethod(operationName = "GetVenueById", action = "http://ufo.untitled-no1.at/webservice/GetVenueById")
+    @WebResult(name = "GetVenueByIdResult", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+    @RequestWrapper(localName = "GetVenueById", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetVenueById")
+    @ResponseWrapper(localName = "GetVenueByIdResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetVenueByIdResponse")
+    public Venue getVenueById(
+        @WebParam(name = "id", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+        String id);
+
+    /**
+     * 
+     * @return
+     *     returns at.ufo.web.generated.ArrayOfVenue
+     */
+    @WebMethod(operationName = "GetNextVenuesPage", action = "http://ufo.untitled-no1.at/webservice/GetNextVenuesPage")
+    @WebResult(name = "GetNextVenuesPageResult", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+    @RequestWrapper(localName = "GetNextVenuesPage", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetNextVenuesPage")
+    @ResponseWrapper(localName = "GetNextVenuesPageResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetNextVenuesPageResponse")
+    public ArrayOfVenue getNextVenuesPage();
+
+    /**
+     * 
+     * @return
+     *     returns at.ufo.web.generated.ArrayOfPerformance
+     */
+    @WebMethod(operationName = "GetNextPerformancesPage", action = "http://ufo.untitled-no1.at/webservice/GetNextPerformancesPage")
+    @WebResult(name = "GetNextPerformancesPageResult", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+    @RequestWrapper(localName = "GetNextPerformancesPage", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetNextPerformancesPage")
+    @ResponseWrapper(localName = "GetNextPerformancesPageResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetNextPerformancesPageResponse")
+    public ArrayOfPerformance getNextPerformancesPage();
+
 }

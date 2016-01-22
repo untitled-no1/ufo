@@ -20,7 +20,7 @@ public class ArtistBean implements Serializable{
     @PostConstruct
     public void init() {
 
-        artist = Session.GetSoap().getArtistByName("zzz");
+        artist = Session.GetSoap().getArtistByName("Ace");
     }
 
     public Artist getArtist() {
