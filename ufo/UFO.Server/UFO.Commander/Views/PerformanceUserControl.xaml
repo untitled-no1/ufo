@@ -5,28 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UFO.Commander.Views"
              mc:Ignorable="d"
-             DataContext="{Binding PerformanceViewModel, Source={StaticResource ViewModelLocator}}">
+             DataContext="{Binding Path=AgendaDataViewModel, Source={StaticResource ViewModelLocator}}">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="85*"/>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
-        <ComboBox Grid.Row="0" Name="DateDropdown"
-                  ItemsSource="{Binding }" 
-                  SelectedItem="{Binding }"/>
-        <DataGrid Grid.Row="1"
-                  ItemsSource="{Binding}"
-                  AutoGenerateColumns="False">
-            <DataGrid.GroupStyle>
-                <GroupStyle>
-                    <GroupStyle.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding}"/> <!-- -->
-                        </DataTemplate>
-                    </GroupStyle.HeaderTemplate>
-                </GroupStyle>
-            </DataGrid.GroupStyle>
-        </DataGrid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        
+        <ComboBox Grid.Row="0" Grid.Column="1" Name="CategoryCb"
+                  ItemsSource="{Binding Path=Dates}" 
+                  SelectedItem="{Binding Path=CurDate}"/>
+        <local:PerformanceTable Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" Name="SaveButton" Content="Save Changes"></Button>
+
     </Grid>
 </UserControl>

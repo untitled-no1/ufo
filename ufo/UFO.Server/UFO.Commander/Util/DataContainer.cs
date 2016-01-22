@@ -102,8 +102,7 @@ namespace UFO.Commander.Util
         // Artist
         private static List<Artist> ChangedArtists = new List<Artist>();
 
-        private static ObservableCollection<ArtistViewModel> Artists { get; } =
-            new ObservableCollection<ArtistViewModel>();
+        private static ObservableCollection<ArtistViewModel> Artists { get; } = new ObservableCollection<ArtistViewModel>();
 
         public static void AddToArtistChanged(Artist artist)
         {
@@ -279,5 +278,72 @@ namespace UFO.Commander.Util
             }
             Console.WriteLine("Venues Reloaded");
         }
+
+
+        // Performance
+
+        private static List<string> dates = new List<string>();
+        private static ObservableCollection<string> Dates { get; } = new ObservableCollection<string>();
+
+        private static List<Performance> performances = new List<Performance>();
+        private static ObservableCollection<PerformanceViewModel> Performances { get; } =
+            new ObservableCollection<PerformanceViewModel>();
+
+        public static ObservableCollection<PerformanceViewModel> GetPerformanceObservColl()
+        {
+            if (Performances.Count == 0)
+            {
+                InitPerformanceObservList();
+            }
+
+            return Performances;
+        }
+
+        public static ObservableCollection<string> GetDatesObservColl()
+        {
+            InitPerformanceObservList();
+            if (Dates.Count == 0)
+            {
+                Dates.Clear();
+                foreach (var d in dates)
+                {
+                    Dates.Add(d);
+                }
+            }
+
+            return Dates;
+        }
+
+        public static void InitPerformanceObservList()
+        {
+            Performances.Clear();
+            performances = Session.GetData.GetAllPerformances();
+            foreach (var a in performances)
+            {
+                if(!dates.Contains(a.DateTime.Date.ToString("yyyy-MM-dd")))
+                    dates.Add(a.DateTime.Date.ToString("yyyy-MM-dd"));
+            }
+            dates.Sort((a, b) => -1 * a.CompareTo(b));
+
+            var firstDate = dates.First();
+            foreach (var p in performances)
+            {
+                if(p.DateTime.Date.ToString("yyyy-MM-dd") == firstDate)
+                    Performances.Add(new PerformanceViewModel(p));
+            }
+            Console.WriteLine("Amount of dates: " + dates.Count);
+            Console.WriteLine("Performances Reloaded");
+        }
+
+        public static void RefreshPerformanceObservList(string date)
+        {
+            Performances.Clear();
+            foreach (var p in performances)
+            {
+                if(date == p.DateTime.Date.ToString("yyyy-MM-dd"))
+                    Performances.Add(new PerformanceViewModel(p));
+            }
+        }
+ 
     }
 }

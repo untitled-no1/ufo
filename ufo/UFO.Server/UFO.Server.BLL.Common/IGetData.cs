@@ -28,5 +28,8 @@ namespace UFO.Server.BLL.Common
         // Venue
         Venue GetVenueById(string id);
         List<Venue> GetAllVenues();
+
+        // Performance
+        List<Performance> GetAllPerformances();
     }
 }

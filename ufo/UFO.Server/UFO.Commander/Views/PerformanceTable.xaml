@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="UFO.Commander.Views.PerformanceTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UFO.Commander.Views"
+             mc:Ignorable="d" 
+              DataContext="{Binding Path=AgendaDataViewModel, Source={StaticResource ViewModelLocator}}" >
+    
+    
+    <Grid>
+        <ListView Name="PerformanceGrid" ItemsSource="{Binding Performances}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="VenueId" DisplayMemberBinding="{Binding VenueId}"></GridViewColumn>
+                    <GridViewColumn Header="Venue" DisplayMemberBinding="{Binding VenueName}"></GridViewColumn>
+                    <GridViewColumn Header="Time" DisplayMemberBinding="{Binding Hour}"></GridViewColumn>
+                    <GridViewColumn Header="Artist" DisplayMemberBinding="{Binding ArtistName}"></GridViewColumn>
+                    <GridViewColumn Header="Category" DisplayMemberBinding="{Binding ArtistCategory}"></GridViewColumn>
+                    <GridViewColumn Header="Country" DisplayMemberBinding="{Binding ArtistCountry}"></GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+
+
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock FontWeight="Bold" FontSize="14" Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListView.GroupStyle>
+            
+            
+        </ListView>
+    </Grid>
+</UserControl>
