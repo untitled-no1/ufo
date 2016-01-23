@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<c:metadata>
+    <c:viewParam name="id" value="#{artistBean.id}" />
+    <c:event type="preRenderView" listener="#{artistBean.init}" />
+    <c:viewParam name="id" value="#{performanceListBean.artistId}" />
+    <c:event type="preRenderView" listener="#{performanceListBean.initPerformancesPerArtist}" />
+</c:metadata>
+
+<ui:composition template="WEB-INF/templates/basicTemplate.xhtml">
+    <ui:define name="content">
+        <h:panelGroup id="artist-page" class="page" rendered="#{artistBean.artist != null}">
+
+            <h:panelGrid columns="1" style="width:100%;" columnClasses="artist-detail-td">
+                <p:graphicImage value="#{artistBean.artist.picture.path}" styleClass="artist-img" />
+                <h:panelGrid columns="2">
+                    <h:outputText value="Name:" />
+                    <h:outputText value="#{artistBean.artist.name}" style="font-weight: bold"/>
+
+                    <h:outputText value="Kategorie:" />
+                    <h:outputText value="#{artistBean.artist.category.name}"/>
+
+                    <h:outputText value="Land:" />
+                    <h:outputText value="#{artistBean.artist.country.name} (#{artistBean.artist.country.code})"/>
+
+                    <p:outputPanel>
+                        <h:panelGroup id="artist-video-tag" class="promo-video" rendered="#{artistBean.artist.promoVideo != null}">
+                            <p:link href="#{artistBean.artist.promoVideo}" target="_blank">Promo-Video auf YouTube</p:link>
+                        </h:panelGroup>
+                    </p:outputPanel>
+
+                </h:panelGrid>
+            </h:panelGrid>
+        </h:panelGroup>
+
+        <h:panelGroup id="artistlist-page" class="page" rendered="#{performanceListBean.performancesPerArtist != null}">
+            <h:form style="width: 70%; align-content: center; margin: auto;">
+                <p:dataScroller value="#{performanceListBean.performancesPerArtist}" var="performance" chunkSize="20">
+                    <h:panelGrid columns="1" style="width:100%;" columnClasses="artist-img-td,detail">
+                        <p:outputPanel>
+                            <h:panelGrid columns="1" bodyrows="2">
+                                <p:outputPanel>
+                                    <h:outputText value="#{performance.venue.name}, #{performance.venue.location.name}" style="font-weight: bold" />
+                                </p:outputPanel>
+                                <h:panelGrid columns="2" cellpadding="5">
+
+                                    <h:outputText value=" Uhrzeit:" />
+                                    <h:outputText value="#{performance.dateTime}"/>
+
+                                </h:panelGrid>
+                            </h:panelGrid>
+                        </p:outputPanel>
+                    </h:panelGrid>
+                </p:dataScroller>
+            </h:form>
+        </h:panelGroup>
+    </ui:define>
+</ui:composition>
+
+</html>

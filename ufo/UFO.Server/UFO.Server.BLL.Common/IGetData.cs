@@ -9,6 +9,7 @@ namespace UFO.Server.BLL.Common
         List<User> GetAllUsers();
 
         // Artist
+        Artist GetArtistById(int id);
         Artist GetArtistByName(string name);
         List<Artist> GetAllArtists();
         List<Artist> GetArtistsPage(Page page);

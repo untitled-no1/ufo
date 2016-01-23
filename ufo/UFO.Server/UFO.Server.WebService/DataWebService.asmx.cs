@@ -21,9 +21,6 @@ namespace UFO.Server.WebService
     public class DataWebService : System.Web.Services.WebService
     {
         private IGetData dataProxy;
-        private Page ArtistPage;
-        private Page VenuePage;
-        private Page PerformancePage;
 
         public DataWebService()
         {
@@ -45,13 +42,16 @@ namespace UFO.Server.WebService
         }
 
         [WebMethod]
-        public List<Artist> GetNextArtistsPage()
+        public Artist GetArtistById(int id)
         {
-            if(ArtistPage == null)
-                ArtistPage = new Page();
-            else
-                ArtistPage.next();
-            return dataProxy.GetArtistsPage(ArtistPage);
+            return dataProxy.GetArtistById(id);
+        }
+
+        [WebMethod]
+        public List<Artist> GetArtistsPage(Page ArtistPage)
+        {
+            var tmp = dataProxy.GetArtistsPage(ArtistPage);
+            return tmp;
         }
 
         [WebMethod]
@@ -61,23 +61,29 @@ namespace UFO.Server.WebService
         }
 
         [WebMethod]
-        public List<Venue> GetNextVenuesPage()
+        public List<Venue> GetVenuesPage(Page VenuePage)
         {
-            if (VenuePage == null)
-                VenuePage = new Page();
-            else
-                VenuePage.next();
             return dataProxy.GetVenuesPage(VenuePage);
         }
 
         [WebMethod]
-        public List<Performance> GetNextPerformancesPage()
+        public List<Performance> GetPerformancesPage(Page PerformancePage)
         {
-            if (PerformancePage == null)
-                PerformancePage = new Page();
-            else
-                PerformancePage.next();
             return dataProxy.GetPerformancePage(PerformancePage);
         }
+
+        [WebMethod]
+        public List<string> GetAllPerformanceDates()
+        {
+            var performances = dataProxy.GetAllPerformances();
+            List<string> dates = new List<string>();
+            foreach (var s in performances)
+            {
+                var date = s.DateTime.Date.ToString("yyyy-MM-dd");
+                if (!dates.Contains(date))
+                    dates.Add(date);
+            }
+            return dates;
+        } 
     }
 }

@@ -16,15 +16,22 @@ import java.io.Serializable;
 public class ArtistBean implements Serializable{
 
     private Artist artist;
+    private int id;
 
-    @PostConstruct
     public void init() {
-
-        artist = Session.GetSoap().getArtistByName("Ace");
+        artist = Session.GetSoap().getArtistById(id);
     }
 
     public Artist getArtist() {
         return artist;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
 }

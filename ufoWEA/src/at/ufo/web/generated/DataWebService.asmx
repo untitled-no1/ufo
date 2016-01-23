@@ -56,13 +56,37 @@
           <s:element minOccurs="0" maxOccurs="1" name="DataStream" type="s:base64Binary" />
         </s:sequence>
       </s:complexType>
-      <s:element name="GetNextArtistsPage">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetNextArtistsPageResponse">
+      <s:element name="GetArtistById">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetNextArtistsPageResult" type="tns:ArrayOfArtist" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArtistByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArtistByIdResult" type="tns:Artist" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArtistsPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ArtistPage" type="tns:Page" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Page">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Offset" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Size" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetArtistsPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArtistsPageResult" type="tns:ArrayOfArtist" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -100,13 +124,17 @@
           <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="GetNextVenuesPage">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetNextVenuesPageResponse">
+      <s:element name="GetVenuesPage">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetNextVenuesPageResult" type="tns:ArrayOfVenue" />
+            <s:element minOccurs="0" maxOccurs="1" name="VenuePage" type="tns:Page" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVenuesPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVenuesPageResult" type="tns:ArrayOfVenue" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -115,13 +143,17 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="Venue" nillable="true" type="tns:Venue" />
         </s:sequence>
       </s:complexType>
-      <s:element name="GetNextPerformancesPage">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetNextPerformancesPageResponse">
+      <s:element name="GetPerformancesPage">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetNextPerformancesPageResult" type="tns:ArrayOfPerformance" />
+            <s:element minOccurs="0" maxOccurs="1" name="PerformancePage" type="tns:Page" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPerformancesPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPerformancesPageResult" type="tns:ArrayOfPerformance" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -135,6 +167,21 @@
           <s:element minOccurs="1" maxOccurs="1" name="DateTime" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="Artist" type="tns:Artist" />
           <s:element minOccurs="0" maxOccurs="1" name="Venue" type="tns:Venue" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllPerformanceDates">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPerformanceDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPerformanceDatesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
         </s:sequence>
       </s:complexType>
     </s:schema>
@@ -151,11 +198,17 @@
   <wsdl:message name="GetArtistByNameSoapOut">
     <wsdl:part name="parameters" element="tns:GetArtistByNameResponse" />
   </wsdl:message>
-  <wsdl:message name="GetNextArtistsPageSoapIn">
-    <wsdl:part name="parameters" element="tns:GetNextArtistsPage" />
+  <wsdl:message name="GetArtistByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArtistById" />
   </wsdl:message>
-  <wsdl:message name="GetNextArtistsPageSoapOut">
-    <wsdl:part name="parameters" element="tns:GetNextArtistsPageResponse" />
+  <wsdl:message name="GetArtistByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArtistByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArtistsPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArtistsPage" />
+  </wsdl:message>
+  <wsdl:message name="GetArtistsPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArtistsPageResponse" />
   </wsdl:message>
   <wsdl:message name="GetVenueByIdSoapIn">
     <wsdl:part name="parameters" element="tns:GetVenueById" />
@@ -163,17 +216,23 @@
   <wsdl:message name="GetVenueByIdSoapOut">
     <wsdl:part name="parameters" element="tns:GetVenueByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="GetNextVenuesPageSoapIn">
-    <wsdl:part name="parameters" element="tns:GetNextVenuesPage" />
+  <wsdl:message name="GetVenuesPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVenuesPage" />
   </wsdl:message>
-  <wsdl:message name="GetNextVenuesPageSoapOut">
-    <wsdl:part name="parameters" element="tns:GetNextVenuesPageResponse" />
+  <wsdl:message name="GetVenuesPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVenuesPageResponse" />
   </wsdl:message>
-  <wsdl:message name="GetNextPerformancesPageSoapIn">
-    <wsdl:part name="parameters" element="tns:GetNextPerformancesPage" />
+  <wsdl:message name="GetPerformancesPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPerformancesPage" />
   </wsdl:message>
-  <wsdl:message name="GetNextPerformancesPageSoapOut">
-    <wsdl:part name="parameters" element="tns:GetNextPerformancesPageResponse" />
+  <wsdl:message name="GetPerformancesPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPerformancesPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPerformanceDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPerformanceDates" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPerformanceDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPerformanceDatesResponse" />
   </wsdl:message>
   <wsdl:portType name="DataWebServiceSoap">
     <wsdl:operation name="HelloWorld">
@@ -184,21 +243,29 @@
       <wsdl:input message="tns:GetArtistByNameSoapIn" />
       <wsdl:output message="tns:GetArtistByNameSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetNextArtistsPage">
-      <wsdl:input message="tns:GetNextArtistsPageSoapIn" />
-      <wsdl:output message="tns:GetNextArtistsPageSoapOut" />
+    <wsdl:operation name="GetArtistById">
+      <wsdl:input message="tns:GetArtistByIdSoapIn" />
+      <wsdl:output message="tns:GetArtistByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistsPage">
+      <wsdl:input message="tns:GetArtistsPageSoapIn" />
+      <wsdl:output message="tns:GetArtistsPageSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetVenueById">
       <wsdl:input message="tns:GetVenueByIdSoapIn" />
       <wsdl:output message="tns:GetVenueByIdSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetNextVenuesPage">
-      <wsdl:input message="tns:GetNextVenuesPageSoapIn" />
-      <wsdl:output message="tns:GetNextVenuesPageSoapOut" />
+    <wsdl:operation name="GetVenuesPage">
+      <wsdl:input message="tns:GetVenuesPageSoapIn" />
+      <wsdl:output message="tns:GetVenuesPageSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetNextPerformancesPage">
-      <wsdl:input message="tns:GetNextPerformancesPageSoapIn" />
-      <wsdl:output message="tns:GetNextPerformancesPageSoapOut" />
+    <wsdl:operation name="GetPerformancesPage">
+      <wsdl:input message="tns:GetPerformancesPageSoapIn" />
+      <wsdl:output message="tns:GetPerformancesPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPerformanceDates">
+      <wsdl:input message="tns:GetAllPerformanceDatesSoapIn" />
+      <wsdl:output message="tns:GetAllPerformanceDatesSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="DataWebServiceSoap" type="tns:DataWebServiceSoap">
@@ -221,8 +288,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNextArtistsPage">
-      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/GetNextArtistsPage" style="document" />
+    <wsdl:operation name="GetArtistById">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/GetArtistById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistsPage">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/GetArtistsPage" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -239,8 +315,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNextVenuesPage">
-      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/GetNextVenuesPage" style="document" />
+    <wsdl:operation name="GetVenuesPage">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/GetVenuesPage" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -248,8 +324,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNextPerformancesPage">
-      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/GetNextPerformancesPage" style="document" />
+    <wsdl:operation name="GetPerformancesPage">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/GetPerformancesPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPerformanceDates">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/GetAllPerformanceDates" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -278,8 +363,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNextArtistsPage">
-      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetNextArtistsPage" style="document" />
+    <wsdl:operation name="GetArtistById">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetArtistById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistsPage">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetArtistsPage" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -296,8 +390,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNextVenuesPage">
-      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetNextVenuesPage" style="document" />
+    <wsdl:operation name="GetVenuesPage">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetVenuesPage" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -305,8 +399,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNextPerformancesPage">
-      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetNextPerformancesPage" style="document" />
+    <wsdl:operation name="GetPerformancesPage">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetPerformancesPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPerformanceDates">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetAllPerformanceDates" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

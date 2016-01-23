@@ -43,6 +43,13 @@ namespace UFO.Server.BLL.Impl
             return artistDao.SelectByName(name).ResultObject;
         }
 
+        public Artist GetArtistById(int id)
+        {
+            if(!authentification.IsLoggedIn())
+                throw new AuthenticationException();
+            return artistDao.SelectById(id).ResultObject;
+        }
+
         public List<Category> GetAllCategories()
         {
             if(!authentification.IsLoggedIn())

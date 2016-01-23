@@ -7,51 +7,22 @@ using System.Threading.Tasks;
 
 namespace UFO.Server.Domain
 {
+    [Serializable]
     public class Page
     {
-        private int offset;
-        private int size;
+        public int Offset { get; set; }
+        public int Size { get; set; }
 
         public Page()
         {
-            offset = 0;
-            size = 50;
+            Offset = 0;
+            Size = 50;
         }
 
-        public int getOffset()
-        {
-            return offset;
-        }
-
-        public void setOffset(int o)
-        {
-            offset = o;
-        }
-
-        public int getSize()
-        {
-            return size;
-        }
-        
 
         public void next()
         {
-            offset += size;
-        }
-
-        public void previous()
-        {
-            offset -= size;
-        }
-
-        public void reset()
-        {
-            offset = 0;
-        }
-
-        public void resize(int s)
-        {
-            size = s;
+            Offset += Size;
         }
     }
 }

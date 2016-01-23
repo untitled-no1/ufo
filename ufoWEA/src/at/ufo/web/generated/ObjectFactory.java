@@ -46,43 +46,75 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetArtistByName }
+     * Create an instance of {@link GetVenuesPage }
      * 
      */
-    public GetArtistByName createGetArtistByName() {
-        return new GetArtistByName();
+    public GetVenuesPage createGetVenuesPage() {
+        return new GetVenuesPage();
     }
 
     /**
-     * Create an instance of {@link GetVenueById }
+     * Create an instance of {@link Page }
      * 
      */
-    public GetVenueById createGetVenueById() {
-        return new GetVenueById();
+    public Page createPage() {
+        return new Page();
     }
 
     /**
-     * Create an instance of {@link GetNextArtistsPage }
+     * Create an instance of {@link GetArtistsPageResponse }
      * 
      */
-    public GetNextArtistsPage createGetNextArtistsPage() {
-        return new GetNextArtistsPage();
+    public GetArtistsPageResponse createGetArtistsPageResponse() {
+        return new GetArtistsPageResponse();
     }
 
     /**
-     * Create an instance of {@link GetNextVenuesPage }
+     * Create an instance of {@link ArrayOfArtist }
      * 
      */
-    public GetNextVenuesPage createGetNextVenuesPage() {
-        return new GetNextVenuesPage();
+    public ArrayOfArtist createArrayOfArtist() {
+        return new ArrayOfArtist();
     }
 
     /**
-     * Create an instance of {@link GetNextVenuesPageResponse }
+     * Create an instance of {@link GetAllPerformanceDatesResponse }
      * 
      */
-    public GetNextVenuesPageResponse createGetNextVenuesPageResponse() {
-        return new GetNextVenuesPageResponse();
+    public GetAllPerformanceDatesResponse createGetAllPerformanceDatesResponse() {
+        return new GetAllPerformanceDatesResponse();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfString }
+     * 
+     */
+    public ArrayOfString createArrayOfString() {
+        return new ArrayOfString();
+    }
+
+    /**
+     * Create an instance of {@link GetArtistById }
+     * 
+     */
+    public GetArtistById createGetArtistById() {
+        return new GetArtistById();
+    }
+
+    /**
+     * Create an instance of {@link HelloWorld }
+     * 
+     */
+    public HelloWorld createHelloWorld() {
+        return new HelloWorld();
+    }
+
+    /**
+     * Create an instance of {@link GetVenuesPageResponse }
+     * 
+     */
+    public GetVenuesPageResponse createGetVenuesPageResponse() {
+        return new GetVenuesPageResponse();
     }
 
     /**
@@ -94,11 +126,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetNextPerformancesPageResponse }
+     * Create an instance of {@link GetArtistByName }
      * 
      */
-    public GetNextPerformancesPageResponse createGetNextPerformancesPageResponse() {
-        return new GetNextPerformancesPageResponse();
+    public GetArtistByName createGetArtistByName() {
+        return new GetArtistByName();
+    }
+
+    /**
+     * Create an instance of {@link GetArtistByIdResponse }
+     * 
+     */
+    public GetArtistByIdResponse createGetArtistByIdResponse() {
+        return new GetArtistByIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link Artist }
+     * 
+     */
+    public Artist createArtist() {
+        return new Artist();
+    }
+
+    /**
+     * Create an instance of {@link GetArtistsPage }
+     * 
+     */
+    public GetArtistsPage createGetArtistsPage() {
+        return new GetArtistsPage();
+    }
+
+    /**
+     * Create an instance of {@link GetVenueById }
+     * 
+     */
+    public GetVenueById createGetVenueById() {
+        return new GetVenueById();
+    }
+
+    /**
+     * Create an instance of {@link GetPerformancesPageResponse }
+     * 
+     */
+    public GetPerformancesPageResponse createGetPerformancesPageResponse() {
+        return new GetPerformancesPageResponse();
     }
 
     /**
@@ -107,6 +179,14 @@ public class ObjectFactory {
      */
     public ArrayOfPerformance createArrayOfPerformance() {
         return new ArrayOfPerformance();
+    }
+
+    /**
+     * Create an instance of {@link GetAllPerformanceDates }
+     * 
+     */
+    public GetAllPerformanceDates createGetAllPerformanceDates() {
+        return new GetAllPerformanceDates();
     }
 
     /**
@@ -126,43 +206,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Artist }
+     * Create an instance of {@link GetPerformancesPage }
      * 
      */
-    public Artist createArtist() {
-        return new Artist();
-    }
-
-    /**
-     * Create an instance of {@link HelloWorld }
-     * 
-     */
-    public HelloWorld createHelloWorld() {
-        return new HelloWorld();
-    }
-
-    /**
-     * Create an instance of {@link GetNextArtistsPageResponse }
-     * 
-     */
-    public GetNextArtistsPageResponse createGetNextArtistsPageResponse() {
-        return new GetNextArtistsPageResponse();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfArtist }
-     * 
-     */
-    public ArrayOfArtist createArrayOfArtist() {
-        return new ArrayOfArtist();
-    }
-
-    /**
-     * Create an instance of {@link GetNextPerformancesPage }
-     * 
-     */
-    public GetNextPerformancesPage createGetNextPerformancesPage() {
-        return new GetNextPerformancesPage();
+    public GetPerformancesPage createGetPerformancesPage() {
+        return new GetPerformancesPage();
     }
 
     /**

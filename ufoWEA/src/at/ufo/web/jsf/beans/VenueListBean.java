@@ -1,13 +1,17 @@
 package at.ufo.web.jsf.beans;
 
+import at.ufo.web.generated.ArrayOfVenue;
 import at.ufo.web.generated.Artist;
+import at.ufo.web.generated.Page;
 import at.ufo.web.generated.Venue;
+import at.ufo.web.utils.Helper;
 import at.ufo.web.utils.Session;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,10 +23,18 @@ import java.util.List;
 public class VenueListBean implements Serializable {
 
     private List<Venue> venues;
+    private Page venuePage;
 
     @PostConstruct
     public void init(){
-        venues = Session.GetSoap().getNextVenuesPage().getVenue();
+        venuePage = Helper.CreateNewPage();
+        venues = new ArrayList<>();
+        ArrayOfVenue tmp = Session.GetSoap().getVenuesPage(venuePage);
+        while(tmp != null && tmp.getVenue().size() > 0) {
+            venues.addAll(tmp.getVenue());
+            venuePage = Helper.CalcNextPage(venuePage);
+            tmp = Session.GetSoap().getVenuesPage(venuePage);
+        }
     }
 
     public List<Venue> getVenues() {

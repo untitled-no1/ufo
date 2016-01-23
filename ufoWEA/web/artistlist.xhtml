@@ -5,16 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="WEB-INF/templates/basicTemplate.xhtml">
     <ui:define name="content">
         <h:panelGroup id="artistlist-page" class="page" rendered="#{artistListBean.artists != null}">
             <h:form style="width: 70%; align-content: center; margin: auto;">
-                <p:dataScroller value="#{artistListBean.artists}" var="artist" chunkSize="50">
-                    <p:link href="#{request.contextPath}/ufo/artist.xhtml?id=#{artist.artistId}">
+                <p:dataScroller id="artistEntries" value="#{artistListBean.artists}" var="artist" chunkSize="50">
+                    <p:link href="#{request.contextPath}/ufo/artistDetail.xhtml?id=#{artist.artistId}">
                         <h:panelGrid columns="2" style="width:100%;" columnClasses="artist-img-td,detail">
-
+                            <p:outputPanel>
+                                <p:graphicImage value="#{artist.picture.path}" styleClass="artist-img" />
+                            </p:outputPanel>
                             <p:outputPanel>
                                 <h:panelGrid columns="1" bodyrows="2">
                                     <p:outputPanel>

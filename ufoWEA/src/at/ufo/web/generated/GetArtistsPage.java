@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="GetNextArtistsPageResult" type="{http://ufo.untitled-no1.at/webservice/}ArrayOfArtist" minOccurs="0"/>
+ *         &lt;element name="ArtistPage" type="{http://ufo.untitled-no1.at/webservice/}Page" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getNextArtistsPageResult"
+    "artistPage"
 })
-@XmlRootElement(name = "GetNextArtistsPageResponse")
-public class GetNextArtistsPageResponse {
+@XmlRootElement(name = "GetArtistsPage")
+public class GetArtistsPage {
 
-    @XmlElement(name = "GetNextArtistsPageResult")
-    protected ArrayOfArtist getNextArtistsPageResult;
+    @XmlElement(name = "ArtistPage")
+    protected Page artistPage;
 
     /**
-     * Ruft den Wert der getNextArtistsPageResult-Eigenschaft ab.
+     * Ruft den Wert der artistPage-Eigenschaft ab.
      * 
      * @return
      *     possible object is
-     *     {@link ArrayOfArtist }
+     *     {@link Page }
      *     
      */
-    public ArrayOfArtist getGetNextArtistsPageResult() {
-        return getNextArtistsPageResult;
+    public Page getArtistPage() {
+        return artistPage;
     }
 
     /**
-     * Legt den Wert der getNextArtistsPageResult-Eigenschaft fest.
+     * Legt den Wert der artistPage-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
-     *     {@link ArrayOfArtist }
+     *     {@link Page }
      *     
      */
-    public void setGetNextArtistsPageResult(ArrayOfArtist value) {
-        this.getNextArtistsPageResult = value;
+    public void setArtistPage(Page value) {
+        this.artistPage = value;
     }
 
 }

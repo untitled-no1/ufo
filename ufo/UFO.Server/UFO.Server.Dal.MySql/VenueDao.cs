@@ -138,8 +138,8 @@ namespace UFO.Server.Dal.MySql
             var venues = new List<Venue>();
             var parameter = new Dictionary<string, QueryParameter>
             {
-                {"?offset", new QueryParameter {ParameterValue = page.getOffset()}},
-                {"?rows", new QueryParameter() {ParameterValue = page.getSize()}}
+                {"?offset", new QueryParameter {ParameterValue = page.Offset}},
+                {"?rows", new QueryParameter() {ParameterValue = page.Size}}
             };
             using (var connection = _dbCommProvider.CreateDbConnection())
             using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.SelectVenueLimit, parameter))

@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="GetNextPerformancesPageResult" type="{http://ufo.untitled-no1.at/webservice/}ArrayOfPerformance" minOccurs="0"/>
+ *         &lt;element name="VenuePage" type="{http://ufo.untitled-no1.at/webservice/}Page" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getNextPerformancesPageResult"
+    "venuePage"
 })
-@XmlRootElement(name = "GetNextPerformancesPageResponse")
-public class GetNextPerformancesPageResponse {
+@XmlRootElement(name = "GetVenuesPage")
+public class GetVenuesPage {
 
-    @XmlElement(name = "GetNextPerformancesPageResult")
-    protected ArrayOfPerformance getNextPerformancesPageResult;
+    @XmlElement(name = "VenuePage")
+    protected Page venuePage;
 
     /**
-     * Ruft den Wert der getNextPerformancesPageResult-Eigenschaft ab.
+     * Ruft den Wert der venuePage-Eigenschaft ab.
      * 
      * @return
      *     possible object is
-     *     {@link ArrayOfPerformance }
+     *     {@link Page }
      *     
      */
-    public ArrayOfPerformance getGetNextPerformancesPageResult() {
-        return getNextPerformancesPageResult;
+    public Page getVenuePage() {
+        return venuePage;
     }
 
     /**
-     * Legt den Wert der getNextPerformancesPageResult-Eigenschaft fest.
+     * Legt den Wert der venuePage-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
-     *     {@link ArrayOfPerformance }
+     *     {@link Page }
      *     
      */
-    public void setGetNextPerformancesPageResult(ArrayOfPerformance value) {
-        this.getNextPerformancesPageResult = value;
+    public void setVenuePage(Page value) {
+        this.venuePage = value;
     }
 
 }

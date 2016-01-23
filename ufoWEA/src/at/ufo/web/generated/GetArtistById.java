@@ -16,6 +16,9 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -24,9 +27,28 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "GetNextVenuesPage")
-public class GetNextVenuesPage {
+@XmlType(name = "", propOrder = {
+    "id"
+})
+@XmlRootElement(name = "GetArtistById")
+public class GetArtistById {
 
+    protected int id;
+
+    /**
+     * Ruft den Wert der id-Eigenschaft ab.
+     * 
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Legt den Wert der id-Eigenschaft fest.
+     * 
+     */
+    public void setId(int value) {
+        this.id = value;
+    }
 
 }

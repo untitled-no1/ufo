@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="WEB-INF/templates/basicTemplate.xhtml">
@@ -14,6 +15,7 @@
     <ui:define name="content">
         <h:panelGroup id="performance-page" class="page">
             <h:form style="width: 70%; align-content: center; margin: auto;">
+
                 <p:dataScroller value="#{performanceListBean.performances}" var="performance" chunkSize="50">
                     <h:panelGrid columns="1" style="width:100%;" columnClasses="detail">
                             <p:outputPanel>

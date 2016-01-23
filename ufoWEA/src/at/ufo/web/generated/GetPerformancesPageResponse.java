@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="GetNextVenuesPageResult" type="{http://ufo.untitled-no1.at/webservice/}ArrayOfVenue" minOccurs="0"/>
+ *         &lt;element name="GetPerformancesPageResult" type="{http://ufo.untitled-no1.at/webservice/}ArrayOfPerformance" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getNextVenuesPageResult"
+    "getPerformancesPageResult"
 })
-@XmlRootElement(name = "GetNextVenuesPageResponse")
-public class GetNextVenuesPageResponse {
+@XmlRootElement(name = "GetPerformancesPageResponse")
+public class GetPerformancesPageResponse {
 
-    @XmlElement(name = "GetNextVenuesPageResult")
-    protected ArrayOfVenue getNextVenuesPageResult;
+    @XmlElement(name = "GetPerformancesPageResult")
+    protected ArrayOfPerformance getPerformancesPageResult;
 
     /**
-     * Ruft den Wert der getNextVenuesPageResult-Eigenschaft ab.
+     * Ruft den Wert der getPerformancesPageResult-Eigenschaft ab.
      * 
      * @return
      *     possible object is
-     *     {@link ArrayOfVenue }
+     *     {@link ArrayOfPerformance }
      *     
      */
-    public ArrayOfVenue getGetNextVenuesPageResult() {
-        return getNextVenuesPageResult;
+    public ArrayOfPerformance getGetPerformancesPageResult() {
+        return getPerformancesPageResult;
     }
 
     /**
-     * Legt den Wert der getNextVenuesPageResult-Eigenschaft fest.
+     * Legt den Wert der getPerformancesPageResult-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
-     *     {@link ArrayOfVenue }
+     *     {@link ArrayOfPerformance }
      *     
      */
-    public void setGetNextVenuesPageResult(ArrayOfVenue value) {
-        this.getNextVenuesPageResult = value;
+    public void setGetPerformancesPageResult(ArrayOfPerformance value) {
+        this.getPerformancesPageResult = value;
     }
 
 }

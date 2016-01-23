@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "GetNextPerformancesPage")
-public class GetNextPerformancesPage {
+@XmlRootElement(name = "GetAllPerformanceDates")
+public class GetAllPerformanceDates {
 
 
 }
