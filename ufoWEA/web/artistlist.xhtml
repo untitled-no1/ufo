@@ -11,30 +11,35 @@
 <ui:composition template="WEB-INF/templates/basicTemplate.xhtml">
     <ui:define name="content">
         <h:panelGroup id="artistlist-page" class="page" rendered="#{artistListBean.artists != null}">
-            <h:form style="width: 70%; align-content: center; margin: auto;">
-                <p:dataScroller id="artistEntries" value="#{artistListBean.artists}" var="artist" chunkSize="50">
-                    <p:link href="#{request.contextPath}/ufo/artistDetail.xhtml?id=#{artist.artistId}">
-                        <h:panelGrid columns="2" style="width:100%;" columnClasses="artist-img-td,detail">
-                            <p:outputPanel>
-                                <p:graphicImage value="#{artist.picture.path}" styleClass="artist-img" />
-                            </p:outputPanel>
-                            <p:outputPanel>
-                                <h:panelGrid columns="1" bodyrows="2">
-                                    <p:outputPanel>
-                                        <h:outputText value="#{artist.name}" style="font-weight: bold" />
-                                    </p:outputPanel>
-                                    <h:panelGrid columns="2" cellpadding="5">
-                                        <h:outputText value=" Kategorie:" />
-                                        <h:outputText value="#{artist.category.name} (#{artist.category.categoryId})"/>
 
-                                        <h:outputText value=" Land:" />
-                                        <h:outputText value="#{artist.country.name} (#{artist.country.code})"/>
-                                    </h:panelGrid>
-                                </h:panelGrid>
-                            </p:outputPanel>
-                        </h:panelGrid>
-                    </p:link>
-                </p:dataScroller>
+            <h:form style="width: 70%; align-content: center; margin: auto;">
+                <p:dataTable var="artist" value="#{artistListBean.artists}">
+
+                    <p:column headerText="Image">
+                        <p:outputPanel>
+                            <p:graphicImage value="#{artist.picture.path}" styleClass="artist-img" />
+                        </p:outputPanel>
+                    </p:column>
+
+                    <p:column headerText="Name">
+                        <h:outputText value="#{artist.name}" />
+                    </p:column>
+
+                    <p:column headerText="Category">
+                        <h:outputText value="#{artist.category.name}" />
+                    </p:column>
+
+                    <p:column headerText="Country">
+                        <h:outputText value="#{artist.country.code}" />
+                    </p:column>
+
+
+
+
+                    <p:column headerText="Details">
+                        <p:link href="#{request.contextPath}/ufo/artistDetail.xhtml?id=#{artist.artistId}">Details anzeigen</p:link>
+                    </p:column>
+                </p:dataTable>
             </h:form>
         </h:panelGroup>
     </ui:define>

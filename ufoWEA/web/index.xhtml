@@ -13,23 +13,10 @@
         UFO Web Portal
     </ui:define>
     <ui:define name="content">
-        <h:panelGroup id="performance-page" class="page">
-            <h:form style="width: 70%; align-content: center; margin: auto;">
-
-                <p:dataScroller value="#{performanceListBean.performances}" var="performance" chunkSize="50">
-                    <h:panelGrid columns="1" style="width:100%;" columnClasses="detail">
-                            <p:outputPanel>
-                                <h:panelGrid columns="4" columnClasses="perf-date,perf-art,perf-venue,perf-loc">
-                                    <h:outputText value="#{performance.dateTime} " style="font-weight: bold"/>
-                                    <h:outputText value="#{performance.artist.name}" />
-                                    <h:outputText value="#{performance.venue.venueId} #{performance.venue.name}"/>
-                                    <h:outputText value="#{performance.venue.location.name}" />
-                                </h:panelGrid>
-                            </p:outputPanel>
-                        </h:panelGrid>
-                </p:dataScroller>
-            </h:form>
-        </h:panelGroup>
+        <h1>Willkommen beim UFO Web Portal.</h1>
+        <ui:insert name="performances">
+            <ui:include src="performancelist.xhtml"/>
+        </ui:insert>
     </ui:define>
 </ui:composition>
 

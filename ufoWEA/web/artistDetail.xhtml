@@ -20,7 +20,7 @@
     <ui:define name="content">
         <h:panelGroup id="artist-page" class="page" rendered="#{artistBean.artist != null}">
 
-            <h:panelGrid columns="1" style="width:100%;" columnClasses="artist-detail-td">
+            <h:panelGrid columns="1" style="width:70%; align-content: center; margin: auto" columnClasses="artist-detail-td">
                 <p:graphicImage value="#{artistBean.artist.picture.path}" styleClass="artist-img" />
                 <h:panelGrid columns="2">
                     <h:outputText value="Name:" />

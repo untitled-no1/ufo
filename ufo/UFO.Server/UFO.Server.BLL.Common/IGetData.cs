@@ -34,5 +34,7 @@ namespace UFO.Server.BLL.Common
         // Performance
         List<Performance> GetAllPerformances();
         List<Performance> GetPerformancePage(Page page);
+        List<Performance> GetPerformancesPerArtist(int id);
+        List<Performance> GetPerformancesPerVenue(string id);
     }
 }

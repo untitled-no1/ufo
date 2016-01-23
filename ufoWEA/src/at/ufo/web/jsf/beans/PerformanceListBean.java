@@ -45,12 +45,19 @@ public class PerformanceListBean implements Serializable {
 
     public void initPerformancesPerArtist() {
         artist = Session.GetSoap().getArtistById(artistId);
-        // TODO performancesPerArtist = Session.GetSoap().getPerformancesPerArtist(artist);
+        ArrayOfPerformance tmp = Session.GetSoap().getPerformancesPerArtist(artistId);
+        if(tmp == null) {
+            tmp = new ArrayOfPerformance();
+        }
+        performancesPerArtist = tmp.getPerformance();
     }
 
     public void initPerformancesPerVenue() {
         venue = Session.GetSoap().getVenueById(venueId);
-        // TODO performancesPerVenue = Session.GetSoap().getPerformancesPerVenue(venue);
+        ArrayOfPerformance tmp = Session.GetSoap().getPerformancesPerVenue(venueId);
+        if(tmp == null)
+            tmp = new ArrayOfPerformance();
+        performancesPerVenue = tmp.getPerformance();
     }
 
     @PostConstruct

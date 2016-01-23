@@ -62,6 +62,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetPerformancesPerVenueResponse }
+     * 
+     */
+    public GetPerformancesPerVenueResponse createGetPerformancesPerVenueResponse() {
+        return new GetPerformancesPerVenueResponse();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfPerformance }
+     * 
+     */
+    public ArrayOfPerformance createArrayOfPerformance() {
+        return new ArrayOfPerformance();
+    }
+
+    /**
      * Create an instance of {@link GetArtistsPageResponse }
      * 
      */
@@ -94,11 +110,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetPerformancesPerArtist }
+     * 
+     */
+    public GetPerformancesPerArtist createGetPerformancesPerArtist() {
+        return new GetPerformancesPerArtist();
+    }
+
+    /**
      * Create an instance of {@link GetArtistById }
      * 
      */
     public GetArtistById createGetArtistById() {
         return new GetArtistById();
+    }
+
+    /**
+     * Create an instance of {@link GetPerformancesPerVenue }
+     * 
+     */
+    public GetPerformancesPerVenue createGetPerformancesPerVenue() {
+        return new GetPerformancesPerVenue();
     }
 
     /**
@@ -174,11 +206,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ArrayOfPerformance }
+     * Create an instance of {@link GetPerformancesPerArtistResponse }
      * 
      */
-    public ArrayOfPerformance createArrayOfPerformance() {
-        return new ArrayOfPerformance();
+    public GetPerformancesPerArtistResponse createGetPerformancesPerArtistResponse() {
+        return new GetPerformancesPerArtistResponse();
     }
 
     /**

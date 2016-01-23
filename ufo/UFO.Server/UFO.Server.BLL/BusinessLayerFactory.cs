@@ -8,6 +8,11 @@ namespace UFO.Server.BLL
     public static class BusinessLayerFactory
     {
 
+        public static IGetData CreateGetDataInstanceWeb()
+        {
+            return new GetData();
+        }
+
         public static IGetData CreateGetDataInstance(IAuthentification auth)
         {
             if(auth == null)

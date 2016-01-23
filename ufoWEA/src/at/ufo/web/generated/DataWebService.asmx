@@ -184,6 +184,34 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="getPerformancesPerArtist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPerformancesPerArtistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPerformancesPerArtistResult" type="tns:ArrayOfPerformance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPerformancesPerVenue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPerformancesPerVenueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPerformancesPerVenueResult" type="tns:ArrayOfPerformance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -234,6 +262,18 @@
   <wsdl:message name="GetAllPerformanceDatesSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllPerformanceDatesResponse" />
   </wsdl:message>
+  <wsdl:message name="getPerformancesPerArtistSoapIn">
+    <wsdl:part name="parameters" element="tns:getPerformancesPerArtist" />
+  </wsdl:message>
+  <wsdl:message name="getPerformancesPerArtistSoapOut">
+    <wsdl:part name="parameters" element="tns:getPerformancesPerArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPerformancesPerVenueSoapIn">
+    <wsdl:part name="parameters" element="tns:getPerformancesPerVenue" />
+  </wsdl:message>
+  <wsdl:message name="getPerformancesPerVenueSoapOut">
+    <wsdl:part name="parameters" element="tns:getPerformancesPerVenueResponse" />
+  </wsdl:message>
   <wsdl:portType name="DataWebServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -266,6 +306,14 @@
     <wsdl:operation name="GetAllPerformanceDates">
       <wsdl:input message="tns:GetAllPerformanceDatesSoapIn" />
       <wsdl:output message="tns:GetAllPerformanceDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPerformancesPerArtist">
+      <wsdl:input message="tns:getPerformancesPerArtistSoapIn" />
+      <wsdl:output message="tns:getPerformancesPerArtistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPerformancesPerVenue">
+      <wsdl:input message="tns:getPerformancesPerVenueSoapIn" />
+      <wsdl:output message="tns:getPerformancesPerVenueSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="DataWebServiceSoap" type="tns:DataWebServiceSoap">
@@ -342,6 +390,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getPerformancesPerArtist">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/getPerformancesPerArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPerformancesPerVenue">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/getPerformancesPerVenue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="DataWebServiceSoap12" type="tns:DataWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -410,6 +476,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllPerformanceDates">
       <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetAllPerformanceDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPerformancesPerArtist">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/getPerformancesPerArtist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPerformancesPerVenue">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/getPerformancesPerVenue" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<c:metadata>
+    <c:viewParam name="id" value="#{venueBean.venueId}" />
+    <c:event type="preRenderView" listener="#{venueBean.init}" />
+    <c:viewParam name="id" value="#{performanceListBean.venueId}" />
+    <c:event type="preRenderView" listener="#{performanceListBean.initPerformancesPerVenue}" />
+</c:metadata>
+
+<ui:composition template="WEB-INF/templates/basicTemplate.xhtml">
+    <ui:define name="content">
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+        <h:panelGrid style="width:70%; margin: auto; align-content: center;">
+
+            <h:panelGroup id="artistlist-page" class="page" rendered="#{performanceListBean.performancesPerVenue != null}">
+                <h:form style="width: 100%; align-content: center; margin: auto;">
+                    <p:dataScroller value="#{performanceListBean.performancesPerVenue}" var="performance" chunkSize="20">
+                        <h:panelGrid columns="2" style="width:100%;" columnClasses="artist-img-td,detail">
+                            <p:outputPanel>
+                                <p:graphicImage value="#{performance.artist.picture.path}" styleClass="artist-img"/>
+                            </p:outputPanel>
+                            <p:outputPanel>
+                                <h:panelGrid columns="1" bodyrows="2">
+                                    <p:outputPanel>
+                                        <h:outputText value="#{performance.artist.name} #{performance.artist.country.code}" style="font-weight: bold" />
+                                    </p:outputPanel>
+                                    <h:panelGrid columns="2" cellpadding="5">
+
+                                        <h:outputText value=" Kategorie:" />
+                                        <h:outputText value="#{performance.artist.category.name} (#{performance.artist.category.categoryId})"/>
+
+                                        <h:outputText value=" Uhrzeit:" />
+                                        <h:outputText value="#{performance.dateTime}"/>
+
+                                    </h:panelGrid>
+                                </h:panelGrid>
+                            </p:outputPanel>
+                        </h:panelGrid>
+                    </p:dataScroller>
+                </h:form>
+            </h:panelGroup>
+
+            <h:panelGroup id="venue-page" class="page" rendered="#{venueBean.venue != null}">
+
+                <h:form prependId="false">
+                    <p:growl id="messages" showDetail="true" />
+                    <p:gmap id="gmap" center="#{venueBean.venue.location.latitude}, #{venueBean.venue.location.longitude}"
+                            zoom="18" type="HYBRID" style="width:100%;height:400px; margin: auto; align-content: center;" widgetVar="map"/>
+
+                    <h:inputHidden id="marker-title" value="#{venueBean.venue.location.name}"/>
+                    <h:inputHidden id="latitude-value" value="#{venueBean.venue.location.latitude}"/>
+                    <h:inputHidden id="longitude-value" value="#{venueBean.venue.location.longitude}"/>
+                </h:form>
+
+            </h:panelGroup>
+
+            <h:outputScript library="js" name="ufo/gmaps-code.js"/>
+
+        </h:panelGrid>
+
+
+    </ui:define>
+</ui:composition>
+</html>

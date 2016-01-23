@@ -24,9 +24,10 @@ namespace UFO.Server.WebService
 
         public DataWebService()
         {
-            IAuthentification auth = BusinessLayerFactory.CreateAuthentificationInstance("a@a.com", "0cc175b9c0f1b6a831c399e269772661");
-            dataProxy = BusinessLayerFactory.CreateGetDataInstance(auth);
+            dataProxy = BusinessLayerFactory.CreateGetDataInstanceWeb();
         }
+
+
 
 
         [WebMethod]
@@ -84,6 +85,18 @@ namespace UFO.Server.WebService
                     dates.Add(date);
             }
             return dates;
-        } 
+        }
+
+        [WebMethod]
+        public List<Performance> getPerformancesPerArtist(int id)
+        {
+            return dataProxy.GetPerformancesPerArtist(id);
+        }
+
+        [WebMethod]
+        public List<Performance> getPerformancesPerVenue(string id)
+        {
+            return dataProxy.GetPerformancesPerVenue(id);
+        }
     }
 }

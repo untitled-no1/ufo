@@ -11,18 +11,23 @@
     <ui:define name="content">
         <h:panelGroup id="venuelist-page" class="page">
             <h:form style="width: 70%; align-content: center; margin: auto;">
-                <p:dataScroller value="#{venueListBean.venues}" var="venue" chunkSize="50">
-                    <p:link href="#{request.contextPath}/ufo/venue.xhtml?id=#{venue.venueId}">
-                        <h:panelGrid columns="1" style="width:100%;" columnClasses="detail">
-                            <p:outputPanel>
-                                <h:panelGrid columns="2" cellpadding="5">
-                                    <h:outputText value="#{venue.name} (#{venue.venueId})" style="font-weight: bold"/>
-                                    <h:outputText value="#{venue.location.name}"/>
-                                </h:panelGrid>
-                            </p:outputPanel>
-                        </h:panelGrid>
-                    </p:link>
-                </p:dataScroller>
+                <p:dataTable var="venue" value="#{venueListBean.venues}">
+
+                    <p:column headerText="Id">
+                        <h:outputText value="#{venue.venueId}" />
+                    </p:column>
+
+                    <p:column headerText="Name">
+                        <h:outputText value="#{venue.name}" />
+                    </p:column>
+
+                    <p:column headerText="Location">
+                        <h:outputText value="#{venue.location.name}" />
+                    </p:column>
+                        <p:column headerText="Details">
+                            <p:link href="#{request.contextPath}/ufo/venueDetail.xhtml?id=#{venue.venueId}">Details anzeigen</p:link>
+                        </p:column>
+                </p:dataTable>
             </h:form>
         </h:panelGroup>
     </ui:define>

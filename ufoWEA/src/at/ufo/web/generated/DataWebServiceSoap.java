@@ -129,4 +129,32 @@ public interface DataWebServiceSoap {
     @ResponseWrapper(localName = "GetAllPerformanceDatesResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetAllPerformanceDatesResponse")
     public ArrayOfString getAllPerformanceDates();
 
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns at.ufo.web.generated.ArrayOfPerformance
+     */
+    @WebMethod(action = "http://ufo.untitled-no1.at/webservice/getPerformancesPerArtist")
+    @WebResult(name = "getPerformancesPerArtistResult", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+    @RequestWrapper(localName = "getPerformancesPerArtist", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetPerformancesPerArtist")
+    @ResponseWrapper(localName = "getPerformancesPerArtistResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetPerformancesPerArtistResponse")
+    public ArrayOfPerformance getPerformancesPerArtist(
+        @WebParam(name = "id", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+        int id);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns at.ufo.web.generated.ArrayOfPerformance
+     */
+    @WebMethod(action = "http://ufo.untitled-no1.at/webservice/getPerformancesPerVenue")
+    @WebResult(name = "getPerformancesPerVenueResult", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+    @RequestWrapper(localName = "getPerformancesPerVenue", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetPerformancesPerVenue")
+    @ResponseWrapper(localName = "getPerformancesPerVenueResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetPerformancesPerVenueResponse")
+    public ArrayOfPerformance getPerformancesPerVenue(
+        @WebParam(name = "id", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+        String id);
+
 }
