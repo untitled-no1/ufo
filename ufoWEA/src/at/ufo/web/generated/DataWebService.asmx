@@ -2,6 +2,64 @@
 <wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ufo.untitled-no1.at/webservice/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://ufo.untitled-no1.at/webservice/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://ufo.untitled-no1.at/webservice/">
+      <s:element name="LogIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passwordHash" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogInResult" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAdmin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsArtist" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Artist" type="tns:Artist" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Artist">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ArtistId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="tns:Category" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="tns:Country" />
+          <s:element minOccurs="0" maxOccurs="1" name="Picture" type="tns:BlobData" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromoVideo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Category">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Color" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Country">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BlobData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataStream" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="HelloWorld">
         <s:complexType />
       </s:element>
@@ -26,36 +84,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="Artist">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="ArtistId" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Category" type="tns:Category" />
-          <s:element minOccurs="0" maxOccurs="1" name="Country" type="tns:Country" />
-          <s:element minOccurs="0" maxOccurs="1" name="Picture" type="tns:BlobData" />
-          <s:element minOccurs="0" maxOccurs="1" name="PromoVideo" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Category">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="CategoryId" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Country">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="BlobData">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="DataStream" type="s:base64Binary" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="GetArtistById">
         <s:complexType>
           <s:sequence>
@@ -212,8 +240,28 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetPerformancesPerDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="d" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPerformancesPerDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPerformancesPerDateResult" type="tns:ArrayOfPerformance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="LogInSoapIn">
+    <wsdl:part name="parameters" element="tns:LogIn" />
+  </wsdl:message>
+  <wsdl:message name="LogInSoapOut">
+    <wsdl:part name="parameters" element="tns:LogInResponse" />
+  </wsdl:message>
   <wsdl:message name="HelloWorldSoapIn">
     <wsdl:part name="parameters" element="tns:HelloWorld" />
   </wsdl:message>
@@ -274,7 +322,17 @@
   <wsdl:message name="getPerformancesPerVenueSoapOut">
     <wsdl:part name="parameters" element="tns:getPerformancesPerVenueResponse" />
   </wsdl:message>
+  <wsdl:message name="GetPerformancesPerDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPerformancesPerDate" />
+  </wsdl:message>
+  <wsdl:message name="GetPerformancesPerDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPerformancesPerDateResponse" />
+  </wsdl:message>
   <wsdl:portType name="DataWebServiceSoap">
+    <wsdl:operation name="LogIn">
+      <wsdl:input message="tns:LogInSoapIn" />
+      <wsdl:output message="tns:LogInSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
@@ -315,9 +373,22 @@
       <wsdl:input message="tns:getPerformancesPerVenueSoapIn" />
       <wsdl:output message="tns:getPerformancesPerVenueSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetPerformancesPerDate">
+      <wsdl:input message="tns:GetPerformancesPerDateSoapIn" />
+      <wsdl:output message="tns:GetPerformancesPerDateSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="DataWebServiceSoap" type="tns:DataWebServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LogIn">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/LogIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="HelloWorld">
       <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/HelloWorld" style="document" />
       <wsdl:input>
@@ -408,9 +479,27 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetPerformancesPerDate">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/GetPerformancesPerDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="DataWebServiceSoap12" type="tns:DataWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LogIn">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/LogIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="HelloWorld">
       <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/HelloWorld" style="document" />
       <wsdl:input>
@@ -494,6 +583,15 @@
     </wsdl:operation>
     <wsdl:operation name="getPerformancesPerVenue">
       <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/getPerformancesPerVenue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformancesPerDate">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetPerformancesPerDate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

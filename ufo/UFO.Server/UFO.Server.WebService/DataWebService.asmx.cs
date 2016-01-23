@@ -20,14 +20,18 @@ namespace UFO.Server.WebService
     // [System.Web.Script.Services.ScriptService]
     public class DataWebService : System.Web.Services.WebService
     {
-        private IGetData dataProxy;
+        private IGetData getDataProxy;
 
         public DataWebService()
         {
-            dataProxy = BusinessLayerFactory.CreateGetDataInstanceWeb();
+            getDataProxy = BusinessLayerFactory.CreateGetDataInstanceWeb();
         }
 
-
+        [WebMethod]
+        public User LogIn(string user, string passwordHash)
+        {
+            return getDataProxy.VerifyUser(user, passwordHash);
+        }
 
 
         [WebMethod]
@@ -39,44 +43,44 @@ namespace UFO.Server.WebService
         [WebMethod]
         public Artist GetArtistByName(string name)
         {
-            return dataProxy.GetArtistByName(name);
+            return getDataProxy.GetArtistByName(name);
         }
 
         [WebMethod]
         public Artist GetArtistById(int id)
         {
-            return dataProxy.GetArtistById(id);
+            return getDataProxy.GetArtistById(id);
         }
 
         [WebMethod]
         public List<Artist> GetArtistsPage(Page ArtistPage)
         {
-            var tmp = dataProxy.GetArtistsPage(ArtistPage);
+            var tmp = getDataProxy.GetArtistsPage(ArtistPage);
             return tmp;
         }
 
         [WebMethod]
         public Venue GetVenueById(string id)
         {
-            return dataProxy.GetVenueById(id);
+            return getDataProxy.GetVenueById(id);
         }
 
         [WebMethod]
         public List<Venue> GetVenuesPage(Page VenuePage)
         {
-            return dataProxy.GetVenuesPage(VenuePage);
+            return getDataProxy.GetVenuesPage(VenuePage);
         }
 
         [WebMethod]
         public List<Performance> GetPerformancesPage(Page PerformancePage)
         {
-            return dataProxy.GetPerformancePage(PerformancePage);
+            return getDataProxy.GetPerformancePage(PerformancePage);
         }
 
         [WebMethod]
         public List<string> GetAllPerformanceDates()
         {
-            var performances = dataProxy.GetAllPerformances();
+            var performances = getDataProxy.GetAllPerformances();
             List<string> dates = new List<string>();
             foreach (var s in performances)
             {
@@ -90,13 +94,19 @@ namespace UFO.Server.WebService
         [WebMethod]
         public List<Performance> getPerformancesPerArtist(int id)
         {
-            return dataProxy.GetPerformancesPerArtist(id);
+            return getDataProxy.GetPerformancesPerArtist(id);
         }
 
         [WebMethod]
         public List<Performance> getPerformancesPerVenue(string id)
         {
-            return dataProxy.GetPerformancesPerVenue(id);
+            return getDataProxy.GetPerformancesPerVenue(id);
         }
+
+        [WebMethod]
+        public List<Performance> GetPerformancesPerDate(DateTime d)
+        {
+            return getDataProxy.GetPerformancesPerDate(d);
+        } 
     }
 }

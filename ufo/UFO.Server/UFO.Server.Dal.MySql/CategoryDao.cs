@@ -41,7 +41,8 @@ namespace UFO.Server.Dal.MySql
             var category = new Category
             {
                 CategoryId = _dbCommProvider.CastDbObject<string>(dataReader, "CategoryId"),
-                Name = _dbCommProvider.CastDbObject<string>(dataReader, "Name")
+                Name = _dbCommProvider.CastDbObject<string>(dataReader, "Name"),
+                Color = _dbCommProvider.CastDbObject<string>(dataReader, "Color")
             };
             return category;
         }
@@ -51,7 +52,8 @@ namespace UFO.Server.Dal.MySql
             return new Dictionary<string, QueryParameter>
             {
                 {"?CategoryId", new QueryParameter {ParameterValue = entity.CategoryId}},
-                {"?Name", new QueryParameter {ParameterValue = entity.Name}}
+                {"?Name", new QueryParameter {ParameterValue = entity.Name}},
+                {"?Color", new QueryParameter {ParameterValue = entity.Color} }
             };
         }
 

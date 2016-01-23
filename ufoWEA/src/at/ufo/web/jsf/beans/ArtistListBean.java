@@ -11,6 +11,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -34,6 +35,7 @@ public class ArtistListBean implements Serializable {
             artistPage = Helper.CalcNextPage(artistPage);
             tmp = Session.GetSoap().getArtistsPage(artistPage);
         }
+        Collections.sort(artists, (Artist a1, Artist a2) -> a1.getName().compareTo(a2.getName()));
     }
 
     public List<Artist> getArtists() {

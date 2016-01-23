@@ -6,6 +6,7 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -22,6 +23,23 @@ import javax.xml.ws.ResponseWrapper;
 })
 public interface DataWebServiceSoap {
 
+
+    /**
+     * 
+     * @param user
+     * @param passwordHash
+     * @return
+     *     returns at.ufo.web.generated.User
+     */
+    @WebMethod(operationName = "LogIn", action = "http://ufo.untitled-no1.at/webservice/LogIn")
+    @WebResult(name = "LogInResult", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+    @RequestWrapper(localName = "LogIn", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.LogIn")
+    @ResponseWrapper(localName = "LogInResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.LogInResponse")
+    public User logIn(
+        @WebParam(name = "user", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+        String user,
+        @WebParam(name = "passwordHash", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+        String passwordHash);
 
     /**
      * 
@@ -156,5 +174,19 @@ public interface DataWebServiceSoap {
     public ArrayOfPerformance getPerformancesPerVenue(
         @WebParam(name = "id", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
         String id);
+
+    /**
+     * 
+     * @param d
+     * @return
+     *     returns at.ufo.web.generated.ArrayOfPerformance
+     */
+    @WebMethod(operationName = "GetPerformancesPerDate", action = "http://ufo.untitled-no1.at/webservice/GetPerformancesPerDate")
+    @WebResult(name = "GetPerformancesPerDateResult", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+    @RequestWrapper(localName = "GetPerformancesPerDate", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetPerformancesPerDate")
+    @ResponseWrapper(localName = "GetPerformancesPerDateResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.GetPerformancesPerDateResponse")
+    public ArrayOfPerformance getPerformancesPerDate(
+        @WebParam(name = "d", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+        XMLGregorianCalendar d);
 
 }

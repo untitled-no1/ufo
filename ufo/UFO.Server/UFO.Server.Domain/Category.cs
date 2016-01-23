@@ -28,6 +28,8 @@ namespace UFO.Server.Domain
 
         public string Name { get; set; }
 
+        public string Color { get; set; }
+
         public override string ToString()
         {
             return $"CategoryId: {CategoryId}, CategoryName: {Name}";

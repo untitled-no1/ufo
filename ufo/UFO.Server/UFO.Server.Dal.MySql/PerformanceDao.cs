@@ -63,7 +63,8 @@ namespace UFO.Server.Dal.MySql
                 artist.Category = new Category
                 {
                     CategoryId = _dbCommProvider.CastDbObject<string>(dataReader, "CategoryId"),
-                    Name = _dbCommProvider.CastDbObject<string>(dataReader, "CategoryName")
+                    Name = _dbCommProvider.CastDbObject<string>(dataReader, "CategoryName"),
+                    Color = _dbCommProvider.CastDbObject<string>(dataReader, "CategoryColor")
                 };
             }
             performance.Artist = artist;
@@ -217,6 +218,26 @@ namespace UFO.Server.Dal.MySql
             return performances.Any()
                 ? DaoResponse.QuerySuccessful<List<Performance>>(performances)
                 : DaoResponse.QueryEmptyResult<List<Performance>>();
+        }
+
+        [DaoExceptionHandler(typeof(List<Performance>))]
+        public DaoResponse<List<Performance>> SelectByDate(DateTime date)
+        {
+            var performances = new List<Performance>();
+            var parameter = new Dictionary<string, QueryParameter>
+            {
+                {"?Date", new QueryParameter {ParameterValue = $"%{date.ToString(Constants.CommonDateFormatDay)}%"}}
+            };
+            using (var connection = _dbCommProvider.CreateDbConnection())
+            using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.SelectPerformanceByDate, parameter))
+            using (var dataReader = _dbCommProvider.ExecuteReader(command))
+            {
+                while (dataReader.Read())
+                {
+                    performances.Add(CreatePerformanceObject(dataReader));
+                }
+            }
+            return performances.Any() ? DaoResponse.QuerySuccessful(performances) : DaoResponse.QueryEmptyResult<List<Performance>>();
         }
 
         [DaoExceptionHandler(typeof(List<Performance>))]

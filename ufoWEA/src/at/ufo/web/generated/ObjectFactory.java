@@ -110,11 +110,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetPerformancesPerDate }
+     * 
+     */
+    public GetPerformancesPerDate createGetPerformancesPerDate() {
+        return new GetPerformancesPerDate();
+    }
+
+    /**
      * Create an instance of {@link GetPerformancesPerArtist }
      * 
      */
     public GetPerformancesPerArtist createGetPerformancesPerArtist() {
         return new GetPerformancesPerArtist();
+    }
+
+    /**
+     * Create an instance of {@link LogIn }
+     * 
+     */
+    public LogIn createLogIn() {
+        return new LogIn();
     }
 
     /**
@@ -139,6 +155,30 @@ public class ObjectFactory {
      */
     public HelloWorld createHelloWorld() {
         return new HelloWorld();
+    }
+
+    /**
+     * Create an instance of {@link GetPerformancesPerDateResponse }
+     * 
+     */
+    public GetPerformancesPerDateResponse createGetPerformancesPerDateResponse() {
+        return new GetPerformancesPerDateResponse();
+    }
+
+    /**
+     * Create an instance of {@link LogInResponse }
+     * 
+     */
+    public LogInResponse createLogInResponse() {
+        return new LogInResponse();
+    }
+
+    /**
+     * Create an instance of {@link User }
+     * 
+     */
+    public User createUser() {
+        return new User();
     }
 
     /**

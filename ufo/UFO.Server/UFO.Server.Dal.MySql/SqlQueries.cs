@@ -73,7 +73,10 @@ namespace UFO.Server.Dal.MySql
                                                                 FROM performance
                                                                WHERE Date BETWEEN CAST(?FromTime AS DATE) AND CAST(?ToTime AS DATE)
                                                                  AND ArtistId=?ArtistId";
-
+        public const string SelectPerformanceByDate = @"SELECT * 
+                                                          FROM performanceview 
+                                                         WHERE Date LIKE ?Date
+                                                         ORDER BY Date DESC";
 
         // Venue
         public const string SelectAllVenues = @"SELECT *
@@ -158,8 +161,8 @@ namespace UFO.Server.Dal.MySql
         public const string DeleteCategory = @"DELETE FROM category
                                                      WHERE CategoryId=?CategoryId";
 
-        public const string InsertCategory = @"INSERT INTO category (CategoryId, Name)
-                                                    VALUES (?CategoryId, ?Name)";
+        public const string InsertCategory = @"INSERT INTO category (CategoryId, Name, Color)
+                                                    VALUES (?CategoryId, ?Name, ?Color)";
 
         
         // Location

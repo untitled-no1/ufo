@@ -6,19 +6,55 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
-
-<c:metadata>
-    </c:metadata>
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:x="http://java.sun.com/jsp/jstl/core">
 
 <ui:composition template="WEB-INF/templates/basicTemplate.xhtml">
     <ui:define name="content">
 
-        <h:panelGrid style="width:70%; margin: auto; align-content: center;">
-        <p>To Login</p>
+        <h:form id="loginForm">
+            <x:choose>
+                <x:when test="#{loginBean.loggedIn}">
+                    <h:panelGrid style="width:70%; margin: auto; align-content: center;">
+                        <h:outputText value="Email: " style="font-weight:bold"/>
+                        <h:outputText value="#{loginBean.loggedUser.EMail}" />
+                        <br />
+                        <h:outputText value="Vorname: " style="font-weight:bold"/>
+                        <h:outputText value="#{loginBean.loggedUser.firstName}" />
+                        <br />
+                        <h:outputText value="Nachname: " style="font-weight:bold"/>
+                        <h:outputText value="#{loginBean.loggedUser.lastName}" />
+                        <br />
+                        <h:outputText value="Id: " style="font-weight:bold"/>
+                        <h:outputText value="#{loginBean.loggedUser.userId}" />
+                        <br />
+                        <p:commandButton action="#{loginBean.LogoutClick}" value="Logout" update="loginForm"/>
+                    </h:panelGrid>
+                </x:when>
+                <x:otherwise>
+                    <h:panelGrid style="width:70%; margin: auto; align-content: center;">
+
+                        <h:outputText value="Username" />
+
+                        <p:inputText id="username" value="#{loginBean.username}" />
+
+                        <p:spacer/>
 
 
-        </h:panelGrid>
+                        <h:outputText value="Password" />
+
+                        <p:password id="password" value="#{loginBean.passwordHash}"  feedback="false"/>
+
+                        <p:spacer/>
+
+                        <p:commandButton action="#{loginBean.LoginClick}" value="Login" update="loginForm"/>
+
+                    </h:panelGrid>
+                </x:otherwise>
+            </x:choose>
+
+
+        </h:form>
 
 
     </ui:define>

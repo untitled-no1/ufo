@@ -39,6 +39,18 @@ namespace UFO.Server.BLL.Impl
             return userDao.SelectAll().ResultObject;
         }
 
+        public User VerifyUser(string name, string passwordHash)
+        {
+            var dbUser = userDao.SelectByEmail(name).ResultObject;
+            if (dbUser == null)
+                return null;
+            User userToLog = new User {EMail = name, UserId = dbUser.UserId, Password = passwordHash};
+            var loggedIn = userDao.VerifyAdminCredentials(userToLog).ResultObject;
+            if (!loggedIn)
+                return null;
+            return dbUser;
+        }
+
         public Artist GetArtistByName(string name)
         {
             return artistDao.SelectByName(name).ResultObject;
@@ -118,6 +130,11 @@ namespace UFO.Server.BLL.Impl
         public List<Performance> GetPerformancesPerVenue(string id)
         {
             return performanceDao.SelectByVenue(id).ResultObject;
+        }
+
+        public List<Performance> GetPerformancesPerDate(DateTime d)
+        {
+            return performanceDao.SelectByDate(d).ResultObject;
         }
     }
 }

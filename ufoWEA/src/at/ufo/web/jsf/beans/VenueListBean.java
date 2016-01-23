@@ -12,6 +12,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -35,6 +36,7 @@ public class VenueListBean implements Serializable {
             venuePage = Helper.CalcNextPage(venuePage);
             tmp = Session.GetSoap().getVenuesPage(venuePage);
         }
+        Collections.sort(venues, (Venue v1, Venue v2) -> v1.getVenueId().compareTo(v2.getVenueId()));
     }
 
     public List<Venue> getVenues() {

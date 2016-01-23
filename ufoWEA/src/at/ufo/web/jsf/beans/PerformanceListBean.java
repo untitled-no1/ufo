@@ -4,15 +4,17 @@ import at.ufo.web.generated.*;
 import at.ufo.web.utils.Helper;
 import at.ufo.web.utils.Session;
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
+import org.primefaces.event.SelectEvent;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Flow on 22.01.2016.
@@ -30,11 +32,12 @@ public class PerformanceListBean implements Serializable {
     private Artist artist;
     private String venueId;
     private Venue venue = new Venue();
-
     private SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm");
     private SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
+    private SimpleDateFormat fullDateFormatter = new SimpleDateFormat("dd.MM.yyyy HH:mm");
 
     private List<String> hours = new ArrayList<>();
+    private Date date = Calendar.getInstance().getTime();
 
     public PerformanceListBean() {
         for (int i = 14; i < 24; i++) {
@@ -115,7 +118,28 @@ public class PerformanceListBean implements Serializable {
     }
 
 
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void dateChange(SelectEvent event)  {
+        this.date = (Date)event.getObject();
+        GregorianCalendar gcal = new GregorianCalendar();
+        gcal.setTime(date);
+        XMLGregorianCalendar xgcal;
+        try {
+            xgcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
+            performances = Session.GetSoap().getPerformancesPerDate(xgcal).getPerformance();
+        } catch(DatatypeConfigurationException e){
+            performances = null;
+            System.out.println("Date not valid");
+        }
+
+    }
 
 
 }

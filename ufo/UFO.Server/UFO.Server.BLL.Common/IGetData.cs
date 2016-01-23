@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UFO.Server.Domain;
 
 namespace UFO.Server.BLL.Common
@@ -7,8 +8,9 @@ namespace UFO.Server.BLL.Common
     {
         // User
         List<User> GetAllUsers();
+        User VerifyUser(string name, string passwordHash);
 
-        // Artist
+            // Artist
         Artist GetArtistById(int id);
         Artist GetArtistByName(string name);
         List<Artist> GetAllArtists();
@@ -36,5 +38,6 @@ namespace UFO.Server.BLL.Common
         List<Performance> GetPerformancePage(Page page);
         List<Performance> GetPerformancesPerArtist(int id);
         List<Performance> GetPerformancesPerVenue(string id);
+        List<Performance> GetPerformancesPerDate(DateTime d);
     }
 }

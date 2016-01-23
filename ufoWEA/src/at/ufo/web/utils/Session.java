@@ -2,6 +2,7 @@ package at.ufo.web.utils;
 
 import at.ufo.web.generated.DataWebService;
 import at.ufo.web.generated.DataWebServiceSoap;
+import at.ufo.web.generated.User;
 
 /**
  * Created by Flow on 22.01.2016.

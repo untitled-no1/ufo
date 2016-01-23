@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="CategoryId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Color" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,7 +31,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Category", propOrder = {
     "categoryId",
-    "name"
+    "name",
+    "color"
 })
 public class Category {
 
@@ -38,6 +40,8 @@ public class Category {
     protected String categoryId;
     @XmlElement(name = "Name")
     protected String name;
+    @XmlElement(name = "Color")
+    protected String color;
 
     /**
      * Ruft den Wert der categoryId-Eigenschaft ab.
@@ -85,6 +89,30 @@ public class Category {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Ruft den Wert der color-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * Legt den Wert der color-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setColor(String value) {
+        this.color = value;
     }
 
 }
