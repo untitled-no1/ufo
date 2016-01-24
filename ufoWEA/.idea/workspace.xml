@@ -2,67 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="329297eb-cd92-4e56-8f99-154ed4bdc21d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/ArrayOfArtist.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/ArrayOfPerformance.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/ArrayOfString.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/ArrayOfVenue.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Artist.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/BlobData.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Category.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Country.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebService.asmx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebServiceSoap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetAllPerformanceDates.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetAllPerformanceDatesResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetArtistById.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetArtistByIdResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetArtistByName.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetArtistByNameResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetArtistsPage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetArtistsPageResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPageResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerArtist.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerArtistResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerDate.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerDateResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerVenue.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerVenueResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetVenueById.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetVenueByIdResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetVenuesPage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetVenuesPageResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/HelloWorld.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/HelloWorldResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Location.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/LogIn.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/LogInResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Page.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Performance.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Venue.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/package-info.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ufo/ufo.war" afterPath="$PROJECT_DIR$/out/artifacts/ufo/ufo.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebServiceSoap.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebServiceSoap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/ObjectFactory.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/ObjectFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/PerformanceListBean.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/PerformanceListBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/SessionBean.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/SessionBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/utils/Helper.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/utils/Helper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebServiceSoap.class" afterPath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebServiceSoap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/ObjectFactory.class" afterPath="$PROJECT_DIR$/src/at/ufo/web/generated/ObjectFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Database/sql/ufo_insert_performance_data.sql" afterPath="$PROJECT_DIR$/../ufo/UFO.Database/sql/ufo_insert_performance_data.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Impl/ModifyData.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Impl/ModifyData.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.WebService/DataWebService.asmx.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.WebService/DataWebService.asmx.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebService.asmx" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebService.asmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/PerformanceListBean.java" afterPath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/PerformanceListBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/SessionBean.java" afterPath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/SessionBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/utils/Helper.java" afterPath="$PROJECT_DIR$/src/at/ufo/web/utils/Helper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/templates/basicTemplate.xhtml" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/basicTemplate.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/templates/header.xhtml" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/header.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/performancelist.xhtml" afterPath="$PROJECT_DIR$/web/performancelist.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ChangePerformanceView.java" afterPath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ChangePerformanceView.java" />
     </list>
     <ignored path="ufoweb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -161,42 +101,42 @@
       <file leaf-file-name="ChangePerformanceView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ChangePerformanceView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6504673">
-              <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.7140187">
+              <caret line="74" column="30" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2645#2646#0" expanded="true" />
-                <element signature="e#2674#2675#0" expanded="true" />
-                <element signature="e#2724#2725#0" expanded="true" />
-                <element signature="e#2760#2761#0" expanded="true" />
-                <element signature="e#2798#2799#0" expanded="true" />
-                <element signature="e#2832#2833#0" expanded="true" />
-                <element signature="e#2886#2887#0" expanded="true" />
-                <element signature="e#2932#2933#0" expanded="true" />
-                <element signature="e#2975#2976#0" expanded="true" />
-                <element signature="e#3009#3010#0" expanded="true" />
-                <element signature="e#3068#3069#0" expanded="true" />
-                <element signature="e#3114#3115#0" expanded="true" />
-                <element signature="e#3141#3142#0" expanded="true" />
-                <element signature="e#3167#3168#0" expanded="true" />
-                <element signature="e#3202#3203#0" expanded="true" />
-                <element signature="e#3232#3233#0" expanded="true" />
-                <element signature="e#3261#3262#0" expanded="true" />
-                <element signature="e#3289#3290#0" expanded="true" />
-                <element signature="e#3328#3329#0" expanded="true" />
-                <element signature="e#3362#3363#0" expanded="true" />
-                <element signature="e#3390#3391#0" expanded="true" />
-                <element signature="e#3417#3418#0" expanded="true" />
-                <element signature="e#3454#3455#0" expanded="true" />
-                <element signature="e#3486#3487#0" expanded="true" />
-                <element signature="e#3514#3515#0" expanded="true" />
-                <element signature="e#3541#3542#0" expanded="true" />
-                <element signature="e#3578#3579#0" expanded="true" />
-                <element signature="e#3610#3611#0" expanded="true" />
-                <element signature="e#3643#3644#0" expanded="true" />
-                <element signature="e#3674#3675#0" expanded="true" />
-                <element signature="e#3719#3720#0" expanded="true" />
-                <element signature="e#3752#3753#0" expanded="true" />
+                <element signature="e#2650#2651#0" expanded="true" />
+                <element signature="e#2679#2680#0" expanded="true" />
+                <element signature="e#2729#2730#0" expanded="true" />
+                <element signature="e#2765#2766#0" expanded="true" />
+                <element signature="e#2803#2804#0" expanded="true" />
+                <element signature="e#2837#2838#0" expanded="true" />
+                <element signature="e#2891#2892#0" expanded="true" />
+                <element signature="e#2937#2938#0" expanded="true" />
+                <element signature="e#2980#2981#0" expanded="true" />
+                <element signature="e#3014#3015#0" expanded="true" />
+                <element signature="e#3073#3074#0" expanded="true" />
+                <element signature="e#3119#3120#0" expanded="true" />
+                <element signature="e#3146#3147#0" expanded="true" />
+                <element signature="e#3172#3173#0" expanded="true" />
+                <element signature="e#3207#3208#0" expanded="true" />
+                <element signature="e#3237#3238#0" expanded="true" />
+                <element signature="e#3266#3267#0" expanded="true" />
+                <element signature="e#3294#3295#0" expanded="true" />
+                <element signature="e#3333#3334#0" expanded="true" />
+                <element signature="e#3367#3368#0" expanded="true" />
+                <element signature="e#3395#3396#0" expanded="true" />
+                <element signature="e#3422#3423#0" expanded="true" />
+                <element signature="e#3459#3460#0" expanded="true" />
+                <element signature="e#3491#3492#0" expanded="true" />
+                <element signature="e#3519#3520#0" expanded="true" />
+                <element signature="e#3546#3547#0" expanded="true" />
+                <element signature="e#3583#3584#0" expanded="true" />
+                <element signature="e#3615#3616#0" expanded="true" />
+                <element signature="e#3648#3649#0" expanded="true" />
+                <element signature="e#3679#3680#0" expanded="true" />
+                <element signature="e#3724#3725#0" expanded="true" />
+                <element signature="e#3757#3758#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1039,16 +979,16 @@
       <workItem from="1453484249743" duration="21383000" />
       <workItem from="1453551736402" duration="8525000" />
       <workItem from="1453561425106" duration="1896000" />
-      <workItem from="1453563878261" duration="32619000" />
+      <workItem from="1453563878261" duration="33990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85539000" />
+    <option name="totallyTimeSpent" value="86910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1059,7 +999,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38537118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38537118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1535,42 +1475,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ChangePerformanceView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6504673">
-          <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.7140187">
+          <caret line="74" column="30" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2645#2646#0" expanded="true" />
-            <element signature="e#2674#2675#0" expanded="true" />
-            <element signature="e#2724#2725#0" expanded="true" />
-            <element signature="e#2760#2761#0" expanded="true" />
-            <element signature="e#2798#2799#0" expanded="true" />
-            <element signature="e#2832#2833#0" expanded="true" />
-            <element signature="e#2886#2887#0" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#2975#2976#0" expanded="true" />
-            <element signature="e#3009#3010#0" expanded="true" />
-            <element signature="e#3068#3069#0" expanded="true" />
-            <element signature="e#3114#3115#0" expanded="true" />
-            <element signature="e#3141#3142#0" expanded="true" />
-            <element signature="e#3167#3168#0" expanded="true" />
-            <element signature="e#3202#3203#0" expanded="true" />
-            <element signature="e#3232#3233#0" expanded="true" />
-            <element signature="e#3261#3262#0" expanded="true" />
-            <element signature="e#3289#3290#0" expanded="true" />
-            <element signature="e#3328#3329#0" expanded="true" />
-            <element signature="e#3362#3363#0" expanded="true" />
-            <element signature="e#3390#3391#0" expanded="true" />
-            <element signature="e#3417#3418#0" expanded="true" />
-            <element signature="e#3454#3455#0" expanded="true" />
-            <element signature="e#3486#3487#0" expanded="true" />
-            <element signature="e#3514#3515#0" expanded="true" />
-            <element signature="e#3541#3542#0" expanded="true" />
-            <element signature="e#3578#3579#0" expanded="true" />
-            <element signature="e#3610#3611#0" expanded="true" />
-            <element signature="e#3643#3644#0" expanded="true" />
-            <element signature="e#3674#3675#0" expanded="true" />
-            <element signature="e#3719#3720#0" expanded="true" />
-            <element signature="e#3752#3753#0" expanded="true" />
+            <element signature="e#2650#2651#0" expanded="true" />
+            <element signature="e#2679#2680#0" expanded="true" />
+            <element signature="e#2729#2730#0" expanded="true" />
+            <element signature="e#2765#2766#0" expanded="true" />
+            <element signature="e#2803#2804#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#2891#2892#0" expanded="true" />
+            <element signature="e#2937#2938#0" expanded="true" />
+            <element signature="e#2980#2981#0" expanded="true" />
+            <element signature="e#3014#3015#0" expanded="true" />
+            <element signature="e#3073#3074#0" expanded="true" />
+            <element signature="e#3119#3120#0" expanded="true" />
+            <element signature="e#3146#3147#0" expanded="true" />
+            <element signature="e#3172#3173#0" expanded="true" />
+            <element signature="e#3207#3208#0" expanded="true" />
+            <element signature="e#3237#3238#0" expanded="true" />
+            <element signature="e#3266#3267#0" expanded="true" />
+            <element signature="e#3294#3295#0" expanded="true" />
+            <element signature="e#3333#3334#0" expanded="true" />
+            <element signature="e#3367#3368#0" expanded="true" />
+            <element signature="e#3395#3396#0" expanded="true" />
+            <element signature="e#3422#3423#0" expanded="true" />
+            <element signature="e#3459#3460#0" expanded="true" />
+            <element signature="e#3491#3492#0" expanded="true" />
+            <element signature="e#3519#3520#0" expanded="true" />
+            <element signature="e#3546#3547#0" expanded="true" />
+            <element signature="e#3583#3584#0" expanded="true" />
+            <element signature="e#3615#3616#0" expanded="true" />
+            <element signature="e#3648#3649#0" expanded="true" />
+            <element signature="e#3679#3680#0" expanded="true" />
+            <element signature="e#3724#3725#0" expanded="true" />
+            <element signature="e#3757#3758#0" expanded="true" />
           </folding>
         </state>
       </provider>

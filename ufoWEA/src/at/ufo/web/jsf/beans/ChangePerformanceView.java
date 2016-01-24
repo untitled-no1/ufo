@@ -72,7 +72,7 @@ public class ChangePerformanceView implements Serializable {
         }
 
         GregorianCalendar gcal = new GregorianCalendar();
-        gcal.set(year, month, day, hour, 0);
+        gcal.set(year, month-1, day, hour, 0, 0);
         XMLGregorianCalendar xgcal;
         try {
             xgcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
