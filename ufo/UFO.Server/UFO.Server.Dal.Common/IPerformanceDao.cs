@@ -29,5 +29,6 @@ namespace UFO.Server.Dal.Common
         DaoResponse<Performance> SelectById(DateTime dateTime, int artistId);
         DaoResponse<List<Performance>> SelectPage(Page page);
         DaoResponse<List<Performance>> SelectByDate(DateTime d);
+        Performance VerifyPerformanceValue(Performance entity);
     }
 }

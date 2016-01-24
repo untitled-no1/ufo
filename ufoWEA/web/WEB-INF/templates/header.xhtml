@@ -1,7 +1,8 @@
 <nav class="navbar navbar-default"
      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
      xmlns:h="http://java.sun.com/jsf/html"
-     xmlns:p="http://primefaces.org/ui">
+     xmlns:p="http://primefaces.org/ui"
+     xmlns:x="http://java.sun.com/jsp/jstl/core">
 
     <div class="container-fluid">
 
@@ -15,7 +16,14 @@
                 <li><a href="#{request.contextPath}/ufo/index.xhtml">Tagesprogramm</a></li>
                 <li><a href="#{request.contextPath}/ufo/artistlist.xhtml">Künstler</a></li>
                 <li><a href="#{request.contextPath}/ufo/venuelist.xhtml">Spielstätten</a></li>
-                <li><a href="#{request.contextPath}/ufo/login.xhtml">Login</a></li>
+                <x:choose>
+                    <x:when test="#{sessionBean.loggedIn}">
+                        <li><a href="#{request.contextPath}/ufo/login.xhtml">Benutzerkonto</a></li>
+                    </x:when>
+                    <x:otherwise>
+                        <li><a href="#{request.contextPath}/ufo/login.xhtml">Login</a></li>
+                    </x:otherwise>
+                </x:choose>
             </ul>
         </div>
     </div>

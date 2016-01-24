@@ -25,6 +25,8 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPageResponse.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerArtist.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerArtistResponse.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerDate.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerDateResponse.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerVenue.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetPerformancesPerVenueResponse.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/GetVenueById.java" afterPath="" />
@@ -34,42 +36,33 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/HelloWorld.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/HelloWorldResponse.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Location.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/LogIn.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/LogInResponse.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/ObjectFactory.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Page.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Performance.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/User.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Venue.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/package-info.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ufo/ufo.war" afterPath="$PROJECT_DIR$/out/artifacts/ufo/ufo.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/Category.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/Category.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebServiceSoap.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebServiceSoap.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/ObjectFactory.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/ObjectFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/ArtistListBean.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/ArtistListBean.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/PerformanceListBean.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/PerformanceListBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/VenueListBean.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/VenueListBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/utils/Session.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/utils/Session.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/Category.class" afterPath="$PROJECT_DIR$/src/at/ufo/web/generated/Category.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/SessionBean.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/jsf/beans/SessionBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/utils/Helper.class" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/utils/Helper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebServiceSoap.class" afterPath="$PROJECT_DIR$/src/at/ufo/web/generated/DataWebServiceSoap.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/generated/ObjectFactory.class" afterPath="$PROJECT_DIR$/src/at/ufo/web/generated/ObjectFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Common/IGetData.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Common/IGetData.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Impl/GetData.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Impl/GetData.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.Common/IPerformanceDao.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.Common/IPerformanceDao.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/CategoryDao.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/CategoryDao.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/PerformanceDao.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/PerformanceDao.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/SqlQueries.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Dal.MySql/SqlQueries.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Domain/Category.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Domain/Category.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Domain/Constants.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.Domain/Constants.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Database/sql/ufo_insert_performance_data.sql" afterPath="$PROJECT_DIR$/../ufo/UFO.Database/sql/ufo_insert_performance_data.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Impl/ModifyData.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.BLL.Impl/ModifyData.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.WebService/DataWebService.asmx.cs" afterPath="$PROJECT_DIR$/../ufo/UFO.Server/UFO.Server.WebService/DataWebService.asmx.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebService.asmx" afterPath="$PROJECT_DIR$/out/production/ufoWEA/at/ufo/web/generated/DataWebService.asmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ufoWEA/css/ufo/ufo-base-style.css" afterPath="$PROJECT_DIR$/out/production/ufoWEA/css/ufo/ufo-base-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistListBean.java" afterPath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistListBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/PerformanceListBean.java" afterPath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/PerformanceListBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/VenueListBean.java" afterPath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/VenueListBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/utils/Session.java" afterPath="$PROJECT_DIR$/src/at/ufo/web/utils/Session.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/SessionBean.java" afterPath="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/SessionBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/ufo/web/utils/Helper.java" afterPath="$PROJECT_DIR$/src/at/ufo/web/utils/Helper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/templates/basicTemplate.xhtml" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/basicTemplate.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.xhtml" afterPath="$PROJECT_DIR$/web/login.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/templates/header.xhtml" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/header.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/performancelist.xhtml" afterPath="$PROJECT_DIR$/web/performancelist.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/css/ufo/ufo-base-style.css" afterPath="$PROJECT_DIR$/web/resources/css/ufo/ufo-base-style.css" />
     </list>
     <ignored path="ufoweb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,29 +85,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PerformanceListBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/PerformanceListBean.java">
+      <file leaf-file-name="Helper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/ufo/web/utils/Helper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2775#2776#0" expanded="true" />
-                <element signature="e#3809#3810#0" expanded="true" />
-                <element signature="e#3841#3842#0" expanded="true" />
-                <element signature="e#3870#3871#0" expanded="true" />
-                <element signature="e#3897#3898#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <file leaf-file-name="index.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6385069">
-              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+            <state vertical-scroll-proportion="-3.2692308">
+              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="50" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/templates/header.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.115385">
+              <caret line="15" column="91" selection-start-line="15" selection-start-column="91" selection-end-line="15" selection-end-column="91" />
+              <folding>
+                <marker date="1453592268834" expanded="true" signature="851:1230" placeholder="..." />
+                <marker date="1453592268834" expanded="true" signature="911:1041" placeholder="..." />
+                <marker date="1453592268834" expanded="true" signature="1075:1202" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PerformanceListBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/PerformanceListBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="70" column="52" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2961#2962#0" expanded="true" />
+                <element signature="e#2996#2997#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/LoginBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="25" selection-end-column="91" />
+              <folding>
+                <element signature="e#1606#1607#0" expanded="true" />
+                <element signature="e#1642#1643#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,45 +151,63 @@
       <file leaf-file-name="performancelist.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/performancelist.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.384615">
-              <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ufo-base-style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/resources/css/ufo/ufo-base-style.css">
+      <file leaf-file-name="ChangePerformanceView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ChangePerformanceView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077">
-              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basicTemplate.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/templates/basicTemplate.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.153847">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/SessionBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.6504673">
+              <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#625#626#0" expanded="true" />
-                <element signature="e#659#660#0" expanded="true" />
-                <element signature="e#690#691#0" expanded="true" />
+                <element signature="e#2645#2646#0" expanded="true" />
+                <element signature="e#2674#2675#0" expanded="true" />
+                <element signature="e#2724#2725#0" expanded="true" />
+                <element signature="e#2760#2761#0" expanded="true" />
+                <element signature="e#2798#2799#0" expanded="true" />
+                <element signature="e#2832#2833#0" expanded="true" />
+                <element signature="e#2886#2887#0" expanded="true" />
+                <element signature="e#2932#2933#0" expanded="true" />
+                <element signature="e#2975#2976#0" expanded="true" />
+                <element signature="e#3009#3010#0" expanded="true" />
+                <element signature="e#3068#3069#0" expanded="true" />
+                <element signature="e#3114#3115#0" expanded="true" />
+                <element signature="e#3141#3142#0" expanded="true" />
+                <element signature="e#3167#3168#0" expanded="true" />
+                <element signature="e#3202#3203#0" expanded="true" />
+                <element signature="e#3232#3233#0" expanded="true" />
+                <element signature="e#3261#3262#0" expanded="true" />
+                <element signature="e#3289#3290#0" expanded="true" />
+                <element signature="e#3328#3329#0" expanded="true" />
+                <element signature="e#3362#3363#0" expanded="true" />
+                <element signature="e#3390#3391#0" expanded="true" />
+                <element signature="e#3417#3418#0" expanded="true" />
+                <element signature="e#3454#3455#0" expanded="true" />
+                <element signature="e#3486#3487#0" expanded="true" />
+                <element signature="e#3514#3515#0" expanded="true" />
+                <element signature="e#3541#3542#0" expanded="true" />
+                <element signature="e#3578#3579#0" expanded="true" />
+                <element signature="e#3610#3611#0" expanded="true" />
+                <element signature="e#3643#3644#0" expanded="true" />
+                <element signature="e#3674#3675#0" expanded="true" />
+                <element signature="e#3719#3720#0" expanded="true" />
+                <element signature="e#3752#3753#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Session.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/ufo/web/utils/Session.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -168,18 +215,8 @@
       <file leaf-file-name="login.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/login.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.153846">
-              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArtistListBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistListBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+            <state vertical-scroll-proportion="-11.115385">
+              <caret line="38" column="83" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -189,32 +226,8 @@
         <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/VenueListBean.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="101" selection-start-line="38" selection-start-column="101" selection-end-line="38" selection-end-column="101" />
+              <caret line="25" column="22" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="22" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/LoginBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#828#829#0" expanded="true" />
-                <element signature="e#859#860#0" expanded="true" />
-                <element signature="e#907#908#0" expanded="true" />
-                <element signature="e#947#948#0" expanded="true" />
-                <element signature="e#986#987#0" expanded="true" />
-                <element signature="e#1021#1022#0" expanded="true" />
-                <element signature="e#1203#1204#0" expanded="true" />
-                <element signature="e#1250#1251#0" expanded="true" />
-                <element signature="e#1285#1286#0" expanded="true" />
-                <element signature="e#1335#1336#0" expanded="true" />
-                <element signature="e#1606#1607#0" expanded="true" />
-                <element signature="e#1642#1643#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -245,7 +258,6 @@
         <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/src/TempClass.java" />
         <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistPaginator.java" />
-        <option value="$PROJECT_DIR$/src/at/ufo/web/utils/Helper.java" />
         <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistBean.java" />
         <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/VenueBean.java" />
         <option value="$PROJECT_DIR$/web/artistDetail.xhtml" />
@@ -254,19 +266,23 @@
         <option value="$PROJECT_DIR$/web/venueDetail.xhtml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/performancelist.xhtml" />
         <option value="$PROJECT_DIR$/web/index.xhtml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/templates/header.xhtml" />
         <option value="$PROJECT_DIR$/src/at/ufo/web/utils/Hash.java" />
         <option value="$PROJECT_DIR$/src/at/ufo/web/utils/Session.java" />
         <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/LoginBean.java" />
-        <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/SessionBean.java" />
         <option value="$PROJECT_DIR$/web/login.xhtml" />
         <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistListBean.java" />
-        <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/VenueListBean.java" />
-        <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/PerformanceListBean.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/templates/basicTemplate.xhtml" />
         <option value="$PROJECT_DIR$/web/resources/css/ufo/ufo-base-style.css" />
-        <option value="$PROJECT_DIR$/web/performancelist.xhtml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/templates/basicTemplate.xhtml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/../ufo/UFO.Database/sql/ufo_insert_performance_data.sql" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/templates/header.xhtml" />
+        <option value="$PROJECT_DIR$/src/at/ufo/web/utils/Helper.java" />
+        <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/SessionBean.java" />
+        <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/PerformanceListBean.java" />
+        <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/VenueListBean.java" />
+        <option value="$PROJECT_DIR$/web/performancelist.xhtml" />
+        <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ChangePerformaceView.java" />
+        <option value="$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ChangePerformanceView.java" />
       </list>
     </option>
   </component>
@@ -385,81 +401,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoWEA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoWEA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoWEA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -517,39 +463,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoWEA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ufoWEA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -562,19 +476,23 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/delta-1.0.10.jar!/" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="at.ufo.web.jsf.beans" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Flow\Desktop\untitled-git-repo\ufoWEA\lib" />
       <recent name="C:\Users\Flow\Desktop\untitled-git-repo\ufoWEA\web" />
       <recent name="C:\Users\Flow\Desktop\untitled-git-repo\ufoWEA" />
     </key>
@@ -1121,16 +1039,16 @@
       <workItem from="1453484249743" duration="21383000" />
       <workItem from="1453551736402" duration="8525000" />
       <workItem from="1453561425106" duration="1896000" />
-      <workItem from="1453563878261" duration="14607000" />
+      <workItem from="1453563878261" duration="32619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67527000" />
+    <option name="totallyTimeSpent" value="85539000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1144,7 +1062,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38537118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1176,13 +1094,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/PerformanceListBean.java</url>
-          <line>78</line>
+          <url>file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ChangePerformanceView.java</url>
+          <line>64</line>
           <properties />
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1191,14 +1109,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1423,14 +1333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/utils/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ArtistBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1454,22 +1356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.807693">
           <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/templates/header.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1498,51 +1384,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/utils/Session.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/at/ufo/web/utils/Hash.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/LoginBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
-            <element signature="e#1250#1251#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-            <element signature="e#1335#1336#0" expanded="true" />
-            <element signature="e#1606#1607#0" expanded="true" />
-            <element signature="e#1642#1643#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.153846">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1554,56 +1402,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/VenueListBean.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="101" selection-start-line="38" selection-start-column="101" selection-end-line="38" selection-end-column="101" />
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/generated/Category.java">
+    <entry file="file://$PROJECT_DIR$/../ufo/UFO.Database/sql/ufo_insert_performance_data.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.3813084">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/resources/css/ufo/ufo-base-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077">
+        <state vertical-scroll-proportion="0.63457763">
           <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/templates/basicTemplate.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33398822">
+          <caret line="16" column="86" selection-start-line="16" selection-start-column="86" selection-end-line="16" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/templates/header.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.115385">
+          <caret line="15" column="91" selection-start-line="15" selection-start-column="91" selection-end-line="15" selection-end-column="91" />
+          <folding>
+            <marker date="1453592268834" expanded="true" signature="851:1230" placeholder="..." />
+            <marker date="1453592268834" expanded="true" signature="911:1041" placeholder="..." />
+            <marker date="1453592268834" expanded="true" signature="1075:1202" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/utils/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/VenueListBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="38" column="83" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/SessionBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.7626168">
+          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#833#834#0" expanded="false" />
+            <element signature="e#866#867#0" expanded="false" />
+            <element signature="e#900#901#0" expanded="false" />
+            <element signature="e#931#932#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/templates/basicTemplate.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/LoginBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.153847">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="25" selection-end-column="91" />
+          <folding>
+            <element signature="e#1606#1607#0" expanded="true" />
+            <element signature="e#1642#1643#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/performancelist.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.384615">
-          <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/utils/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1611,23 +1524,54 @@
     <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/PerformanceListBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <caret line="70" column="52" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2775#2776#0" expanded="true" />
-            <element signature="e#3809#3810#0" expanded="true" />
-            <element signature="e#3841#3842#0" expanded="true" />
-            <element signature="e#3870#3871#0" expanded="true" />
-            <element signature="e#3897#3898#0" expanded="true" />
+            <element signature="e#2961#2962#0" expanded="true" />
+            <element signature="e#2996#2997#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/at/ufo/web/jsf/beans/ChangePerformanceView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6385069">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="0.6504673">
+          <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2645#2646#0" expanded="true" />
+            <element signature="e#2674#2675#0" expanded="true" />
+            <element signature="e#2724#2725#0" expanded="true" />
+            <element signature="e#2760#2761#0" expanded="true" />
+            <element signature="e#2798#2799#0" expanded="true" />
+            <element signature="e#2832#2833#0" expanded="true" />
+            <element signature="e#2886#2887#0" expanded="true" />
+            <element signature="e#2932#2933#0" expanded="true" />
+            <element signature="e#2975#2976#0" expanded="true" />
+            <element signature="e#3009#3010#0" expanded="true" />
+            <element signature="e#3068#3069#0" expanded="true" />
+            <element signature="e#3114#3115#0" expanded="true" />
+            <element signature="e#3141#3142#0" expanded="true" />
+            <element signature="e#3167#3168#0" expanded="true" />
+            <element signature="e#3202#3203#0" expanded="true" />
+            <element signature="e#3232#3233#0" expanded="true" />
+            <element signature="e#3261#3262#0" expanded="true" />
+            <element signature="e#3289#3290#0" expanded="true" />
+            <element signature="e#3328#3329#0" expanded="true" />
+            <element signature="e#3362#3363#0" expanded="true" />
+            <element signature="e#3390#3391#0" expanded="true" />
+            <element signature="e#3417#3418#0" expanded="true" />
+            <element signature="e#3454#3455#0" expanded="true" />
+            <element signature="e#3486#3487#0" expanded="true" />
+            <element signature="e#3514#3515#0" expanded="true" />
+            <element signature="e#3541#3542#0" expanded="true" />
+            <element signature="e#3578#3579#0" expanded="true" />
+            <element signature="e#3610#3611#0" expanded="true" />
+            <element signature="e#3643#3644#0" expanded="true" />
+            <element signature="e#3674#3675#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
+            <element signature="e#3752#3753#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1638,10 +1582,10 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="jpa-descriptors" />
-              <type id="artifact" />
               <type id="library" />
               <type id="javaee-facet-resources" />
+              <type id="jpa-descriptors" />
+              <type id="artifact" />
             </show-content>
           </artifact-editor>
           <last-edited>ufo</last-edited>
@@ -1704,7 +1648,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Mojarra-2.2.1</last-edited>
+          <last-edited>JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -88,7 +88,7 @@ namespace UFO.Server.Dal.MySql
             return performance;
         }
 
-        private void VerifyPerformanceValue(Performance entity)
+        public Performance VerifyPerformanceValue(Performance entity)
         {
             if (entity.DateTime.Minute != 0 || entity.DateTime.Second != 0 || entity.DateTime.Millisecond != 0)
             {
@@ -104,16 +104,17 @@ namespace UFO.Server.Dal.MySql
                 {"?ToTime", new QueryParameter {ParameterValue = toTime.ToString(Constants.CommonDateFormat)}},
                 {"?ArtistId", new QueryParameter {ParameterValue = entity.Artist?.ArtistId}}
             };
-
+            Performance performance = null;
             using (var connection = _dbCommProvider.CreateDbConnection())
             using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.SelectPerformanceBetweenHours, parameter))
             using (var dataReader = _dbCommProvider.ExecuteReader(command))
             {
                 if (dataReader.Read())
                 {
-                    throw new InvalidOperationException("Invalid Date format: ArtistId already performing!");
+                    performance = CreatePerformanceObject(dataReader);
                 }
             }
+            return performance;
         }
 
         private Dictionary<string, QueryParameter> CreatePerformanceParameter(Performance performance)
@@ -129,7 +130,11 @@ namespace UFO.Server.Dal.MySql
         [DaoExceptionHandler(typeof(Performance))]
         public DaoResponse<Performance> Insert(Performance entity)
         {
-            VerifyPerformanceValue(entity);
+            Performance p = VerifyPerformanceValue(entity);
+            if (p != null)
+            {
+                return DaoResponse.QueryFailed(entity, "Insertion not possible");
+            }
             using (var connection = _dbCommProvider.CreateDbConnection())
             using (var command = _dbCommProvider.CreateDbCommand(connection, SqlQueries.InsertPerformance, CreatePerformanceParameter(entity)))
             {

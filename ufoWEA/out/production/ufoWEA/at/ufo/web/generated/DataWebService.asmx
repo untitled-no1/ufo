@@ -254,6 +254,37 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="deletePerformance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="u" type="tns:User" />
+            <s:element minOccurs="0" maxOccurs="1" name="p" type="tns:Performance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deletePerformanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deletePerformanceResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePerformance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="u" type="tns:User" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPerformance" type="tns:Performance" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPerformance" type="tns:Performance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePerformanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePerformanceResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="LogInSoapIn">
@@ -328,6 +359,18 @@
   <wsdl:message name="GetPerformancesPerDateSoapOut">
     <wsdl:part name="parameters" element="tns:GetPerformancesPerDateResponse" />
   </wsdl:message>
+  <wsdl:message name="deletePerformanceSoapIn">
+    <wsdl:part name="parameters" element="tns:deletePerformance" />
+  </wsdl:message>
+  <wsdl:message name="deletePerformanceSoapOut">
+    <wsdl:part name="parameters" element="tns:deletePerformanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePerformanceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePerformance" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePerformanceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePerformanceResponse" />
+  </wsdl:message>
   <wsdl:portType name="DataWebServiceSoap">
     <wsdl:operation name="LogIn">
       <wsdl:input message="tns:LogInSoapIn" />
@@ -376,6 +419,14 @@
     <wsdl:operation name="GetPerformancesPerDate">
       <wsdl:input message="tns:GetPerformancesPerDateSoapIn" />
       <wsdl:output message="tns:GetPerformancesPerDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deletePerformance">
+      <wsdl:input message="tns:deletePerformanceSoapIn" />
+      <wsdl:output message="tns:deletePerformanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerformance">
+      <wsdl:input message="tns:UpdatePerformanceSoapIn" />
+      <wsdl:output message="tns:UpdatePerformanceSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="DataWebServiceSoap" type="tns:DataWebServiceSoap">
@@ -488,6 +539,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="deletePerformance">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/deletePerformance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerformance">
+      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/UpdatePerformance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="DataWebServiceSoap12" type="tns:DataWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -592,6 +661,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetPerformancesPerDate">
       <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/GetPerformancesPerDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePerformance">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/deletePerformance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerformance">
+      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/UpdatePerformance" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

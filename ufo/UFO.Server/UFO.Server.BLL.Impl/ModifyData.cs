@@ -126,14 +126,27 @@ namespace UFO.Server.BLL.Impl
             return status == DaoStatus.Successful;
         }
 
-        public bool ModifyPerformance(Performance performance)
+        public bool ModifyPerformance(Performance oldPerformance, Performance newPerformance)
         {
-            throw new NotImplementedException();
+            if (!authentification.IsLoggedIn())
+                return false;
+            var tmpPerformance = performanceDao.VerifyPerformanceValue(newPerformance);
+            DaoStatus result = DaoStatus.Failed;
+            if (tmpPerformance == null || tmpPerformance.Artist.Equals(oldPerformance.Artist))
+            {
+                result = performanceDao.Delete(oldPerformance).ResponseStatus;
+                if(result == DaoStatus.Successful)
+                    result = performanceDao.Insert(newPerformance).ResponseStatus;
+            }
+            return result == DaoStatus.Successful;
         }
 
         public bool DeletePerformance(Performance performance)
         {
-            throw new NotImplementedException();
+            if (!authentification.IsLoggedIn())
+                return false;
+            var status = performanceDao.Delete(performance).ResponseStatus;
+            return status == DaoStatus.Successful;
         }
     }
 }

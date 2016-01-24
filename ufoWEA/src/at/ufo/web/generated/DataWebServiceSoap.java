@@ -189,4 +189,41 @@ public interface DataWebServiceSoap {
         @WebParam(name = "d", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
         XMLGregorianCalendar d);
 
+    /**
+     * 
+     * @param p
+     * @param u
+     * @return
+     *     returns boolean
+     */
+    @WebMethod(action = "http://ufo.untitled-no1.at/webservice/deletePerformance")
+    @WebResult(name = "deletePerformanceResult", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+    @RequestWrapper(localName = "deletePerformance", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.DeletePerformance")
+    @ResponseWrapper(localName = "deletePerformanceResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.DeletePerformanceResponse")
+    public boolean deletePerformance(
+        @WebParam(name = "u", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+        User u,
+        @WebParam(name = "p", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+        Performance p);
+
+    /**
+     * 
+     * @param u
+     * @param oldPerformance
+     * @param newPerformance
+     * @return
+     *     returns boolean
+     */
+    @WebMethod(operationName = "UpdatePerformance", action = "http://ufo.untitled-no1.at/webservice/UpdatePerformance")
+    @WebResult(name = "UpdatePerformanceResult", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+    @RequestWrapper(localName = "UpdatePerformance", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.UpdatePerformance")
+    @ResponseWrapper(localName = "UpdatePerformanceResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.UpdatePerformanceResponse")
+    public boolean updatePerformance(
+        @WebParam(name = "u", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+        User u,
+        @WebParam(name = "oldPerformance", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+        Performance oldPerformance,
+        @WebParam(name = "newPerformance", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
+        Performance newPerformance);
+
 }

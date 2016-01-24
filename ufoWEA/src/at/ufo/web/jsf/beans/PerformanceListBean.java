@@ -8,6 +8,7 @@ import org.primefaces.event.SelectEvent;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
@@ -38,6 +39,13 @@ public class PerformanceListBean implements Serializable {
 
     private List<String> hours = new ArrayList<>();
     private Date date = Calendar.getInstance().getTime();
+
+
+    @ManagedProperty(value = "#{sessionBean}")
+    private SessionBean sessionBean;
+    public void setSessionBean(SessionBean sessionBean) { this.sessionBean = sessionBean; }
+
+
 
     public PerformanceListBean() {
         for (int i = 14; i < 24; i++) {
@@ -133,12 +141,21 @@ public class PerformanceListBean implements Serializable {
         XMLGregorianCalendar xgcal;
         try {
             xgcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
-            performances = Session.GetSoap().getPerformancesPerDate(xgcal).getPerformance();
+            ArrayOfPerformance tmp = Session.GetSoap().getPerformancesPerDate(xgcal);
+            if(tmp != null)
+                performances = tmp.getPerformance();
         } catch(DatatypeConfigurationException e){
             performances = null;
             System.out.println("Date not valid");
         }
 
+    }
+
+    public void delete(Performance p) {
+        if (!sessionBean.isLoggedIn())
+            return;
+        performances.remove(p);
+        Session.GetSoap().deletePerformance(sessionBean.getLoggedUser(), p);
     }
 
 

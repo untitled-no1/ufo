@@ -17,7 +17,7 @@ namespace UFO.Server.BLL.Common
         bool ModifyLocation(Location location);
         bool DeleteLocation(Location location);
 
-        bool ModifyPerformance(Performance performance);
+        bool ModifyPerformance(Performance oldPerformance, Performance newPerformance);
         bool DeletePerformance(Performance performance);
     }
 }

@@ -74,7 +74,8 @@ namespace UFO.Server.WebService
         [WebMethod]
         public List<Performance> GetPerformancesPage(Page PerformancePage)
         {
-            return getDataProxy.GetPerformancePage(PerformancePage);
+            var result = getDataProxy.GetPerformancePage(PerformancePage);
+            return result;
         }
 
         [WebMethod]
@@ -107,6 +108,24 @@ namespace UFO.Server.WebService
         public List<Performance> GetPerformancesPerDate(DateTime d)
         {
             return getDataProxy.GetPerformancesPerDate(d);
-        } 
+        }
+
+        [WebMethod]
+        public bool deletePerformance(User u, Performance p)
+        {
+            var auth = BusinessLayerFactory.CreateAuthentificationInstance(u.EMail, u.Password);
+            var modifyData = BusinessLayerFactory.CreateModifyDataInstance(auth);
+            var res = modifyData.DeletePerformance(p);
+            return res;
+        }
+
+        [WebMethod]
+        public bool UpdatePerformance(User u, Performance oldPerformance, Performance newPerformance)
+        {
+            var auth = BusinessLayerFactory.CreateAuthentificationInstance(u.EMail, u.Password);
+            var modifyData = BusinessLayerFactory.CreateModifyDataInstance(auth);
+            var result = modifyData.ModifyPerformance(oldPerformance, newPerformance);
+            return result;
+        }
     }
 }

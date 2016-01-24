@@ -1,9 +1,14 @@
 package at.ufo.web.jsf.beans;
 
 import at.ufo.web.generated.User;
+import at.ufo.web.utils.Helper;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.io.Serializable;
 
 /**
@@ -20,11 +25,13 @@ public class SessionBean implements Serializable {
     public void setLoggedUser(User u) {
         loggedUser = u;
         loggedIn = true;
+        Helper.Reload();
     }
 
     public void logout() {
         loggedUser = null;
         loggedIn = false;
+        Helper.Reload();
     }
 
     public User getLoggedUser() {
