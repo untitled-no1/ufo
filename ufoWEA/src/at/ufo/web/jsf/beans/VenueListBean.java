@@ -39,6 +39,14 @@ public class VenueListBean implements Serializable {
         Collections.sort(venues, (Venue v1, Venue v2) -> v1.getVenueId().compareTo(v2.getVenueId()));
     }
 
+    public String ShowNameforId(String id){
+        for(Venue v: venues) {
+            if(v.getVenueId().equals(id))
+                return v.getName();
+        }
+        return "";
+    }
+
     public List<Venue> getVenues() {
         return venues;
     }

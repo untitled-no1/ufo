@@ -7,65 +7,73 @@
      xmlns:x="http://java.sun.com/jsp/jstl/core">
 
 
-    <h:form>
+    <h:form style="width:70%; align-content: center; margin: auto">
         <p:calendar id="inline-date-picker" value="#{performanceListBean.date}" mode="inline">
             <p:ajax process="inline-date-picker" event="dateSelect" partialSubmit="true" listener="#{performanceListBean.dateChange}" update="performancesList"/>
         </p:calendar>
     </h:form>
 
-    <p:panelGrid id="performancesList">
+    <p:outputPanel id="performancesList">
 
-        <f:facet name="header">
-            <p:row>
-                <p:column colspan="13">Zeitplan</p:column>
-            </p:row>
-            <p:row>
-                <p:column>Datum</p:column>
-                <p:column>Spielstätten</p:column>
-                <x:forEach items="#{performanceListBean.hours}" var="hour">
-                    <p:column>#{hour}</p:column>
-                </x:forEach>
-            </p:row>
-        </f:facet>
+        <x:forEach var="perfGroup" items="#{performanceListBean.groupMap}">
 
-        <x:forEach items="#{performanceListBean.performances}" var="p">
-            <p:row>
-                <p:column styleClass="artist-table">#{performanceListBean.toDateString(p.dateTime)}</p:column>
-                <p:column styleClass="artist-table">
-                    <p:link href="#{request.contextPath}/ufo/venueDetail.xhtml?id=#{p.venue.venueId}">
-                        #{p.venue.venueId}
-                    </p:link>
-                </p:column>
-                <x:forEach items="#{performanceListBean.hours}" var="hour">
-                    <x:choose>
-                        <x:when test="#{not empty performanceListBean.checkPerformanceAvailable(p, hour)}">
-                            <p:column styleClass="artist-table" style="background-color: #{p.artist.category.color}">
-                                <p:link styleClass="artist-link" href="#{request.contextPath}/ufo/artistDetail.xhtml?id=#{p.artist.artistId}">
-                                    #{p.artist.name}
+            <p:panelGrid>
+
+                <f:facet name="header">
+                    <p:row>
+                        <p:column styleClass="artist-table">#{perfGroup.key}</p:column>
+                    </p:row>
+                    <p:row>
+                        <p:column>Spielstätten</p:column>
+                        <x:forEach items="#{performanceListBean.hours}" var="hour">
+                            <p:column>#{hour}</p:column>
+                        </x:forEach>
+                    </p:row>
+                </f:facet>
+
+                <x:forEach items="#{perfGroup.value.venueMap}" var="venuesGroup">
+
+                    <x:if test="#{venuesGroup.value.size() > 0}">
+                        <p:row>
+
+                            <p:column styleClass="artist-table" style="min-width: 200px;">
+                                <p:link href="#{request.contextPath}/ufo/venue.xhtml?id=#{venuesGroup.key}">
+                                    #{venuesGroup.key} #{venueListBean.ShowNameforId(venuesGroup.key)}
                                 </p:link>
-
-                                <p:outputPanel rendered="#{sessionBean.loggedIn}">
-                                    <p:commandLink styleClass="artist-link-cancel" action="#{performanceListBean.delete(p)}" update="performancesList">
-                                        [Eintrag löschen]
-                                    </p:commandLink>
-                                </p:outputPanel>
-
-                                <p:outputPanel rendered="#{sessionBean.loggedIn}">
-                                    <p:commandLink styleClass="artist-link-edit" onclick="PF('dlg2').show();" action="#{changePerformanceView.InvokePerformance(p)}" update="changeDialog">
-                                        [Verschieben]
-                                    </p:commandLink>
-                                </p:outputPanel>
-
                             </p:column>
-                        </x:when>
-                        <x:otherwise>
-                            <p:column styleClass="artist-table" />
-                        </x:otherwise>
-                    </x:choose>
+
+                            <x:forEach items="#{performanceListBean.hours}" var="hour">
+                                <p:column styleClass="artist-table" style="min-width: 100px;">
+                                    <x:forEach items="#{venuesGroup.value}" var="p">
+                                        <x:if test="#{venuesGroup.key.equals(p.venue.venueId) and not empty performanceListBean.checkPerformanceAvailable(p, hour)}" >
+                                            <div style="background-color: #{p.artist.category.color}; height: 100%">
+                                                <p:link styleClass="artist-link" href="#{request.contextPath}/ufo/artistList.xhtml?id=#{p.artist.artistId}">
+                                                    #{p.artist.name} (#{p.artist.category.categoryId})
+                                                </p:link>
+                                                <p:outputPanel rendered="#{sessionBean.loggedIn}">
+                                                    <p:commandLink styleClass="artist-link-cancel" action="#{performanceListBean.delete(p)}" update="performancesList">
+                                                        [Stornieren]
+                                                    </p:commandLink>
+                                                </p:outputPanel>
+
+                                                <p:outputPanel rendered="#{sessionBean.loggedIn}">
+                                                    <p:commandLink styleClass="artist-link-edit" onclick="PF('dlg2').show();" action="#{changePerformanceView.InvokePerformance(p)}" update="changeDialog">
+                                                        [Verschieben]
+                                                    </p:commandLink>
+                                                </p:outputPanel>
+                                            </div>
+                                        </x:if>
+                                    </x:forEach>
+                                </p:column>
+                            </x:forEach>
+                        </p:row>
+                    </x:if>
                 </x:forEach>
-            </p:row>
+
+            </p:panelGrid>
+
         </x:forEach>
-    </p:panelGrid>
+    </p:outputPanel>
 
     <p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="200" width="350">
 

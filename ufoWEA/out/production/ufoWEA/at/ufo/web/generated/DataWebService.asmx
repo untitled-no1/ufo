@@ -60,16 +60,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="DataStream" type="s:base64Binary" />
         </s:sequence>
       </s:complexType>
-      <s:element name="HelloWorld">
-        <s:complexType />
-      </s:element>
-      <s:element name="HelloWorldResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="GetArtistByName">
         <s:complexType>
           <s:sequence>
@@ -293,12 +283,6 @@
   <wsdl:message name="LogInSoapOut">
     <wsdl:part name="parameters" element="tns:LogInResponse" />
   </wsdl:message>
-  <wsdl:message name="HelloWorldSoapIn">
-    <wsdl:part name="parameters" element="tns:HelloWorld" />
-  </wsdl:message>
-  <wsdl:message name="HelloWorldSoapOut">
-    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
-  </wsdl:message>
   <wsdl:message name="GetArtistByNameSoapIn">
     <wsdl:part name="parameters" element="tns:GetArtistByName" />
   </wsdl:message>
@@ -376,10 +360,6 @@
       <wsdl:input message="tns:LogInSoapIn" />
       <wsdl:output message="tns:LogInSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="HelloWorld">
-      <wsdl:input message="tns:HelloWorldSoapIn" />
-      <wsdl:output message="tns:HelloWorldSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="GetArtistByName">
       <wsdl:input message="tns:GetArtistByNameSoapIn" />
       <wsdl:output message="tns:GetArtistByNameSoapOut" />
@@ -433,15 +413,6 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LogIn">
       <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/LogIn" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="HelloWorld">
-      <soap:operation soapAction="http://ufo.untitled-no1.at/webservice/HelloWorld" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -562,15 +533,6 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LogIn">
       <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/LogIn" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="HelloWorld">
-      <soap12:operation soapAction="http://ufo.untitled-no1.at/webservice/HelloWorld" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

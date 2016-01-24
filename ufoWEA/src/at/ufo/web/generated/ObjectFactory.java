@@ -190,14 +190,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link HelloWorldResponse }
-     * 
-     */
-    public HelloWorldResponse createHelloWorldResponse() {
-        return new HelloWorldResponse();
-    }
-
-    /**
      * Create an instance of {@link GetArtistByNameResponse }
      * 
      */
@@ -299,14 +291,6 @@ public class ObjectFactory {
      */
     public GetArtistById createGetArtistById() {
         return new GetArtistById();
-    }
-
-    /**
-     * Create an instance of {@link HelloWorld }
-     * 
-     */
-    public HelloWorld createHelloWorld() {
-        return new HelloWorld();
     }
 
     /**

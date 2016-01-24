@@ -2,9 +2,11 @@ package at.ufo.web.jsf.beans;
 
 import at.ufo.web.generated.*;
 import at.ufo.web.utils.Helper;
+import at.ufo.web.utils.PerformanceGroup;
 import at.ufo.web.utils.Session;
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import org.primefaces.event.SelectEvent;
+import sun.misc.Perf;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -39,6 +41,7 @@ public class PerformanceListBean implements Serializable {
 
     private List<String> hours = new ArrayList<>();
     private Date date = Calendar.getInstance().getTime();
+    private Map<String, PerformanceGroup> groupMap;
 
 
     @ManagedProperty(value = "#{sessionBean}")
@@ -81,6 +84,13 @@ public class PerformanceListBean implements Serializable {
             performancePage = Helper.CalcNextPage(performancePage);
             tmp = Session.GetSoap().getPerformancesPage(performancePage);
         }
+        Collections.sort(performances, new Comparator<Performance>(){
+            public int compare(Performance s1, Performance s2) {
+                return s2.getDateTime().getYear() - s1.getDateTime().getYear();
+            }
+        });
+        performances = performances.subList(0, 100 > performances.size() ? performances.size() : 100);
+        groupMap = PerformanceGroup.buildGrouping(performances);
     }
 
     public List<Performance> getPerformances() {
@@ -142,8 +152,11 @@ public class PerformanceListBean implements Serializable {
         try {
             xgcal = DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal);
             ArrayOfPerformance tmp = Session.GetSoap().getPerformancesPerDate(xgcal);
-            if(tmp != null)
+            if(tmp != null) {
+                groupMap.clear();
                 performances = tmp.getPerformance();
+                groupMap = PerformanceGroup.buildGrouping(performances);
+            }
         } catch(DatatypeConfigurationException e){
             performances = null;
             System.out.println("Date not valid");
@@ -155,7 +168,12 @@ public class PerformanceListBean implements Serializable {
         if (!sessionBean.isLoggedIn())
             return;
         performances.remove(p);
+        groupMap = PerformanceGroup.buildGrouping(performances);
         Session.GetSoap().deletePerformance(sessionBean.getLoggedUser(), p);
+    }
+
+    public Map<String, PerformanceGroup> getGroupMap() {
+        return groupMap;
     }
 
 

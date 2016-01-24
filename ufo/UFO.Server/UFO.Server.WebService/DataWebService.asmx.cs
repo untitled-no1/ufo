@@ -33,13 +33,6 @@ namespace UFO.Server.WebService
             return getDataProxy.VerifyUser(user, passwordHash);
         }
 
-
-        [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
-
         [WebMethod]
         public Artist GetArtistByName(string name)
         {
@@ -85,7 +78,7 @@ namespace UFO.Server.WebService
             List<string> dates = new List<string>();
             foreach (var s in performances)
             {
-                var date = s.DateTime.Date.ToString("yyyy-MM-dd");
+                var date = s.DateTime.Date.ToString("dd.MM.yyyy");
                 if (!dates.Contains(date))
                     dates.Add(date);
             }

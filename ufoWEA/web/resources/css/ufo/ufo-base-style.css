@@ -9,12 +9,48 @@
     margin: 2px !important;
 }
 
-.ui-widget-content a.ui-link.ui-widget.artist-link {
+.ui-widget-content div a.ui-link.ui-widget.artist-link {
     color: #fff;
+    margin: 5px;
+}
+
+.ui-widget-content div .ui-commandlink.ui-widget.artist-link-cancel {
+    color: #A92323;
+}
+
+.ui-widget-content div .ui-commandlink.ui-widget.artist-link-edit {
+    color: #0C0569;
 }
 
 .artist-table {
     border-color: #EAEAEA !important;
-    min-width: 120px !important;
-    max-width: 120px !important;
+}
+
+.ui-panelgrid td.ui-panelgrid-cell {
+    padding: 0px;
+    height: 2em;
+    position: relative;
+}
+
+.ui-datepicker {
+    margin: 0 auto;
+}
+
+.ui-widget-header,
+.ui-state-default,
+.ui-datepicker .ui-datepicker-header {
+    background: #222222;
+    color: #EAEAEA;
+    text-shadow: none;
+    border: none;
+}
+
+.jumbotron {
+    background-image: url("http://www.theboredroom.net/wp-content/uploads/2015/03/music_live_concert_desktop.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    color: #EAEAEA;
+    height: 400px;
 }

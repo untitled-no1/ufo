@@ -43,17 +43,6 @@ public interface DataWebServiceSoap {
 
     /**
      * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "HelloWorld", action = "http://ufo.untitled-no1.at/webservice/HelloWorld")
-    @WebResult(name = "HelloWorldResult", targetNamespace = "http://ufo.untitled-no1.at/webservice/")
-    @RequestWrapper(localName = "HelloWorld", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.HelloWorld")
-    @ResponseWrapper(localName = "HelloWorldResponse", targetNamespace = "http://ufo.untitled-no1.at/webservice/", className = "at.ufo.web.generated.HelloWorldResponse")
-    public String helloWorld();
-
-    /**
-     * 
      * @param name
      * @return
      *     returns at.ufo.web.generated.Artist
