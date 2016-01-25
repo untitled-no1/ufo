@@ -7,7 +7,7 @@
      xmlns:x="http://java.sun.com/jsp/jstl/core">
 
 
-    <h:form style="width:70%; align-content: center; margin: auto">
+    <h:form style="width:100%;">
         <p:calendar id="inline-date-picker" value="#{performanceListBean.date}" mode="inline">
             <p:ajax process="inline-date-picker" event="dateSelect" partialSubmit="true" listener="#{performanceListBean.dateChange}" update="performancesList"/>
         </p:calendar>
@@ -21,7 +21,7 @@
 
                 <f:facet name="header">
                     <p:row>
-                        <p:column styleClass="artist-table">#{perfGroup.key}</p:column>
+                        <p:column styleClass="artist-table" colspan="12">#{perfGroup.key}</p:column>
                     </p:row>
                     <p:row>
                         <p:column>Spielstätten</p:column>
@@ -37,7 +37,7 @@
                         <p:row>
 
                             <p:column styleClass="artist-table" style="min-width: 200px;">
-                                <p:link href="#{request.contextPath}/ufo/venue.xhtml?id=#{venuesGroup.key}">
+                                <p:link href="#{request.contextPath}/ufo/venueDetail.xhtml?id=#{venuesGroup.key}">
                                     #{venuesGroup.key} #{venueListBean.ShowNameforId(venuesGroup.key)}
                                 </p:link>
                             </p:column>
@@ -47,7 +47,7 @@
                                     <x:forEach items="#{venuesGroup.value}" var="p">
                                         <x:if test="#{venuesGroup.key.equals(p.venue.venueId) and not empty performanceListBean.checkPerformanceAvailable(p, hour)}" >
                                             <div style="background-color: #{p.artist.category.color}; height: 100%">
-                                                <p:link styleClass="artist-link" href="#{request.contextPath}/ufo/artistList.xhtml?id=#{p.artist.artistId}">
+                                                <p:link styleClass="artist-link" href="#{request.contextPath}/ufo/artistDetail.xhtml?id=#{p.artist.artistId}">
                                                     #{p.artist.name} (#{p.artist.category.categoryId})
                                                 </p:link>
                                                 <p:outputPanel rendered="#{sessionBean.loggedIn}">
@@ -75,7 +75,7 @@
         </x:forEach>
     </p:outputPanel>
 
-    <p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="200" width="350">
+    <p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="400" width="350">
 
             <h:form id="changeDialog">
                 <p:growl id="msgs" showDetail="true" />
@@ -84,14 +84,14 @@
                     <h:panelGrid columns="2" cellpadding="5">
                         <p:outputLabel for="venue" value="Venue: " />
                         <p:selectOneMenu id="venue" value="#{changePerformanceView.pickedVenue}" style="width:150px">
-                            <f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
+                            <f:selectItem itemLabel="" itemValue="" noSelectionOption="true" />
                             <f:selectItems value="#{changePerformanceView.venues}" />
                         </p:selectOneMenu>
 
 
                     </h:panelGrid>
 
-                    <br />
+                    <p:separator />
 
                     <h:outputText value="Date: " style="font-weight:bold"/>
                     <h:inputText id="day" value="#{changePerformanceView.day}" style="width: 40px"/>
@@ -99,10 +99,14 @@
                     <h:inputText id="month" value="#{changePerformanceView.month}" style="width: 40px" />
                     <h:outputText value=" . " style="font-weight:bold"/>
                     <h:inputText id="year" value="#{changePerformanceView.year}" style="width: 40px" />
-                    <br />
+
+                    <p:separator />
+
                     <h:outputText value="Hour: " style="font-weight:bold"/>
-                    <h:inputText id="hour" value="#{changePerformanceView.hour}" />
-                    <br />
+                    <h:inputText id="hour" value="#{changePerformanceView.hour}" style="width: 40px" />
+                    <h:outputText value=" :00" style="font-weight:bold"/>
+
+                    <p:separator />
 
                     <p:commandButton value="Submit" update="msgs" actionListener="#{changePerformanceView.saveChanges}" icon="ui-icon-check" />
                 </p:panel>
