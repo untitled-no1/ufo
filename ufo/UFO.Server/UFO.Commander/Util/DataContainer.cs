@@ -158,6 +158,23 @@ namespace UFO.Commander.Util
             Console.WriteLine("Artists Reloaded");
         }
 
+        public static Artist FindArtistByName(ArtistViewModel a)
+        {
+            var dbArtist = Session.GetData.GetArtistByName(a.Name);
+            return dbArtist;
+        }
+
+        public static ArtistViewModel FindArtistByNameInObs(string name)
+        {
+            foreach (var a in Artists)
+            {
+                if (a.Name == name)
+                    return a;
+            }
+            return null;
+        }
+
+        
 
         // Location
         private static List<Location> ChangedLocations = new List<Location>();
@@ -247,6 +264,11 @@ namespace UFO.Commander.Util
             return null;
         }
 
+        public static VenueViewModel FindVenueByIdInObs(string id)
+        {
+            return Venues.FirstOrDefault(v => v.VenueId == id);
+        }
+
         public static List<Venue> GetChangedVenueList => ChangedVenues;
 
         public static async void SaveVenuesChanged()
@@ -279,6 +301,12 @@ namespace UFO.Commander.Util
             Console.WriteLine("Venues Reloaded");
         }
 
+        public static Venue FindVenueById(VenueViewModel v)
+        {
+            var dbVenue = Session.GetData.GetVenueById(v.VenueId);
+            return dbVenue;
+        }
+
 
         // Performance
 
@@ -302,15 +330,7 @@ namespace UFO.Commander.Util
         public static ObservableCollection<string> GetDatesObservColl()
         {
             InitPerformanceObservList();
-            if (Dates.Count == 0)
-            {
-                Dates.Clear();
-                foreach (var d in dates)
-                {
-                    Dates.Add(d);
-                }
-            }
-
+            
             return Dates;
         }
 
@@ -331,6 +351,12 @@ namespace UFO.Commander.Util
                 if(p.DateTime.Date.ToString("yyyy-MM-dd") == firstDate)
                     Performances.Add(new PerformanceViewModel(p));
             }
+            Dates.Clear();
+            foreach (var d in dates)
+            {
+                Dates.Add(d);
+            }
+            
             Console.WriteLine("Amount of dates: " + dates.Count);
             Console.WriteLine("Performances Reloaded");
         }
@@ -344,6 +370,32 @@ namespace UFO.Commander.Util
                     Performances.Add(new PerformanceViewModel(p));
             }
         }
- 
+
+
+        // Notification
+
+        public class NotificationPack
+        {
+            public PerformanceViewModel Performance { get; set; }
+            public NotificationReason Reason { get; set; }
+
+            public override string ToString()
+            {
+                return Performance.ArtistName + ": " + Performance.DateString + " " + Performance.Hour + ":00 " +
+                       Performance.VenueName + " => " + Reason;
+            }
+        }
+        private static ObservableCollection<NotificationPack> concernedPerformances = new ObservableCollection<NotificationPack>();
+        public static ObservableCollection<NotificationPack> ConcernedPerformances => concernedPerformances; 
+
+        public static void AddToConcernedPerformances(PerformanceViewModel p, NotificationReason r)
+        {
+            concernedPerformances.Add(new NotificationPack { Performance = p, Reason = r});
+        }
+
+        public static void ClearConcernedPerformances()
+        {
+            concernedPerformances.Clear();
+        }
     }
 }

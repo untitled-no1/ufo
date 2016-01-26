@@ -83,6 +83,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Util\NotificationReason.cs" />
     <Compile Include="Util\DataContainer.cs" />
     <Compile Include="Util\PasswordHelper.cs" />
     <Compile Include="Util\RelayCommand.cs" />
@@ -100,7 +101,9 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewArtistViewModel.cs" />
     <Compile Include="ViewModels\NewLocationViewModel.cs" />
+    <Compile Include="ViewModels\NewPeformanceViewModel.cs" />
     <Compile Include="ViewModels\NewVenueViewModel.cs" />
+    <Compile Include="ViewModels\NotificationViewModel.cs" />
     <Compile Include="ViewModels\PerformanceViewModel.cs" />
     <Compile Include="ViewModels\VenueDataViewModel.cs" />
     <Compile Include="ViewModels\VenueViewModel.cs" />
@@ -122,8 +125,14 @@
     <Compile Include="Views\NewArtistUserControl.xaml.cs">
       <DependentUpon>NewArtistUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\NewPerformanceUserControl.xaml.cs">
+      <DependentUpon>NewPerformanceUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NewVenueUserControl.xaml.cs">
       <DependentUpon>NewVenueUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NotificationUserControl.xaml.cs">
+      <DependentUpon>NotificationUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PerformanceTable.xaml.cs">
       <DependentUpon>PerformanceTable.xaml</DependentUpon>
@@ -177,7 +186,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\NewPerformanceUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\NewVenueUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NotificationUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

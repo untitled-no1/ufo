@@ -17,6 +17,9 @@ namespace UFO.Commander.ViewModels
 
         private Performance performance;
 
+        public Performance GetDbPerformance => performance;
+
+
         public string LocationName
         {
             get { return performance?.Venue.Location.Name; }
@@ -53,6 +56,11 @@ namespace UFO.Commander.ViewModels
 
         }
 
+        public int ArtistId
+        {
+            get { return performance.Artist.ArtistId; }
+        }
+
         public string DateString
         {
             get { return performance?.DateTime.Date.ToString("yyyy-MM-dd"); }
@@ -63,9 +71,9 @@ namespace UFO.Commander.ViewModels
             get { return performance.DateTime; }
         }
 
-        public int Hour
+        public string Hour
         {
-            get { return performance.DateTime.Hour; }
+            get { return performance.DateTime.Hour + ": 00"; }
         }
 
 

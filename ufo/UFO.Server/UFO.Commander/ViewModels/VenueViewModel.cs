@@ -66,5 +66,10 @@ namespace UFO.Commander.ViewModels
             DataContainer.AddToVenueChanged(venue);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public override string ToString()
+        {
+            return Name + ", " + LocName;
+        }
     }
 }

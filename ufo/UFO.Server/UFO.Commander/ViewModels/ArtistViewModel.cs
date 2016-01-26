@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Security.RightsManagement;
 using UFO.Commander.Util;
 using UFO.Server.Domain;
 
@@ -106,8 +108,9 @@ namespace UFO.Commander.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        
-
-       
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

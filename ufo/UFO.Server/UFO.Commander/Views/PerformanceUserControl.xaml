@@ -9,19 +9,20 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
-            <RowDefinition Height="85*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="75*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="90*" />
             <ColumnDefinition Width="10*" />
         </Grid.ColumnDefinitions>
-        
+
+        <local:NewPerformanceUserControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
         <ComboBox Grid.Row="0" Grid.Column="1" Name="CategoryCb"
                   ItemsSource="{Binding Path=Dates}" 
                   SelectedItem="{Binding Path=CurDate}"/>
-        <local:PerformanceTable Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
-        <Button Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" Name="SaveButton" Content="Save Changes"></Button>
-
+        <local:PerformanceTable Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+        
     </Grid>
 </UserControl>

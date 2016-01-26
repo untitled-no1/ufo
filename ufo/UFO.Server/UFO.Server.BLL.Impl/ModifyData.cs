@@ -130,14 +130,18 @@ namespace UFO.Server.BLL.Impl
         {
             if (!authentification.IsLoggedIn())
                 return false;
-            var tmpPerformance = performanceDao.VerifyPerformanceValue(newPerformance);
             DaoStatus result = DaoStatus.Failed;
-            if (tmpPerformance == null || tmpPerformance.Artist.Equals(oldPerformance.Artist))
+            if (oldPerformance != null)
             {
-                result = performanceDao.Delete(oldPerformance).ResponseStatus;
-                if(result == DaoStatus.Successful)
-                    result = performanceDao.Insert(newPerformance).ResponseStatus;
+                var tmpPerformance = performanceDao.VerifyPerformanceValue(newPerformance);
+                if (tmpPerformance == null || tmpPerformance.Artist.Equals(oldPerformance.Artist))
+                {
+                    result = performanceDao.Delete(oldPerformance).ResponseStatus;
+                    if (result != DaoStatus.Successful)
+                        return result == DaoStatus.Successful;
+                }
             }
+            result = performanceDao.Insert(newPerformance).ResponseStatus;
             return result == DaoStatus.Successful;
         }
 

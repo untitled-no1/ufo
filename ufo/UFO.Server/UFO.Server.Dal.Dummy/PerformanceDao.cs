@@ -62,5 +62,15 @@ namespace UFO.Server.Dal.Dummy
         {
             throw new NotImplementedException();
         }
+
+        public DaoResponse<List<Performance>> SelectByDate(DateTime d)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Performance VerifyPerformanceValue(Performance entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

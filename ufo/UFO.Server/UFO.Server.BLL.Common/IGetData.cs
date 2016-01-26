@@ -10,7 +10,7 @@ namespace UFO.Server.BLL.Common
         List<User> GetAllUsers();
         User VerifyUser(string name, string passwordHash);
 
-            // Artist
+        // Artist
         Artist GetArtistById(int id);
         Artist GetArtistByName(string name);
         List<Artist> GetAllArtists();
@@ -39,5 +39,6 @@ namespace UFO.Server.BLL.Common
         List<Performance> GetPerformancesPerArtist(int id);
         List<Performance> GetPerformancesPerVenue(string id);
         List<Performance> GetPerformancesPerDate(DateTime d);
+        Performance GetPerformancePerId(DateTime d, int artistId);
     }
 }

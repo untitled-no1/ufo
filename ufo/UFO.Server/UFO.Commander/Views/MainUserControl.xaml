@@ -10,7 +10,11 @@
     <Grid>
         <TabControl>
             <TabItem Header="Home">
-                
+                <TabItem.ContentTemplate>
+                    <DataTemplate>
+                        <local:NotificationUserControl/>
+                    </DataTemplate>
+                </TabItem.ContentTemplate>
             </TabItem>
             <TabItem Header="Performances">
                 <TabItem.ContentTemplate>

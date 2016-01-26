@@ -136,5 +136,10 @@ namespace UFO.Server.BLL.Impl
         {
             return performanceDao.SelectByDate(d).ResultObject;
         }
+
+        public Performance GetPerformancePerId(DateTime d, int artistId)
+        {
+            return performanceDao.SelectById(d, artistId).ResultObject;
+        }
     }
 }

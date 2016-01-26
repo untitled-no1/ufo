@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="UFO.Commander.Views.NotificationUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UFO.Commander.Views"
+             mc:Ignorable="d" 
+             DataContext="{Binding NotificationViewModel, Source={StaticResource ViewModelLocator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="80*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+            <ListView Grid.Row="0" Grid.Column="1" Name="NotificationListView"
+                      ItemsSource="{Binding Notifications}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Changes to Notify" DisplayMemberBinding="{Binding}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        
+
+       
+        <Button Grid.Row="1" Grid.Column="1" Name="SendButton"
+                Content="Send Notifications" Command="{Binding SendCommand}" />
+    </Grid>
+</UserControl>

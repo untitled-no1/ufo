@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,22 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UFO.Commander.Util;
 
 namespace UFO.Commander.Views
 {
     /// <summary>
-    /// Interaction logic for PerformanceTable.xaml
+    /// Interaction logic for NotificationUserControl.xaml
     /// </summary>
-    public partial class PerformanceTable : UserControl
+    public partial class NotificationUserControl : UserControl
     {
-        public PerformanceTable()
+        public NotificationUserControl()
         {
             InitializeComponent();
-            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(PerformanceGrid.ItemsSource);
-            view.GroupDescriptions.Clear();
-            PropertyGroupDescription groupDescription = new PropertyGroupDescription("LocationName");
-            view.GroupDescriptions.Add(groupDescription);
         }
     }
 }
